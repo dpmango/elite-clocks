@@ -1,0 +1,93 @@
+// FOOTER
+.footer
+  &__wrapper
+    padding: 90px 0
+    border-top: 1px solid #F1F1F1
+
+  &__logo
+    font-size: 0px
+    display: flex
+    flex-direction: column
+    .ico
+      font-size: 87px
+    span
+      display: inline-block
+      margin-top: 20px
+      padding-left: 70px
+      font-weight: 300
+      font-size: 20px
+      line-height: (22 / 20)
+
+  &__menu
+    margin-top: 10px
+
+  &__menu-title
+    font-size: 26px
+    line-height: 38px
+  &__menu-list
+    list-style: none
+    margin: 35px 0 0
+    padding: 0
+    li
+      display: block
+      margin: 10px -5px
+      &:last-child
+        margin-bottom: 0
+    a
+      display: inline-block
+      padding: 5px
+      font-size: 20px
+      line-height: (29 / 20)
+      transition: color .25s $ease
+      span
+        font-weight: 300
+        color: $colorGray
+      &:hover
+        color: $colorPrimary
+
+
+  &__bottom
+    display: flex
+    align-items: center
+    padding: 40px 0
+    border-top: 1px solid #F1F1F1
+
+  &__copy
+    font-weight: 300
+    font-size: 18px
+    line-height: (26 / 18)
+
+  &__socials
+    margin-left: auto
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+
+  &__social-link
+    display: inline-flex
+    align-items: center
+    padding: 5px
+    margin-right: 40px
+    transition: color .25s $ease
+    &:last-child
+      margin-right: 0
+    .ico
+      color: #CCCCCC
+      transition: color .25s $ease
+    .ico-mono-instagram
+      font-size: 20px
+    .ico-mono-youtube
+      font-size: 14px
+    .ico-mono-facebook
+      font-size: 20px
+
+    span
+      display: inline-block
+      margin-left: 10px
+      font-weight: 300
+      font-size: 18px
+      line-height: 26px
+    &:hover
+      color: $colorPrimary
+      .ico
+        color: $colorPrimary

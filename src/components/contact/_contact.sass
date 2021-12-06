@@ -1,0 +1,157 @@
+// contact
+.contact
+  &__wrapper
+    position: relative
+  &__map
+    position: relative
+    z-index: 1
+    height: 800px
+    display: flex
+    flex-direction: column
+    background: #F1F1F1
+    font-size: 0
+    > div
+      flex: 1 0 auto
+
+  &__content
+    position: absolute
+    left: -70px
+    bottom: 70px
+    right: 0
+    display: flex
+
+  &__ribbon
+    position: relative
+    flex: 0 0 670px
+    padding: 50px 90px 47px
+    color: white
+    &::before, &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+    &::before
+      z-index: 2
+      top: 0
+      right: 0
+      bottom: 0
+      left: 20%
+      background: $colorPrimary
+      border-right: 20px solid $colorPrimaryHover
+      transform: skew(15deg)
+    &::after
+      z-index: 2
+      background: $colorPrimary
+      left: 0
+      top: 0
+      bottom: 0
+      width: 50%
+  &__ribbon-wrapper
+    position: relative
+    z-index: 3
+  &__ribbon-title
+    font-size: 46px
+    line-height: 44px
+  &__ribbon-location
+    margin-top: 20px
+    display: flex
+    align-items: center
+    .ico
+      font-size: 19px
+    span
+      display: inline-block
+      margin-left: 12px
+      font-weight: 300
+      font-size: 24px
+      line-height: 35px
+  &__ribbon-contacts
+    margin-top: 15px
+    display: flex
+    align-items: center
+  &__ribbon-phones
+    display: flex
+    align-items: center
+    margin-left: -10px
+    a
+      display: inline-block
+      padding: 5px 10px
+      font-size: 26px
+      line-height: 38px
+      margin-right: 10px
+      transition: color .25s $ease
+      &:last-child
+        margin-right: 0
+      &:hover
+        color: rgba(white, .7)
+  &__ribbon-socials
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      padding: 5px 5px
+      font-size: 0
+      color: white
+      transition: color .25s $ease
+      .ico-mono-telegram
+        font-size: 20px
+      .ico-mono-viber
+        font-size: 25px
+      &:hover
+        color: rgba(white, .7)
+
+  &__gallery
+    position: relative
+    margin-left: 100px
+    width: calc(100% - 670px)
+    flex: 0 0 calc(100% - 670px)
+    .swiper-slide
+      flex: 0 0 400px
+      width: 400px
+      height: 260px
+      display: flex
+      flex-direction: column
+  &__gallery-image
+    flex: 1 0 auto
+    position: relative
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &__gallery-prev, &__gallery-next
+    position: absolute
+    z-index: 3
+    bottom: 0
+    width: 80px
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    background: $colorPrimary
+    cursor: pointer
+    transition: background .25s $ease
+    .ico
+      font-size: 16px
+    &:hover
+      background: $colorPrimaryHover
+  &__gallery-prev
+    left: 0
+    background: $fontColor
+    &:hover
+      background: $colorPrimaryHover
+  &__gallery-next
+    left: 80px
+    background: $colorPrimary
+    &:hover
+      background: $colorPrimaryHover
+  &__image
+    text-align: center
+    font-size: 0
+    background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
+    transition: background .25s $ease
+    img
+      max-width: 100%
+      mix-blend-mode: darken

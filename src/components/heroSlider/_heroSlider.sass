@@ -1,0 +1,118 @@
+.heroSlider
+  &__wrapper
+
+  &__slider
+
+  &__slide
+
+  &__nav
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: 5
+
+.heroSlide
+  &__background
+    font-size: 0
+    img
+      width: 100%
+  &__content
+    position: absolute
+    left: 0px
+    bottom: 70px
+    max-width: 700px
+  &__content-wrapper
+    position: relative
+    padding: 50px 90px 56px
+    color: white
+    &::before, &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+    &::before
+      z-index: 2
+      top: 0
+      right: 0
+      bottom: 0
+      left: 20%
+      background: $colorPrimary
+      border-right: 20px solid $colorPrimaryHover
+      transform: skew(15deg)
+    &::after
+      z-index: 2
+      background: $colorPrimary
+      left: 0
+      top: 0
+      bottom: 0
+      width: 50%
+  &__title
+    position: relative
+    z-index: 3
+    font-size: 46px
+    line-height: 44px
+  &__description
+    position: relative
+    z-index: 3
+    margin-top: 20px
+    font-weight: 300
+    font-size: 20px
+    line-height: 23px
+
+
+// sliderNav
+.sliderNav
+  display: flex
+  &__prev, &__next
+    flex: 0 0 120px
+    width: 120px
+    height: 120px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    color: white
+    font-size: 0
+    cursor: pointer
+    transition: background .25s $ease
+    .ico
+      font-size: 18px
+  &__prev
+    background: $fontColor
+    &:hover
+      background: $colorPrimaryHover
+  &__next
+    background: $colorPrimary
+    &:hover
+      background: $colorPrimaryHover
+  &__bullets
+    width: 285px
+    height: 120px
+    background: white
+    display: flex
+    align-items: center
+    justify-content: center
+    .swiper-pagination-bullet
+      position: relative
+      width: 20px
+      height: 20px
+      cursor: pointer
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        width: 8px
+        height: 8px
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        background: #EEEEEE
+        border-radius: 50%
+        transition: background .25s $ease
+      &:hover
+        &::after
+          background: $colorPrimary
+
+      &.swiper-pagination-bullet-active
+        &::after
+          background: $colorPrimary
+
+

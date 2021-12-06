@@ -1,0 +1,23 @@
+// heroSlider
+.heroSlider
+  .container
+    .heroSlider__wrapper.js-stick-to-window(data-position="right")
+      .heroSlider__slider.swiper-container.js-swiper-hero
+        .swiper-wrapper
+          each slide in [1,2,3]
+            .swiper-slide.heroSlider__slide.heroSlide
+              .heroSlide__background
+                img(src='img/hero/heroSlide_1.jpg' srcset='img/hero/heroSlide_1@2x.jpg 2x')
+              .heroSlide__content
+                .heroSlide__content-wrapper
+                  .heroSlide__title Уникальные часы <br/>для вашего дома
+                  .heroSlide__description Их количество строго лимитировано, <br/>поэтому успейте забрать себе
+
+        .heroSlider__nav.sliderNav
+          .sliderNav__prev.swiper-hero-prev
+            +svgMono('arrow-left')
+          .sliderNav__next.swiper-hero-next
+            +svgMono('arrow-right')
+          .sliderNav__bullets.swiper-hero-pagination
+
+

@@ -1,0 +1,17 @@
+ProjectTitle: Elite-clocks
+
+PageList:
+  - file: homepage.html
+    ready: 40
+  - file: catalog.html
+    ready: 5
+  - file: product.html
+    ready: 5
+  - file: contacts.html
+    ready: 5
+  - file: complications.html
+    ready: 5
+  - file: article.html
+    ready: 5
+  - file: ui.html
+    ready: 100

@@ -1,0 +1,89 @@
+// about
+.about
+  &__wrapper
+    padding: 20px 0
+  &__nav
+    position: relative
+    display: flex
+    padding: 60px 0
+    margin: 0
+    border-bottom: 1px solid #F1F1F1
+    li
+      width: 100%
+      flex: 0 0 $col3
+      max-width: $col3
+      min-width: 1px
+      padding: 0 0px
+      display: block
+      &.is-active
+        .about__nav-icon
+          > .ico
+            opacity: 0
+        .about__nav-icon-active
+          .ico
+            opacity: 1
+          .ico-color-diamond
+            opacity: 1
+            transform: none
+
+    a
+      position: relative
+      display: block
+      text-align: center
+      padding: 0 15px
+      span
+        display: inline-block
+        margin-top: 24px
+        font-size: 20px
+        line-height: 24px
+  &__nav-icon
+    position: relative
+    font-size: 0
+    > .ico
+      font-size: 60px
+      transition: opacity .25s $ease
+  &__nav-icon-active
+    position: absolute
+    display: flex
+    flex-direction: column
+    align-items: center
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    .ico
+      font-size: 60px
+      opacity: 0
+      transition: opacity .25s $ease
+    .ico-color-diamond
+      font-size: 30px
+      margin-bottom: 7px
+      opacity: 0
+      transform: translate3d(0, 7px, 0)
+      transition: opacity .1s $ease, transform .25s $ease
+  &__nav-highlighter
+    position: absolute
+    z-index: 2
+    bottom: 0px
+    left: 0
+    width: 130px
+    height: 1px
+    background: $colorPrimary
+    transition: all .25s $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+      height: 30px
+      width: 1px
+      background: $colorPrimary
+
+  &__content-tab
+    margin-top: 80px
+    .wysiwyg
+      max-width: 760px
+    img
+      margin-top: 16px
+      max-width: 100%

@@ -1,0 +1,177 @@
+/* HEADER
+.header
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  z-index: 9
+  background: white
+  will-change: transform
+  backface-visibility: hidden
+  transform-style: preserve-3d
+  &__top
+    display: flex
+    align-items: center
+    padding: 12px 0 20px
+
+  &__logo
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    font-size: 0px
+    margin-right: 95px
+    .ico
+      font-size: 87px
+    span
+      display: inline-block
+      padding-left: 40px
+      font-weight: 300
+      font-size: 20px
+      line-height: (22 / 20)
+
+  &__location
+    display: inline-flex
+    align-items: center
+    font-size: 0
+    .ico
+      font-size: 14px
+      margin-right: 12px
+  &__location-link
+    position: relative
+    font-weight: 300
+    font-size: 20px
+    line-height: 29px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      height: 1px
+      background: #C5C5C5
+      transition: right .2s $ease
+    &:hover
+      &::after
+        right: 100%
+
+  &__contacts
+    margin-left: auto
+    display: flex
+    align-items: center
+  &__phones
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      padding: 5px 10px
+      font-size: 26px
+      line-height: 38px
+      margin-right: 10px
+      transition: color .25s $ease
+      &:last-child
+        margin-right: 0
+      &:hover
+        color: $colorPrimary
+  &__socials
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      padding: 5px 5px
+      font-size: 0
+      color: #CCCCCC
+      transition: color .25s $ease
+      .ico-mono-telegram
+        font-size: 20px
+      .ico-mono-viber
+        font-size: 25px
+      &:hover
+        color: $colorPrimary
+
+  &__bottom
+    display: flex
+    align-items: center
+    padding: 14px 0
+    border-top: 1px solid #F1F1F1
+
+
+  &__menu
+    list-style: none
+    margin: 0 auto
+    padding: 0
+    display: flex
+    align-content: center
+    li
+      display: inline-block
+      margin-right: 30px
+    a
+      display: inline-block
+      padding: 10px
+      font-size: 20px
+      line-height: (29 / 20)
+
+  &__stock
+    display: inline-flex
+    align-items: center
+    .ico
+      font-size: 15px
+      color: $colorPrimary
+      margin-right: 20px
+    span
+      font-size: 20px
+      line-height: (29 / 20)
+
+  &__hamburger
+    display: flex
+    cursor: pointer
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+
+  &__hamburger-text
+    font-size: 20px
+    line-height: (29 / 20)
+
+  &.is-fixed
+    // should be normalized to -100% scroll at this point
+    position: fixed
+    transform: translate3d(0,-100%,0) !important
+    transition: transform .25s $ease
+    .header__wrapper
+      padding-top: 10px
+      padding-bottom: 10px
+
+  &.is-fixed-visible
+    transform: translate3d(0,0,0) !important
+
+  &.is-transitioning
+    transition: transform .25s $ease
+    transform: translate3d(0,-100%,0) !important
+
+
++r($lg)
+  .header
+    &__menu
+      display: none
+    &__hamburger
+      margin-left: auto
+      display: block
+
+
+
+// hamburger
+.hamburger
+  padding: 10px
+  margin-right: 10px
+  margin-left: -10px
+  &__bar
+    position: relative
+    width: 30px
+    height: 2px
+    display: block
+    background: $colorPrimary
+    &:nth-child(2)
+      margin-top: 4px
+      width: 24px

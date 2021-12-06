@@ -1,0 +1,44 @@
+// contact
+.contact
+  .container
+    .contact__wrapper.js-stick-to-window(data-position="right")
+      .contact__map
+        .js-gmap(data-center="55.723004,37.612838")
+
+      .contact__content
+        .contact__ribbon
+          .contact__ribbon-wrapper
+            .contact__ribbon-title Шоурум в Москве
+            .contact__ribbon-location
+              +svgColor('location-white')
+              span Шаболовка д.23
+            .contact__ribbon-contacts
+              .contact__ribbon-phones
+                a(href="tel:+74954091058") +74954091058
+                a(href="tel:+79258144534") +79258144534
+              .contact__ribbon-socials
+                a(href="https://t.me/" target="_blank")
+                  +svgMono('telegram')
+                a(href="https://viber.com/" target="_blank")
+                  +svgMono('viber')
+
+        .contact__gallery
+          .swiper-container.js-swiper-cgallery
+            .swiper-wrapper
+              .swiper-slide
+                .contact__gallery-image
+                  img(src='img/gallery/gallery_1.jpg' srcset='img/gallery/gallery_1@2x.jpg 2x')
+              .swiper-slide
+                .contact__gallery-image
+                  img(src='img/gallery/gallery_2.jpg' srcset='img/gallery/gallery_2@2x.jpg 2x')
+              .swiper-slide
+                .contact__gallery-image
+                  img(src='img/gallery/gallery_3.jpg' srcset='img/gallery/gallery_3@2x.jpg 2x')
+              .swiper-slide
+                .contact__gallery-image
+                  img(src='img/gallery/gallery_2.jpg' srcset='img/gallery/gallery_2@2x.jpg 2x')
+
+            .contact__gallery-prev.swiper-cgallery-prev
+              +svgMono('arrow-left')
+            .contact__gallery-next.swiper-cgallery-next
+              +svgMono('arrow-right')

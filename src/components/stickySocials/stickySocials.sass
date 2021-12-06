@@ -1,0 +1,38 @@
+// stickySocials
+.stickySocials
+  position: absolute
+  z-index: 10
+  left: 50px
+  top: -120px
+  transform: rotate(-90deg)
+  transform-origin: 360px 360px
+  &__wrapper
+    display: flex
+    align-items: center
+  &__link
+    display: inline-flex
+    align-items: center
+    padding: 5px
+    margin-right: 30px
+    transition: color .25s $ease
+    &:last-child
+      margin-right: 0
+    .ico
+      color: #CCCCCC
+      transition: color .25s $ease
+    .ico-mono-instagram
+      font-size: 20px
+    .ico-mono-facebook
+      font-size: 20px
+    .ico-mono-youtube
+      font-size: 14px
+    span
+      display: inline-block
+      margin-left: 14px
+      font-weight: 300
+      font-size: 18px
+      line-height: 26px
+    &:hover
+      color: $colorPrimary
+      .ico
+        color: $colorPrimary
