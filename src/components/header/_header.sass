@@ -19,17 +19,19 @@
     display: flex
     align-items: center
     font-size: 0px
-    margin-right: 95px
+    margin-right: 100px
     .ico
       font-size: 87px
     span
       display: inline-block
+      margin-top: 8px
       padding-left: 40px
       font-weight: 300
       font-size: 20px
       line-height: (22 / 20)
 
   &__location
+    margin-top: 10px
     display: inline-flex
     align-items: center
     font-size: 0
@@ -56,9 +58,14 @@
         right: 100%
 
   &__contacts
+    margin-top: 10px
     margin-left: auto
+    margin-right: -5px
     display: flex
     align-items: center
+  &__contacts-mobile
+    display: none
+
   &__phones
     display: flex
     align-items: center
@@ -66,7 +73,7 @@
       display: inline-block
       padding: 5px 10px
       font-size: 26px
-      line-height: 38px
+      line-height: (38 / 26)
       margin-right: 10px
       transition: color .25s $ease
       &:last-child
@@ -93,28 +100,75 @@
   &__bottom
     display: flex
     align-items: center
-    padding: 14px 0
-    border-top: 1px solid #F1F1F1
+    padding: 15px 0
+    border-top: 1px solid $borderColor
+    border-bottom: 1px solid $borderColor
 
+
+  &__hamburger
+    position: relative
+    padding-right: 110px
+    display: flex
+    cursor: pointer
+    transition: color .25s $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 1px
+      height: 50px
+      background: $borderColor
+
+    &:hover
+      color: $colorPrimary
+
+  &__hamburger-mobile
+    display: none
+    cursor: pointer
+
+  &__hamburger-text
+    font-size: 20px
+    line-height: (29 / 20)
 
   &__menu
     list-style: none
-    margin: 0 auto
+    margin: 0 0 0 105px
     padding: 0
     display: flex
     align-content: center
     li
       display: inline-block
-      margin-right: 30px
+      margin-right: 90px
+      &:last-child
+        margin-right: 0
     a
       display: inline-block
       padding: 10px
       font-size: 20px
       line-height: (29 / 20)
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimary
 
   &__stock
+    position: relative
+    padding-left: 110px
+    margin-left: auto
     display: inline-flex
     align-items: center
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 1px
+      height: 50px
+      background: $borderColor
     .ico
       font-size: 15px
       color: $colorPrimary
@@ -122,17 +176,6 @@
     span
       font-size: 20px
       line-height: (29 / 20)
-
-  &__hamburger
-    display: flex
-    cursor: pointer
-    transition: color .25s $ease
-    &:hover
-      color: $colorPrimary
-
-  &__hamburger-text
-    font-size: 20px
-    line-height: (29 / 20)
 
   &.is-fixed
     // should be normalized to -100% scroll at this point
@@ -151,14 +194,72 @@
     transform: translate3d(0,-100%,0) !important
 
 
-+r($lg)
++r($hdplus)
   .header
     &__menu
+      margin-left: 75px
+      li
+        margin-right: 40px
+
++r($hd)
+  .header
+    &__location
+      margin-left: auto
+    &__contacts
+      display: none
+    &__contacts-mobile
+      display: flex
+      align-items: center
+      margin-left: auto
+      margin-right: -5px
+    &__menu
+      display: none
+    &__stock
       display: none
     &__hamburger
-      margin-left: auto
-      display: block
+      padding-right: 80px
 
++r($md)
+  .header
+    &__top
+      padding: 7px 0 12px
+    &__logo
+      margin-right: 10px
+      .ico
+        font-size: 55px
+      span
+        margin-top: 4px
+        padding-left: 14px
+        font-size: 14px
+    &__location
+      display: none
+
+    &__hamburger
+      display: none
+    &__hamburger-mobile
+      display: flex
+      margin-left: auto
+
+    &__bottom
+      padding: 10px 0 11px
+
+    &__contacts-mobile
+      margin-left: -5px
+    &__phones
+      a
+        font-size: 16px
+        margin-right: 7px
+        padding: 5px
+    &__socials
+      flex: 0 0 auto
+      display: flex
+      align-items: center
+      a
+        padding: 3px
+        .ico-mono-telegram
+          font-size: 15px
+        .ico-mono-viber
+          font-size: 18px
 
 
 // hamburger
@@ -172,6 +273,23 @@
     height: 2px
     display: block
     background: $colorPrimary
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      right: -2px
+      top: 0
+      bottom: 0
+      width: 3px
+      transform: skew(-40deg)
+      background: white
+
     &:nth-child(2)
       margin-top: 4px
       width: 24px
+
+
++r($md)
+  .hamburger
+    margin-left: auto
+    margin-right: -10px

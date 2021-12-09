@@ -10,7 +10,7 @@ header.header
         +svgColor('location')
         span.header__location-link Москва, Шаболовка д.23
 
-      .header__contacts
+      .header__contacts.js-teleport(data-teleport-to="headerContacts" data-teleport-condition="<1440")
         .header__phones
           a(href="tel:+74954091058") +74954091058
           a(href="tel:+79258144534") +79258144534
@@ -20,12 +20,21 @@ header.header
           a(href="https://viber.com/" target="_blank")
             +svgMono('viber')
 
+      .header__hamburger-mobile.js-hamburger
+        .hamburger
+          span.hamburger__bar
+          span.hamburger__bar
+
     .header__bottom.js-stick-to-window(data-position="right" data-keep-container="true")
-      .header__hamburger
-        .hamburger.js-hamburger
+      .header__hamburger.js-hamburger
+        .hamburger
           span.hamburger__bar
           span.hamburger__bar
-        .header__hamburger-text Каталог
+        .header__hamburger-text
+          span.hd-hidden Каталог
+          span.hd-visible Меню
+
+      .header__contacts-mobile(data-teleport-target="headerContacts")
 
       ul.header__menu
         li
@@ -42,7 +51,48 @@ header.header
         span В наличии
 
 
-// MOBILE NAVI
-.mobile-navi
-  .mobile-navi__wrapper
+// NAVI
+.navi
+  .navi__wrapper
+    .container
+      .navi__grid
+        .navi__col-main
+          .row
+            .col.col-4
+              a(href="#").navi__brand
+                .navi__brand-logo.--sinclair-harding
+                  img(src='img/brands/Sinclair_Harding.png' srcset='img/brands/Sinclair_Harding@2x.png 2x')
+                .navi__brand-name Erwin Sattler <span>(Германия)</span>
+            .col.col-4
+              a(href="#").navi__brand
+                .navi__brand-logo.--matthias-naeschke
+                  img(src='img/brands/Matthias_Naeschke.png' srcset='img/brands/Matthias_Naeschke@2x.png 2x')
+                .navi__brand-name Matthias Naeschke <span>(Германия)</span>
+            .col.col-4
+              a(href="#").navi__brand
+                .navi__brand-logo.--erwin-sattler
+                  img(src='img/brands/Erwin_Sattler.png' srcset='img/brands/Erwin_Sattler@2x.png 2x')
+                .navi__brand-name Bray ~ Harding <span>(Великобритания)</span>
 
+          .navi__menu
+            .row
+              .col.col-4
+                a(href="#") Напольные
+              .col.col-4
+                a(href="#") Настенные
+              .col.col-4
+                a(href="#") Настольные
+
+        .navi__col-alt
+          a(href="#" data-micromodal-trigger="callbackModal").navi__question
+            +svgColor('question-mark')
+            span Задать вопрос
+
+
+#callbackModal.modal.micromodal-slide(aria-hidden='true')
+  .modal__overlay(tabindex='-1' data-micromodal-close)
+    .modal__container(role='dialog' aria-modal='true')
+      .modal__close(aria-label='Close modal' data-micromodal-close)
+        +svgMono('close')
+      .modal__header.tac
+        .h3-title.h3-title.h3-title-lg.h3-title-sm.modal__title Задать вопрос

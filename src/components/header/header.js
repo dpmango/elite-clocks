@@ -38,14 +38,14 @@
     },
     closeMobileMenu: function () {
       $('.js-hamburger').removeClass('is-active');
-      $('.mobile-navi').removeClass('is-active');
+      $('.navi').removeClass('is-active');
 
       APP.Plugins.ScrollBlock.enableScroll();
     },
     hamburgerClickListener: function () {
       _document.on('click', '.js-hamburger', function () {
         $(this).toggleClass('is-active');
-        $('.mobile-navi').toggleClass('is-active');
+        $('.navi').toggleClass('is-active');
 
         if ($(this).is('.is-active')) {
           APP.Plugins.ScrollBlock.disableScroll();

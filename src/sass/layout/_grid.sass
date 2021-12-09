@@ -7,12 +7,21 @@
   padding-left: 40px
   padding-right: 40px
 
-+r($hdplus)
++r(1865)
   .container
     max-width: 100%
     padding-left: 135px
 
-+r($sm)
++r($hd)
+  .container
+    padding-left: 80px
+
++r($lg)
+  .container
+    padding-left: 30px
+    padding-right: 30px
+
++r($md)
   .container
     padding-left: 20px
     padding-right: 20px
@@ -80,7 +89,7 @@
   max-width: $col12
 
 // responsive (desktop first)
-$sizes: ("xl": $xl, "lg": $lg, "md": $md, "sm": $sm);
+$sizes: ("hd": $hd, "xl": $xl, "lg": $lg, "md": $md, "sm": $sm);
 
 @each $size, $px in $sizes
   +r(#{$px})

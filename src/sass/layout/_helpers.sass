@@ -17,6 +17,14 @@
   margin-right: auto
 
 // desktop first utils
++r($hd)
+  .hd-hidden
+    display: none
+
++r($xl)
+  .xl-hidden
+    display: none
+
 +r($lg)
   .lg-hidden
     display: none
@@ -30,6 +38,14 @@
     display: none
 
 // mobile first utils
++rmin($hd + 1)
+  .hd-visible
+    display: none
+
++rmin($xl + 1)
+  .xl-visible
+    display: none
+
 +rmin($lg + 1)
   .lg-visible
     display: none

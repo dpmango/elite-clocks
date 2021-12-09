@@ -2,8 +2,11 @@
   &__wrapper
 
   &__slider
+    margin-left: -70px
 
   &__slide
+    position: relative
+    padding-left: 70px
 
   &__nav
     position: absolute
@@ -11,16 +14,57 @@
     right: 0
     z-index: 5
 
+
++r($hd)
+  .heroSlider
+    &__slider
+      margin-left: -80px
+    &__slide
+      padding-left: 80px
+
++r($lg)
+  .heroSlider
+    margin-left: -30px
+    margin-right: -30px
+    &__slider
+      margin-left: 0
+      padding-bottom: 130px
+    &__slide
+      padding-left: 0
+    &__nav
+      left: 0
+
++r($md)
+  .heroSlider
+    margin-left: -20px
+    margin-right: -20px
+    &__slider
+      padding-bottom: 50px
+
+
+// heroSlide
 .heroSlide
+  width: 100%
   &__background
+    position: relative
+    max-height: 800px
+    height: calc(100vh - 200px)
+    min-height: 600px
     font-size: 0
     img
+      position: absolute
+      top: 0
+      left: 0
       width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center center
   &__content
     position: absolute
     left: 0px
     bottom: 70px
-    max-width: 700px
+    width: 100%
+    max-width: 680px
   &__content-wrapper
     position: relative
     padding: 50px 90px 56px
@@ -37,7 +81,7 @@
       left: 20%
       background: $colorPrimary
       border-right: 20px solid $colorPrimaryHover
-      transform: skew(15deg)
+      transform: skew(10deg)
     &::after
       z-index: 2
       background: $colorPrimary
@@ -49,15 +93,66 @@
     position: relative
     z-index: 3
     font-size: 46px
-    line-height: 44px
+    line-height: 1
   &__description
     position: relative
     z-index: 3
     margin-top: 20px
     font-weight: 300
     font-size: 20px
-    line-height: 23px
+    line-height: (23 / 20)
 
++rh(980)
+  .heroSlide
+    &__content
+      bottom: 40px
+
++rh(900)
+  .heroSlide
+    &__content
+      bottom: 32px
+    &__content-wrapper
+      padding-top: 32px
+      padding-bottom: 32px
+
++r($hd)
+  .heroSlide
+    &__content
+      max-width: 520px
+    &__content-wrapper
+      padding-top: 32px
+      padding-bottom: 32px
+      padding-left: 32px
+
++r($lg)
+  .heroSlide
+    &__content
+      max-width: 680px
+      bottom: -50px
+      left: 30px
+    &__content-wrapper
+      padding: 50px 70px 56px
+
++r($md)
+  .heroSlide
+    &__background
+      max-height: 340px
+      height: 340px
+      min-height: 340px
+    &__content
+      position: static
+      left: 0
+      bottom: 0
+    &__content-wrapper
+      padding: 30px 20px
+      &::before
+        transform: skew(0deg)
+        border-right-width: 10px
+    &__title
+      font-size: 24px
+    &__description
+      margin-top: 10px
+      font-size: 16px
 
 // sliderNav
 .sliderNav
@@ -116,3 +211,24 @@
           background: $colorPrimary
 
 
++r($hd)
+  .sliderNav
+    &__prev, &__next
+      flex: 0 0 80px
+      width: 80px
+      height: 80px
+    &__bullets
+      width: 220px
+      height: 80px
+
++r($lg)
+  .sliderNav
+    &__prev, &__next
+      display: none
+    &__bullets
+      width: 100%
+
++r($md)
+  .sliderNav
+    &__bullets
+      height: 50px

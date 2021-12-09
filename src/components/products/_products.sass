@@ -1,21 +1,33 @@
 // products
 .products
-  margin: 110px 0
+  margin: 100px 0
+  &__title
+    margin-bottom: 40px
   &__grid
 
++r($lg)
+  .products
+    margin-bottom: 90px
+
++r($sm)
+  .products
+    margin: 40px 0
+    &__title
+      margin-bottom: 20px
 
 .productCard
+  position: relative
+  z-index: 1
   flex: 1 0 auto
   display: flex
   flex-direction: column
-  position: relative
   padding: 50px 0
   text-align: center
   background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
   transition: background .25s $ease, box-shadow .25s $ease
   &__title
     font-size: 20px
-    line-height: 29px
+    line-height: (29 / 20)
     text-align: center
     transition: color .25s $ease
 
@@ -55,6 +67,8 @@
   &__image
     text-align: center
     font-size: 0
+    padding-left: 15px
+    padding-right: 15px
     background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
     transition: background .25s $ease
     img
@@ -64,7 +78,7 @@
   &__brand
     font-weight: 300
     font-size: 18px
-    line-height: 26px
+    line-height: (26 / 18)
     color: rgba($fontColor, .5)
   &__price
     position: relative
@@ -73,7 +87,7 @@
     margin: 12px auto 0
     font-family: $altFont
     font-size: 20px
-    line-height: 27px
+    line-height: (27 / 20)
     color: $colorPrimary
     text-align: right
     span
@@ -89,8 +103,68 @@
         height: 6px
         background: $colorPrimary
         border-radius: 50%
+  &__availability
+    position: absolute
+    left: -10px
+    top: 20px
+    width: 100%
+    max-width: 36px
+    pointer-events: none
+  &__availability-wrapper
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    height: 24px
+    font-size: 0
+    .ico
+      position: relative
+      z-index: 3
+      font-size: 12px
+    &::before, &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+    &::before
+      z-index: 2
+      top: 0
+      right: 0
+      bottom: 0
+      left: 20%
+      background: $colorPrimary
+      border-right: 4px solid $colorPrimaryHover
+      transform: skew(10deg)
+    &::after
+      z-index: 2
+      background: $colorPrimary
+      left: 0
+      top: 0
+      bottom: 0
+      width: 50%
+
+  &__hoverable
+    position: absolute
+    top: calc(100% - 50px)
+    left: 0
+    right: 0
+    padding: 18px 16px 60px
+    background: white
+    opacity: 0
+    pointer-events: none
+    transform: translate3d(0, 7px, 0)
+    will-change: transform
+    backface-visibility: hidden
+    transition: opacity .25s $ease, transform .25s $ease
+  &__description
+    font-weight: 300
+    font-size: 18px
+    line-height: (20 / 18)
+  &__cta
+    margin-top: 30px
 
   &:hover
+    z-index: 2
     background: #FFFFFF
     box-shadow: 0px 22px 24px rgba(79, 72, 74, 0.2)
     .productCard
@@ -101,3 +175,40 @@
       &__gallery-prev, &__gallery-next
         opacity: 1
         pointer-events: all
+      &__hoverable
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        pointer-events: all
+
++r($sm)
+  .productCard
+    padding: 30px 0
+    &__title
+      font-size: 18px
+    &__gallery
+      margin: 20px 0
+    &__brand
+      font-size: 16px
+    &__price
+      margin-top: 10px
+      font-size: 16px
+      span
+        &::before
+          bottom: 8px
+          left: -16px
+          width: 4px
+          height: 4px
+    &__availability
+      max-width: 30px
+    &__availability-wrapper
+      height: 18px
+      .ico
+        font-size: 9px
+    &__hoverable
+      top: calc(100% - 30px)
+      padding-bottom: 40px
+
+    &__description
+      font-size: 16px
+    &__cta
+      margin-top: 24px

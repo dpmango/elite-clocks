@@ -1,9 +1,9 @@
 // stickySocials
 .stickySocials
   position: absolute
-  z-index: 10
+  z-index: 7
   left: 50px
-  top: -120px
+  top: -105px
   transform: rotate(-90deg)
   transform-origin: 360px 360px
   &__wrapper
@@ -36,3 +36,21 @@
       color: $colorPrimary
       .ico
         color: $colorPrimary
+
++rh(980)
+  .stickySocials
+    top: -140px
+
++rh(900)
+  .stickySocials
+    top: -183px
+    &__link
+      margin-right: 10px
+
++r($hd)
+  .stickySocials
+    left: 20px
+
++r($lg)
+  .stickySocials
+    display: none

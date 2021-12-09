@@ -1,0 +1,101 @@
+.navi
+  position: fixed 0
+  z-index: 8
+  background: transparent
+  // display: flex
+  flex-direction: column
+  pointer-events: none
+  transition: background .3s $ease
+  &__wrapper
+    flex: 0 1 auto
+    display: flex
+    flex-direction: column
+    background: white
+    padding: 200px 0px 0px
+    transform: translate3d(0,-100%,0)
+    transition: transform .3s $ease
+  &__grid
+    display: flex
+  &__col-main
+    width: 100%
+    padding: 70px 40px 0px 0
+    flex: 0 0 calc(100% - 242px)
+    max-width: calc(100% - 242px)
+  &__col-alt
+    position: relative
+    width: 100%
+    flex: 0 0 242px
+    display: flex
+    flex-direction: column
+    max-width: 242px
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 0
+      top: 14px
+      bottom: 14px
+      width: 1px
+      background: $borderColor
+
+  &__brand
+    display: block
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+  &__brand-logo
+    position: relative
+    font-size: 0
+    height: 90px
+    display: flex
+    align-items: center
+    img
+      max-width: 100%
+    &.--sinclair-harding
+      img
+        max-width: 173px
+    &.--matthias-naeschke
+      img
+        max-width: 220px
+    &.--erwin-sattler
+      img
+        max-width: 166px
+  &__brand-name
+    margin-top: 40px
+    font-size: 20px
+    line-height: 29px
+    span
+      color: $colorGray
+  &__question
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: auto 0 auto auto
+    transition: color .25s $ease
+    .ico
+      font-size: 50px
+    span
+      display: inline-block
+      margin-top: 16px
+      font-size: 24px
+      line-height: (28 / 24)
+    &:hover
+      color: $colorPrimary
+  &__menu
+    margin-top: 80px
+    padding: 40px 0
+    border-top: 1px solid $borderColor
+    a
+      display: inline-block
+      font-size: 20px
+      line-height: (29 / 20)
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimary
+
+  &.is-active
+    pointer-events: all
+    background: rgba(#1D1D1D, .5)
+    .navi__wrapper
+      transform: translate3d(0,0,0)
+

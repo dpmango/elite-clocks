@@ -18,3 +18,13 @@ mixin productCard(card)
 
     .productCard__price
       span= card.price
+
+    .productCard__availability
+      .productCard__availability-wrapper
+        +svgMono('checkmark')
+
+    .productCard__hoverable
+      .productCard__description постамент из мрамара, запас хода 31 день, родирование корпуса
+      .productCard__cta
+        .btn.btn-primary.js-link(data-href="product.html")
+          span Купить

@@ -1,10 +1,26 @@
 // brands
 .brands
   padding: 110px 0
-  border-bottom: 1px solid #F1F1F1
+  border-bottom: 1px solid $borderColor
   &__wrapper
-  &__card
+    margin-bottom: -45px
+    .row
+      justify-content: center
 
+  &__card
+    margin-bottom: 30px
+
++r($lg)
+  .brands
+    padding: 55px 0 90px
+
++r($sm)
+  .brands
+    padding: 20px 0 40px
+    &__wrapper
+      margin-bottom: -25px
+    &__card
+      margin-bottom: 10px
 
 // brandCard
 .brandCard
@@ -23,7 +39,35 @@
     font-size: 26px
     line-height: (38 / 26)
   &__description
-    margin-top: 30px
+    margin: 30px auto 0
     font-weight: 300
     font-size: 18px
     line-height: (26 / 18)
+    max-width: 440px
+
++r($lg)
+  .brandCard
+    &__description
+      max-width: 640px
+
++r($sm)
+  .brandCard
+    &__logo
+      min-height: 1px
+      &.--sinclair-harding
+        img
+          max-width: 153px
+      &.--matthias-naeschke
+        img
+          max-width: 171px
+      &.--erwin-sattler
+        img
+          max-width: 152px
+
+    &__name
+      margin-top: 20px
+      font-size: 20px
+    &__description
+      margin-top: 20px
+      font-size: 14px
+
