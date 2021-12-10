@@ -1,5 +1,5 @@
-/* Checkbox
-.ui-checkbox
+/* Toggle
+.ui-toggle
   input
     display: none
     width: 0.1px
@@ -13,7 +13,8 @@
         &::before
           background-color: $colorPrimary
         &::after
-          transform: translateY(-50%) scale(1)
+          transform: translate(24px, -50%)
+          background-color: white
   label
     display: inline-flex
     width: 100%
@@ -28,40 +29,33 @@
       transform: translateY(-50%)
       display: inline-block
       content: ' '
-      size: 22px
-      background-color: #F7F7F7
+      width: 50px
+      height: 26px
+      background: #F7F7F7
       border: 0
-      border-radius: 0px
+      border-radius: 14px
       cursor: pointer
       vertical-align: middle
       cursor: pointer
-      transition: all $transitionSpeed ease-in-out
+      transition: all .25s ease-in-out
     &::after
       position: absolute
       left: 5px
       top: 50%
-      transform: translateY(-50%) scale(0)
+      transform: translateY(-50%)
       display: inline-block
       content: ' '
-      width: 13px
-      height: 10px
-      background: svg-load('../icons/svg-mono/checkmark.svg', fill=#FFFFFF) no-repeat center
-      background-size: contain
-      transition: transform .2s ease
+      width: 16px
+      height: 16px
+      background: #D2CCCC
+      border-radius: 50%
+      transition: transform .2s ease, background .2s $ease
     &:hover
       color: $colorPrimary
     span
       display: inline-block
-      padding-left: 35px
+      padding-left: 66px
       vertical-align: top
       line-height: 1.3
       font-size: 20px
       cursor: pointer
-      + span
-        margin-left: auto
-        padding-left: 16px
-        font-size: 18px
-        line-height: (26 / 18)
-        text-align: right
-        color: rgba($fontColor, .5)
-

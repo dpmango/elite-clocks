@@ -17,6 +17,7 @@ mixin productCard(card)
     .productCard__brand= card.brand
 
     .productCard__price
+      span 1 000 000<i class="rub">v</i>
       span= card.price
 
     .productCard__availability
@@ -28,3 +29,71 @@ mixin productCard(card)
       .productCard__cta
         .btn.btn-primary.js-link(data-href="product.html")
           span Купить
+
+mixin productFull(card)
+  // productCard
+  a(href="#").productFull
+    .productFull__gallery.swiper-container.js-swiper-product
+      .swiper-wrapper
+        each img in card.gallery
+          .swiper-slide
+            .productFull__image
+              img(src='img/products/'+img+'.png' srcset='img/products/'+img+'@2x.png 2x')
+
+      .productFull__gallery-prev.swiper-product-prev
+        +svgMono('arrow-left')
+      .productFull__gallery-next.swiper-product-next
+          +svgMono('arrow-right')
+
+    .productFull__content
+      .productFull__head
+        .productFull__title= card.title
+        .productFull__brand= card.brand
+
+      .productFull__description Точные маятниковые часы с получасовым ударным механизмом и индикатором фаз Луны. Как большие напольные часы, они также могут скрывать самые сокровенные сокровища
+
+      .productFull__features
+        .row
+          .col.col-6.col-md-12
+            ul.productFull__features-list
+              li постамент из мрамара
+              li запас хода 31 день
+              li родирование корпуса
+          .col.col-6.col-md-12
+            ul.productFull__features-list
+              li скрытый сейф в базе, сканер отпечатков пальцев
+              li варианты держателей часов для ремешка разной длины
+
+      .productFull__params
+        .row
+          .col.col-6
+            .productFull__params-row
+              .productFull__params-label Цвета:
+              .productFull__params-values
+                span.productFull__params-value(style="background: #9A624B")
+                span.productFull__params-value(style="background: #7F3B1F")
+                span.productFull__params-value(style="background: #60463B")
+
+          .col.col-6
+            .productFull__params-row
+              .productFull__params-label Материалы:
+              .productFull__params-values
+                span.productFull__params-value
+                  img(src='img/materials/wood.jpg' srcset='img/materials/wood@2x.jpg 2x')
+                span.productFull__params-value
+                  img(src='img/materials/steel.jpg' srcset='img/materials/steel@2x.jpg 2x')
+
+      .productFull__actions
+        .row
+          .col.col-6
+            .productFull__price
+              span 1 000 000<i class="rub">v</i>
+              span= card.price
+          .col.col-6
+            .productFull__cta
+              .btn.btn-primary.js-link(data-href="product.html")
+                span Купить
+
+      .productFull__availability
+        .productFull__availability-wrapper
+          +svgMono('checkmark')

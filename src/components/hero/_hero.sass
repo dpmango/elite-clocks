@@ -1,0 +1,53 @@
+// hero
+.hero
+  &__wrapper
+    height: 340px
+    display: flex
+    background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
+  &__crumbs
+    margin: auto 0 auto 134px
+    padding-right: 30px
+  &__crumbs-list
+    li
+      display: block
+    a
+      font-weight: 300
+      font-size: 18px
+      line-height: 26px
+      color: rgba($fontColor, .5)
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimary
+  &__crumbs-title
+    margin-top: 16px
+    font-size: 60px
+    line-height: 1
+
+  &__meta
+    display: flex
+    align-items: center
+    margin-right: 130px
+    margin-left: auto
+  &__meta-icon
+    flex: 0 0 auto
+    font-size: 0
+    margin-bottom: 8px
+    .ico
+      font-size: 35px
+  &__meta-count
+    margin-left: 16px
+    font-weight: 300
+    font-size: 18px
+    line-height: 26px
+    span
+      display: block
+      font-family: $altFont
+      font-size: 60px
+      line-height: (81 / 60)
+      margin-bottom: 6px
+  &__image
+    align-self: flex-end
+    font-size: 0
+    margin-right: 120px
+    img
+      max-width: 100%

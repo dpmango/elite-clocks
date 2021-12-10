@@ -1,0 +1,17 @@
+// hero
+.hero
+  .container
+    .hero__wrapper.js-stick-to-window(data-position="right" data-keep-container="true" data-stop="<993")
+      .hero__crumbs
+        .hero__crumbs-list
+          li
+            a(href="#") Главная
+        .hero__crumbs-title Каталог
+
+      .hero__meta
+        .hero__meta-icon
+          +svgColor('diamond')
+        .hero__meta-count <span>200+</span> наименований
+
+      .hero__image
+        img(src='img/hero/hero_catalog.png' srcset='img/hero/hero_catalog@2x.png 2x')

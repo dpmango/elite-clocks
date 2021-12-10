@@ -1,0 +1,127 @@
+include ../products/_productCard
+
+// catalog
+.catalog
+  .container
+    .catalog__wrapper
+      .row
+        .col.col-3
+          // catalogSidebar
+          .catalog__sidebar.catSidebar
+            .catSidebar__section.is-open
+              .catSidebar__title.js-catalog-sidebar Усложнения
+              .catSidebar__content(style="display: block")
+                .ui-checkbox
+                  input(id="complications_1" type="checkbox" checked)
+                  label(for="complications_1")
+                    span фазы луны
+                    span 6
+                .ui-checkbox
+                  input(id="complications_2" type="checkbox")
+                  label(for="complications_2")
+                    span запас хода месяц
+                    span 21
+                .ui-checkbox
+                  input(id="complications_3" type="checkbox")
+                  label(for="complications_3")
+                    span запас хода 4 года
+                    span 3
+                .ui-checkbox
+                  input(id="complications_4" type="checkbox")
+                  label(for="complications_4")
+                    span высокоточный механизм
+                    span 21
+                .ui-checkbox
+                  input(id="complications_5" type="checkbox")
+                  label(for="complications_5")
+                    span вечный календарь
+                    span 3
+                .ui-checkbox
+                  input(id="complications_6" type="checkbox")
+                  label(for="complications_6")
+                    span турбийон
+                    span 8
+
+            // section
+            .catSidebar__section
+              .catSidebar__title.js-catalog-sidebar Цвет
+              .catSidebar__content
+                .ui-checkbox
+                  input(id="color_1" type="checkbox" checked)
+                  label(for="color_1")
+                    span орех
+                    span 6
+                .ui-checkbox
+                  input(id="color_2" type="checkbox")
+                  label(for="color_2")
+                    span золото
+                    span 21
+                .ui-checkbox
+                  input(id="color_3" type="checkbox")
+                  label(for="color_3")
+                    span родий
+                    span 3
+                .ui-checkbox
+                  input(id="color_4" type="checkbox")
+                  label(for="color_4")
+                    span серебро
+                    span 21
+
+            // section
+            .catSidebar__section
+              .catSidebar__title.js-catalog-sidebar Бренд
+              .catSidebar__content
+                .ui-checkbox
+                  input(id="brand_1" type="checkbox" checked)
+                  label(for="brand_1")
+                    span Erwin Sattler
+                    span 6
+                .ui-checkbox
+                  input(id="brand_2" type="checkbox")
+                  label(for="brand_2")
+                    span Matthias Naeschke
+                    span 21
+                .ui-checkbox
+                  input(id="brand_3" type="checkbox")
+                  label(for="brand_3")
+                    span Bray ~ Harding
+                    span 3
+
+            // section
+            .catSidebar__section
+              .catSidebar__title.js-catalog-sidebar Тип
+              .catSidebar__content
+                .ui-checkbox
+                  input(id="brand_1" type="checkbox" checked)
+                  label(for="brand_1")
+                    span Механические
+                    span 15
+                .ui-checkbox
+                  input(id="brand_2" type="checkbox")
+                  label(for="brand_2")
+                    span Кварцевые
+                    span 7
+
+
+            // toggles
+            .catSidebar__toggles
+              .ui-toggle
+                input(id="avail_1" type="checkbox" checked)
+                label(for="avail_1")
+                  span есть в Москве
+              .ui-toggle
+                input(id="avail_2" type="checkbox")
+                label(for="avail_2")
+                  span есть в Баден-Бадене
+
+        .col.col-9
+          .catalog__products
+            +productFull({title: 'Laterna 1615', gallery: ['product_1', 'product_3'], brand: 'Erwin Sattler', price: '8 100€' })
+            +productFull({title: 'NT 10', gallery: ['product_2', 'product_3'], brand: 'Matthias Naeschke', price: '11 600€' })
+            +productFull({title: 'Opus Sonata', gallery: ['product_3', 'product_5'], brand: 'Erwin Sattler', price: '12 140€' })
+            +productFull({title: 'Opus Sonata', gallery: ['product_4', 'product_1'], brand: 'Erwin Sattler', price: '25 000€' })
+            +productFull({title: 'NL125', gallery: ['product_5', 'product_6'], brand: 'Matthias Naeschke', price: '15 140€' })
+            +productFull({title: 'NT 10', gallery: ['product_6', 'product_4'], brand: 'Erwin Sattler', price: '10 200€' })
+            +productFull({title: 'Opus Sonata', gallery: ['product_7', 'product_1'], brand: 'Erwin Sattler', price: '12 140€' })
+            +productFull({title: 'Opus Sonata', gallery: ['product_8', 'product_3'], brand: 'Erwin Sattler', price: '7 400€' })
+

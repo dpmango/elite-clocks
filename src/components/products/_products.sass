@@ -82,23 +82,25 @@
     color: rgba($fontColor, .5)
   &__price
     position: relative
-    width: 100%
-    max-width: 220px
     margin: 12px auto 0
     font-family: $altFont
     font-size: 20px
     line-height: (27 / 20)
     color: $colorPrimary
-    text-align: right
     span
       display: inline-block
       position: relative
-      &::before
+      margin-right: 34px
+      &:last-child
+        margin-right: 0
+        &::after
+          display: none
+      &::after
         display: inline-block
         content: ' '
         position: absolute
-        left: -20px
-        bottom: 10px
+        right: -20px
+        top: 10px
         width: 6px
         height: 6px
         background: $colorPrimary
@@ -155,6 +157,7 @@
     transform: translate3d(0, 7px, 0)
     will-change: transform
     backface-visibility: hidden
+    box-shadow: 0px 22px 24px rgba(79, 72, 74, 0.2)
     transition: opacity .25s $ease, transform .25s $ease
   &__description
     font-weight: 300
@@ -212,3 +215,254 @@
       font-size: 16px
     &__cta
       margin-top: 24px
+
+
+// productFull
+.productFull
+  position: relative
+  z-index: 1
+  flex: 1 0 auto
+  display: flex
+  padding: 50px 50px 50px 36px
+  background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
+  transition: background .25s $ease, box-shadow .25s $ease
+  &__gallery
+    width: 100%
+    flex: 0 0 350px
+    max-width: 350px
+    min-width: 1px
+    position: relative
+    margin: 0 0
+    .swiper-slide
+      flex: 1 0 auto
+      display: flex
+      flex-direction: column
+      justify-content: center
+  &__gallery-prev, &__gallery-next
+    position: absolute
+    z-index: 3
+    top: 50%
+    width: 40px
+    height: 40px
+    transform: translateY(-50%)
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    background: $colorPrimary
+    opacity: 0
+    pointer-events: none
+    cursor: pointer
+    transition: background .25s $ease, opacity .25s $ease
+    .ico
+      font-size: 15px
+    &:hover
+      background: $colorPrimaryHover
+  &__gallery-prev
+    left: 0
+  &__gallery-next
+    right: 0
+  &__image
+    text-align: center
+    font-size: 0
+    padding-left: 15px
+    padding-right: 15px
+    background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
+    transition: background .25s $ease
+    img
+      max-width: 100%
+      mix-blend-mode: darken
+
+  &__content
+    width: 100%
+    padding-left: 34px
+    flex: 0 0 calc(100% - 350px)
+    max-width: calc(100% - 350px)
+    min-width: 1px
+
+  &__head
+    display: flex
+    align-items: center
+
+  &__title
+    font-size: 26px
+    line-height: (38 / 26)
+    transition: color .25s $ease
+  &__brand
+    margin-left: auto
+    font-weight: 300
+    font-size: 18px
+    line-height: (26 / 18)
+    color: rgba($fontColor, .5)
+
+  &__description
+    margin-top: 30px
+    font-weight: 300
+    font-size: 18px
+    line-height: (26 / 18)
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    line-clamp: 2;
+    -webkit-box-orient: vertical
+
+  &__features
+    margin: 30px 0 0px
+    padding: 0 0 30px 0
+    border-bottom: 1px solid #DEDEDE
+  &__features-list
+    margin: 0
+    padding: 0
+    li
+      display: block
+      position: relative
+      font-size: 18px
+      font-weight: 300
+      line-height: (24 / 18)
+      padding-left: 22px
+      margin-bottom: 10px
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 0
+        top: 12px
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background: $colorPrimary
+
+  &__params
+    margin-top: 40px
+  &__params-row
+    display: flex
+    align-items: center
+  &__params-label
+    margin-right: 20px
+    font-size: 20px
+    line-height: (29 / 20)
+
+  &__params-values
+    display: flex
+  &__params-value
+    position: relative
+    overflow: hidden
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    margin-left: -8px
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+    &:first-child
+      margin-left: 0
+    &:nth-child(1)
+      z-index: 10
+    &:nth-child(2)
+      z-index: 9
+    &:nth-child(3)
+      z-index: 8
+    &:nth-child(4)
+      z-index: 7
+    &:nth-child(5)
+      z-index: 6
+    &:nth-child(6)
+      z-index: 5
+    &:nth-child(7)
+      z-index: 4
+    &:nth-child(8)
+      z-index: 3
+    &:nth-child(9)
+      z-index: 2
+    &:nth-child(10)
+      z-index: 1
+
+  &__actions
+    margin-top: 15px
+
+  &__price
+    position: relative
+    margin: auto 0
+    font-family: $altFont
+    font-size: 24px
+    line-height: (33 / 24)
+    color: $colorPrimary
+    span
+      display: inline-block
+      position: relative
+      margin-right: 34px
+      &:last-child
+        margin-right: 0
+        &::after
+          display: none
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        right: -20px
+        top: 13px
+        width: 6px
+        height: 6px
+        background: $colorPrimary
+        border-radius: 50%
+  &__cta
+    display: block
+
+  &__availability
+    position: absolute
+    left: -10px
+    top: 20px
+    width: 100%
+    max-width: 36px
+    pointer-events: none
+  &__availability-wrapper
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    height: 24px
+    font-size: 0
+    .ico
+      position: relative
+      z-index: 3
+      font-size: 12px
+    &::before, &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+    &::before
+      z-index: 2
+      top: 0
+      right: 0
+      bottom: 0
+      left: 20%
+      background: $colorPrimary
+      border-right: 4px solid $colorPrimaryHover
+      transform: skew(10deg)
+    &::after
+      z-index: 2
+      background: $colorPrimary
+      left: 0
+      top: 0
+      bottom: 0
+      width: 50%
+
+
+  &:hover
+    z-index: 2
+    background: #FFFFFF
+    box-shadow: 0px 22px 24px rgba(79, 72, 74, 0.2)
+    .productFull
+      &__title
+        color: $colorPrimary
+      &__image
+        background: white
+      &__gallery-prev, &__gallery-next
+        opacity: 1
+        pointer-events: all

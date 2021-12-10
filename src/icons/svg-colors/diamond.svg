@@ -1,39 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="30px" viewBox="0 0 26 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>diamond</title>
-    <defs>
-        <rect id="diamond-p-1" x="0" y="0" width="26" height="15"></rect>
-        <rect id="diamond-p-3" x="0" y="0" width="26" height="15"></rect>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Styles" transform="translate(-824.000000, -1505.000000)">
-            <g id="4" transform="translate(360.000000, 1305.000000)">
-                <g id="3" transform="translate(454.000000, 83.000000)">
-                    <g id="1" transform="translate(0.000000, 117.000000)">
-                        <g id="diamond" transform="translate(10.000000, 0.000000)">
-                            <g id="Group-3" transform="translate(0.000000, 15.000000)">
-                                <mask id="diamond-m-2" fill="white">
-                                    <use xlink:href="diamond-p-1"></use>
-                                </mask>
-                                <g id="Rectangle"></g>
-                                <polygon id="Path" fill="#6D0120" mask="url(diamond-m-2)" points="0 -0.292948608 13.0671328 -0.861917842 26 -0.292948608 13 14.5714286"></polygon>
-                                <path d="M21.8273047,-0.254002642 L13,14.5714286 L25.8866055,-0.163277938 C25.9311406,-0.214260845 25.8942227,-0.292948608 25.825668,-0.292948608 L21.8965195,-0.292948608 C21.8680313,-0.292948608 21.841625,-0.278126261 21.8273047,-0.254002642 Z" id="Path" fill="#5A001B" mask="url(diamond-m-2)"></path>
-                                <polygon id="Path" fill="#980A34" mask="url(diamond-m-2)" points="4.14953906 -6 21.8504609 -6 13 14.5714286"></polygon>
-                            </g>
-                            <g id="Group-3" transform="translate(13.000000, 7.500000) scale(1, -1) translate(-13.000000, -7.500000) ">
-                                <mask id="diamond-m-4" fill="white">
-                                    <use xlink:href="diamond-p-3"></use>
-                                </mask>
-                                <g id="Rectangle"></g>
-                                <polygon id="Path" fill="#89052C" mask="url(diamond-m-4)" points="0 -0.292948608 13.0671328 -0.861917842 26 -0.292948608 13 14.5714286"></polygon>
-                                <path d="M21.8273047,-0.254002642 L13,14.5714286 L25.8866055,-0.163277938 C25.9311406,-0.214260845 25.8942227,-0.292948608 25.825668,-0.292948608 L21.8965195,-0.292948608 C21.8680313,-0.292948608 21.841625,-0.278126261 21.8273047,-0.254002642 Z" id="Path" fill="#68001F" mask="url(diamond-m-4)"></path>
-                                <polygon id="Path" fill="#B21342" mask="url(diamond-m-4)" points="4.14953906 -6 21.8504609 -6 13 14.5714286"></polygon>
-                                <polygon id="Path" fill="#FFF2BB" fill-rule="nonzero" mask="url(diamond-m-4)" points="19.3951367 -0.292948608 21.8504609 -6 4.14953906 -6 6.60486328 -0.292948608"></polygon>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="30" height="35" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M29.7046 17.5L15.0002 0.500044L0.295898 17.5H29.7046Z" fill="#89052C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M29.7044 17.5H25.0108L15 0.500023L29.7044 17.5Z" fill="#68001F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2337 17.5L15.0002 0.5L7.7666 17.5H22.2337Z" fill="#B21342"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M29.7085 17.5L15.0041 34.5L0.299805 17.5H29.7085Z" fill="#6D0120"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M29.7083 17.5H25.0147L15.0039 34.5L29.7083 17.5Z" fill="#5A001B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2376 17.5L15.0041 34.5L7.77051 17.5H22.2376Z" fill="#980A34"/>
 </svg>

@@ -1,0 +1,62 @@
+// catalog
+.catalog
+  &__wrapper
+    margin: 100px 0
+
+  &__sidebar
+    position: sticky
+    top: 30px
+    padding-right: 50px
+
+  &__products
+    .productFull
+      margin-bottom: 30px
+
+
+// catalog sidebar
+.catSidebar
+  &__section
+    border-bottom: 1px solid $borderColor
+    padding: 40px 0
+    &:first-child
+      padding-top: 0
+    &.is-open
+      .catSidebar__title
+        &::after
+          transform: translateY(-50%) rotate(180deg)
+
+  &__title
+    position: relative
+    font-size: 26px
+    line-height: (38 / 26)
+    cursor: pointer
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 50%
+      right: 0
+      width: 14px
+      height: 8px
+      transform: translateY(-50%)
+      background: svg-load('../icons/svg-mono/caret.svg') no-repeat center
+      background-size: contain
+      transition: transform .25s $ease
+
+  &__content
+    display: none
+    padding: 30px 0 0
+    .ui-checkbox
+      margin-bottom: 25px
+      &:last-child
+        margin-bottom: 0
+
+  &__toggles
+    padding: 40px 0
+    .ui-toggle
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
