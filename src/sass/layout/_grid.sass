@@ -7,7 +7,7 @@
   padding-left: 40px
   padding-right: 40px
 
-+r(1865)
++r(1919)
   .container
     max-width: 100%
     padding-left: 135px
@@ -25,6 +25,29 @@
   .container
     padding-left: 20px
     padding-right: 20px
+
+.stick-widndow-right
+  margin-right: calc(((100vw - 1640px) / 2) * -1)
+  &.--keep-container
+    padding-right: calc((100vw - 1640px) / 2)
+
++r(1919)
+  .stick-widndow-right
+    margin-right: -40px
+    &.--keep-container
+      padding-right: 40px
+
++r($lg)
+  .stick-widndow-right
+    margin-right: -30px
+    &.--keep-container
+      padding-right: 30px
+
++r($md)
+  .stick-widndow-right
+    margin-right: -20px
+    &.--keep-container
+      padding-right: 20px
 
 
 .row

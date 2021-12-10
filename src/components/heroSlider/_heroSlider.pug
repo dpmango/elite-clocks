@@ -1,7 +1,7 @@
 // heroSlider
 .heroSlider
   .container
-    .heroSlider__wrapper.js-stick-to-window(data-position="right" data-stop="<993")
+    .heroSlider__wrapper.stick-widndow-right
       .heroSlider__slider.swiper-container.js-swiper-hero
         .swiper-wrapper
           each slide in [1,2,3]
@@ -19,5 +19,3 @@
           .sliderNav__next.swiper-hero-next
             +svgMono('arrow-right')
           .sliderNav__bullets.swiper-hero-pagination
-
-
