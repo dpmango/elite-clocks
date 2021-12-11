@@ -28,7 +28,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     };
 
     app.onLoadTrigger = function () {
-      APP.Components.Preloader.loaded();
+      // APP.Components.Preloader.loaded();
     };
 
     app.refresh = function () {
@@ -59,10 +59,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.ScrollBlock.listenScroll();
       APP.Plugins.Clicks.init();
       APP.Plugins.Barba.init();
-
-      if (!APP.Components.Preloader) {
-        APP.Plugins.AOS.init();
-      }
+      APP.Plugins.AOS.init();
     };
 
     // Plugins which depends on DOM and page content

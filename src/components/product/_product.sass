@@ -1,0 +1,201 @@
+
+
+// product specs
+.productSpecs
+  margin: 100px 0
+  &__title
+    margin-bottom: 40px
+  &__table
+    position: relative
+    padding: 80px 0
+    background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      z-index: 1
+      left: 0
+      top: 0
+      bottom: 0
+      background: linear-gradient(250.62deg, #FBFBFB -127.85%, #F7F7F7 -49.33%, #E8E6E6 57.76%);
+      width: 490px
+  &__row
+    display: flex
+    &:last-child
+      .productSpecs
+        &__label, &__content
+          border-bottom: 0
+  &__left
+    position: relative
+    z-index: 2
+    display: flex
+    flex-direction: column
+    flex: 0 0 490px
+  &__label
+    flex: 1 0 auto
+    display: flex
+    // align-items: center
+    padding: 30px 30px 30px 0px
+    margin-left: 140px
+    border-bottom: 1px solid #DEDEDE
+    .ico
+      margin-top: 3px
+      font-size: 24px
+      margin-right: 22px
+    span
+      font-size: 20px
+      line-height: (29 / 20)
+
+  &__content
+    flex: 0 0 calc(100% - 490px)
+    margin: 0
+    padding: 30px 0 20px 70px
+    border-bottom: 1px solid #DEDEDE
+    &--collumned
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      li
+        width: 100%
+        flex: 0 0 470px
+        max-width: 470px
+        min-width: 1px
+    li
+      display: block
+      position: relative
+      font-size: 18px
+      font-weight: 300
+      line-height: (24 / 18)
+      padding-left: 22px
+      margin-bottom: 10px
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 0
+        top: 12px
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background: $colorPrimary
+
+// product media
+.productMedia
+  margin: 100px 0
+  &__wrapper
+    display: flex
+    padding-top: 110px
+    padding-left: 140px
+    background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
+
+  &__gallery
+    width: 100%
+    flex: 0 0 calc(100% - 560px)
+    max-width: calc(100% - 560px)
+    min-width: 1px
+  &__links
+    width: 100%
+    flex: 0 0 560px
+    max-width: 560px
+    min-width: 1px
+
+  &__link
+    display: flex
+    align-items: center
+    max-width: 460px
+    padding: 30px 40px
+    background: white
+    margin-left: auto
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+    &:hover
+      .productMedia
+        &__link-name
+          color: $colorPrimary
+  &__link-icon
+    flex: 0 0 auto
+    font-size: 0
+    .ico
+      font-size: 40px
+  &__link-name
+    display: inline-block
+    margin-left: 20px
+    font-size: 20px
+    line-height: (29 / 20)
+    transition: color .25s $ease
+  &__link-meta
+    display: inline-block
+    margin-left: auto
+    font-weight: 300
+    font-size: 18px
+    line-height: (26 / 18)
+    color: rgba($fontColor, .5)
+
+// video
+.video
+  position: relative
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute 0
+    z-index: 2
+    background: rgba(#1D1D1D, .9)
+  &__placeholder
+    position: relative
+    font-size: 0
+    img
+      position: relative
+      z-index: 1
+      width: 100%
+  &__details
+    position: absolute 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    z-index: 3
+    text-align: center
+    color: white
+  &__play
+    width: 100px
+    height: 100px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    border-radius: 50%
+    background: $colorPrimary
+    font-size: 0
+    box-shadow: inset 0px -4px 0px $colorPrimaryHover
+    cursor: pointer
+    will-change: box-shadow
+    transition: box-shadow .25s $ease
+    .ico
+      font-size: 10px
+    &:hover
+      box-shadow: inset 0px -100px 0px $colorPrimaryHover
+  &__title
+    margin-top: 40px
+    font-size: 30px
+    line-height: (34 / 30)
+  &__time
+    margin-top: 20px
+    font-size: 18px
+    line-height: (26 / 18)
+    color: rgba(white, .5)
+
+// productGallery
+.productGallery
+  margin: 100px 0
+  &__title
+    margin-bottom: 40px
+
+  &__wrapper
+    .swiper-slide
+      flex: 0 0 530px
+      width: 530px
+      height: 340px
+      display: flex
+      flex-direction: column
