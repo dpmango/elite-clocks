@@ -1,0 +1,19 @@
+// contact page
+.contactPage.contact
+  .container
+    .contact__wrapper
+      .contact__map
+        .js-gmap.stick-window-right(data-center="55.723004,37.612838")
+
+        .contact__details
+          // contactDetails
+          .contactDetails
+            ul.contactDetails__tab-nav
+              li.is-active Россия
+              li Германия
+            .contactDetails__tab(style="display: block")
+              .contactDetails__address
+                .contactDetails__address-label Адрес
+                .contactDetails__address-name Москва, Шаболовка д.23
+                .contactDetails__decor
+                  +svgColor('diamond')

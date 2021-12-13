@@ -13,6 +13,16 @@
     > div
       flex: 1 0 auto
 
+  &__details
+    position: absolute
+    width: 100%
+    max-width: 390px
+    right: 0
+    top: 50px
+    bottom: 50px
+    display: flex
+    flex-direction: column
+
   &__content
     position: absolute
     left: -70px
@@ -155,3 +165,60 @@
     img
       max-width: 100%
       mix-blend-mode: darken
+
+
+// contactpage
+.contactPage
+  margin-bottom: 80px
+
+// contactDetails
+.contactDetails
+  background: #FFFFFF
+  box-shadow: 0px 22px 24px rgba(79, 72, 74, 0.2)
+  &__tab-nav
+    color: white
+    margin: 0
+    padding: 0
+    background: $colorPrimaryHover
+    li
+      width: 100%
+      min-width: 1px
+      flex: 0 0 50%
+      max-width: 50%
+      font-size: 28px
+      line-height: (40 / 28)
+      color: rgba(white, .5)
+      padding: 14px
+      text-align: center
+      cursor: pointer
+      transition: background .25s $ease, color .25s $ease
+      &.is-active
+        background: $colorPrimary
+        color: white
+      &:hover
+        color: white
+  &__tab
+    display: none
+
+  &__address
+    position: relative
+    background: $colorPrimary
+    color: white
+    border-bottom: 16px solid $colorPrimaryHover
+    padding: 22px 60px 40px
+
+  &__address-label
+    font-weight: 300
+    font-size: 20px
+    line-height: (29 / 20)
+  &__address-name
+    font-size: 24px
+    line-height: (35 / 24)
+
+  &__decor
+    position: absolute
+    right: 25px
+    bottom: -57px
+    font-size: 0
+    .ico
+      font-size: 82px
