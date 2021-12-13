@@ -1,0 +1,50 @@
+// productProgress
+.productProgress
+  .container
+    .productProgress__wrapper.stick-window-right.--keep-container
+      .productProgress__title Как происходит оформление заказа
+      .productProgress__toggle.js-productProgressToggle
+        span под заказ
+        .productProgress__toggle-icon
+        span в наличии
+
+      .productProgress__grid
+        .productProgress__col
+          // progressCard
+          .progressCard
+            .progressCard__number 01
+            .progressCard__icon
+              +svgColor('pay-per-click')
+            .progressCard__name Вы подаете заявку через сайт, или звоните по нашим телефонам
+
+        .productProgress__col
+          // progressCard
+          .progressCard
+            .progressCard__number 02
+            .progressCard__icon
+              +svgColor('chat')
+            .progressCard__name Обговариваем условия заказа - утверждаем сроки поставки, особенности механизма, отделки
+
+        .productProgress__col
+          // progressCard
+          .progressCard
+            .progressCard__number 03
+            .progressCard__icon
+              +svgColor('prepay-click')
+            .progressCard__name Вносите предоплату 70%-30%
+
+        .productProgress__col
+          // progressCard
+          .progressCard
+            .progressCard__number 04
+            .progressCard__icon
+              +svgColor('warehouse')
+            .progressCard__name Часы поступают на наш склад в Москве
+
+        .productProgress__col
+          // progressCard
+          .progressCard
+            .progressCard__number 05
+            .progressCard__icon
+              +svgColor('clock-active')
+            .progressCard__name Мы доставляем, устанавливаем и рассказываем как пользоваться

@@ -1,0 +1,34 @@
+<svg width="186" height="16" viewBox="0 0 186 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="progressCard_separator">
+<g id="Group 6">
+<path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M86 0V16L100 8L86 0Z" fill="url(#paint0_linear_0_5234)"/>
+<mask id="mask0_0_5234" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="86" y="0" width="14" height="16">
+<path id="Path_2" fill-rule="evenodd" clip-rule="evenodd" d="M86 0V16L100 8L86 0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_5234)">
+<path id="Path_3" fill-rule="evenodd" clip-rule="evenodd" d="M86 5V16L100 8L86 5Z" fill="url(#paint1_linear_0_5234)"/>
+</g>
+</g>
+<path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd" d="M112 10C113.105 10 114 9.10457 114 8C114 6.89543 113.105 6 112 6C110.895 6 110 6.89543 110 8C110 9.10457 110.895 10 112 10ZM126 8C126 9.10457 125.105 10 124 10C122.895 10 122 9.10457 122 8C122 6.89543 122.895 6 124 6C125.105 6 126 6.89543 126 8ZM136 10C137.105 10 138 9.10457 138 8C138 6.89543 137.105 6 136 6C134.895 6 134 6.89543 134 8C134 9.10457 134.895 10 136 10ZM150 8C150 9.10457 149.105 10 148 10C146.895 10 146 9.10457 146 8C146 6.89543 146.895 6 148 6C149.105 6 150 6.89543 150 8ZM160 10C161.105 10 162 9.10457 162 8C162 6.89543 161.105 6 160 6C158.895 6 158 6.89543 158 8C158 9.10457 158.895 10 160 10ZM174 8C174 9.10457 173.105 10 172 10C170.895 10 170 9.10457 170 8C170 6.89543 170.895 6 172 6C173.105 6 174 6.89543 174 8ZM186 8C186 9.10457 185.105 10 184 10C182.895 10 182 9.10457 182 8C182 6.89543 182.895 6 184 6C185.105 6 186 6.89543 186 8Z" fill="url(#paint2_linear_0_5234)"/>
+<path id="Combined Shape_2" fill-rule="evenodd" clip-rule="evenodd" d="M2 10C3.10457 10 4 9.10457 4 8C4 6.89543 3.10457 6 2 6C0.895431 6 0 6.89543 0 8C0 9.10457 0.895431 10 2 10ZM16 8C16 9.10457 15.1046 10 14 10C12.8954 10 12 9.10457 12 8C12 6.89543 12.8954 6 14 6C15.1046 6 16 6.89543 16 8ZM26 10C27.1046 10 28 9.10457 28 8C28 6.89543 27.1046 6 26 6C24.8954 6 24 6.89543 24 8C24 9.10457 24.8954 10 26 10ZM40 8C40 9.10457 39.1046 10 38 10C36.8954 10 36 9.10457 36 8C36 6.89543 36.8954 6 38 6C39.1046 6 40 6.89543 40 8ZM50 10C51.1046 10 52 9.10457 52 8C52 6.89543 51.1046 6 50 6C48.8954 6 48 6.89543 48 8C48 9.10457 48.8954 10 50 10ZM64 8C64 9.10457 63.1046 10 62 10C60.8954 10 60 9.10457 60 8C60 6.89543 60.8954 6 62 6C63.1046 6 64 6.89543 64 8ZM76 8C76 9.10457 75.1046 10 74 10C72.8954 10 72 9.10457 72 8C72 6.89543 72.8954 6 74 6C75.1046 6 76 6.89543 76 8Z" fill="url(#paint3_linear_0_5234)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_5234" x1="85.5" y1="-3.81258" x2="93.1061" y2="3.16992" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FBFBFB"/>
+<stop offset="1" stop-color="#D9D5D5"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_5234" x1="77.7975" y1="9.19579" x2="93.2196" y2="-0.572991" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FBFBFB"/>
+<stop offset="0.423058" stop-color="#F7F7F7"/>
+<stop offset="1" stop-color="#E8E6E6"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_5234" x1="110" y1="10" x2="186" y2="10" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D9D5D5"/>
+<stop offset="1" stop-color="#FBFBFB"/>
+</linearGradient>
+<linearGradient id="paint3_linear_0_5234" x1="0" y1="10" x2="76" y2="10" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FBFBFB"/>
+<stop offset="1" stop-color="#D9D5D5"/>
+</linearGradient>
+</defs>
+</svg>

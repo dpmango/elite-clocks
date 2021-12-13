@@ -1,4 +1,51 @@
-
+// product hero
+.productHero
+  position: relative
+  &__wrapper
+    background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
+    display: flex
+    flex-wrap: wrap
+    height: 800px
+  &__content
+    position: relative
+    z-index: 2
+    width: 100%
+    flex: 0 0 $col7
+    max-width: $col7
+    padding-left: 140px
+    min-width: 1px
+  &__image
+    position: relative
+    z-index: 2
+    width: 100%
+    display: flex
+    flex-direction: column
+    flex: 0 0 $col5
+    max-width: $col5
+    padding: 20px
+    min-width: 1px
+  &__image-container
+    flex: 1 1 auto
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 0
+    img
+      max-width: 100%
+      max-height: 100%
+  &__decor
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    display: flex
+    flex-direction: column
+    font-size: 0
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: right top
 
 // product specs
 .productSpecs
@@ -83,17 +130,32 @@
 .productMedia
   margin: 100px 0
   &__wrapper
+    position: relative
     display: flex
     padding-top: 110px
     padding-left: 140px
-    background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      z-index: 1
+      top: 0
+      left: 0
+      right: 0
+      bottom: 124px
+      background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
 
   &__gallery
+    position: relative
+    z-index: 2
     width: 100%
     flex: 0 0 calc(100% - 560px)
     max-width: calc(100% - 560px)
     min-width: 1px
+    padding-bottom: 34px
   &__links
+    position: relative
+    z-index: 2
     width: 100%
     flex: 0 0 560px
     max-width: 560px
@@ -132,6 +194,76 @@
     line-height: (26 / 18)
     color: rgba($fontColor, .5)
 
+  &__video
+    position: relative
+    z-index: 2
+  &__thumbs
+    position: absolute
+    z-index: 4
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    justify-content: center
+
+  &__thumb
+    position: relative
+    width: 160px
+    height: 100px
+    border: 1px solid rgba(#F6F6F6, .2)
+    cursor: pointer
+    margin-right: 30px
+    will-change: transform
+    transition: transform .25s $ease, border .25s $ease
+    &:last-child
+      margin-right: 0
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      z-index: 2
+      background: rgba(#1D1D1D, .9)
+    &:hover
+      transform: translate3d(0, -10px, 0)
+    &.is-active
+      border-color: #F6F6F6
+      transform: translate3d(0, -10px, 0)
+  &__thumb-image
+    position: absolute 0
+    font-size: 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    img
+      position: relative
+      flex: 1 1 auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__thumb-play
+    position: absolute
+    z-index: 3
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 32px
+    height: 32px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    border-radius: 50%
+    background: $colorPrimary
+    font-size: 0
+    box-shadow: inset 0px -4px 0px $colorPrimaryHover
+    color: white
+    .ico
+      font-size: 3.5px
+
+
 // video
 .video
   position: relative
@@ -143,10 +275,9 @@
     background: rgba(#1D1D1D, .9)
   &__placeholder
     position: relative
+    z-index: 1
     font-size: 0
     img
-      position: relative
-      z-index: 1
       width: 100%
   &__details
     position: absolute 0
@@ -186,16 +317,127 @@
     line-height: (26 / 18)
     color: rgba(white, .5)
 
+
 // productGallery
 .productGallery
-  margin: 100px 0
+  margin: 100px 0 0
   &__title
     margin-bottom: 40px
 
   &__wrapper
+    padding-bottom: 110px
+    border-bottom: 1px solid $borderColor
     .swiper-slide
       flex: 0 0 530px
       width: 530px
       height: 340px
       display: flex
       flex-direction: column
+
+
+// productProgress
+.productProgress
+  margin-top: 100px
+  &__wrapper
+    padding-bottom: 110px
+    border-bottom: 1px solid $borderColor
+  &__title
+    font-size: 46px
+    line-height: (66 / 46)
+    text-align: center
+  &__toggle
+    margin-top: 32px
+    display: flex
+    justify-content: center
+    align-items: center
+    span
+      display: inline-block
+      font-weight: 300
+      font-size: 20px
+      line-height: (29 / 20)
+      border-bottom: 1px solid #C5C5C5
+      cursor: pointer
+      transition: color .25s $ease, border .25s $ease
+      &:first-child
+        color: $colorPrimary
+        border-color: transparent
+    &.is-toggled
+      .productProgress__toggle-icon
+        &::after
+          transform: translate(24px, -50%)
+      span
+        &:first-child
+          color: $fontColor
+          border-color: #C5C5C5
+        &:last-child
+          color: $colorPrimary
+          border-color: transparent
+
+  &__toggle-icon
+    position: relative
+    width: 50px
+    height: 26px
+    margin: 0 20px
+    background: $colorPrimary
+    box-shadow: inset 0px -4px 0px $colorPrimaryHover
+    border: 0
+    border-radius: 14px
+    cursor: pointer
+    vertical-align: middle
+    cursor: pointer
+    transition: all .25s ease-in-out
+    &::after
+      position: absolute
+      left: 5px
+      top: 50%
+      transform: translateY(-50%)
+      display: inline-block
+      content: ' '
+      width: 16px
+      height: 16px
+      background: white
+      border-radius: 50%
+      transition: transform .2s ease, background .2s $ease
+  &__grid
+    margin-top: 50px
+    display: flex
+    flex-wrap: wrap
+  &__col
+    position: relative
+    width: 100%
+    flex: 0 0 20%
+    max-width: 20%
+    min-width: 1px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: -90px
+      top: 84px
+      width: 186px
+      height: 16px
+      background: svg-load('../icons/svg-colors/progressCard_separator.svg') no-repeat center
+    &:first-child::after
+      display: none
+
+// progressCard
+.progressCard
+  display: flex
+  flex-direction: column
+  max-width: 240px
+  margin: 0 auto
+  text-align: center
+  &__number
+    font-family: $altFont
+    font-size: 20px
+    line-height: (27 / 20)
+    color: rgba($fontColor, .5)
+  &__icon
+    margin-top: 35px
+    font-size: 0
+    .ico
+      font-size: 60px
+  &__name
+    margin-top: 24px
+    font-size: 20px
+    line-height: (24 / 20)

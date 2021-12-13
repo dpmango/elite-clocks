@@ -14,6 +14,21 @@
             .video__time 2 минуты
 
         .productMedia__thumbs
+          .productMedia__thumb.js-productMedia-thumb.is-active(data-id="1")
+            .productMedia__thumb-image
+              img(src='img/product/videoPlaceholder.jpg' srcset='img/product/videoPlaceholder@2x.jpg 2x')
+            .productMedia__thumb-play
+              +svgMono('play')
+          .productMedia__thumb.js-productMedia-thumb(data-id="2")
+            .productMedia__thumb-image
+              img(src='img/product/videoPlaceholder.jpg' srcset='img/product/videoPlaceholder@2x.jpg 2x')
+            .productMedia__thumb-play
+              +svgMono('play')
+          .productMedia__thumb.js-productMedia-thumb(data-id="3")
+            .productMedia__thumb-image
+              img(src='img/product/videoPlaceholder.jpg' srcset='img/product/videoPlaceholder@2x.jpg 2x')
+            .productMedia__thumb-play
+              +svgMono('play')
 
       // links
       .productMedia__links
