@@ -2,9 +2,46 @@
 .productHero
   .container
     .productHero__wrapper.stick-window-right.--keep-container
+      // content
       .productHero__content
+        .productHero__head
+          ul.productHero__breadcrumbs
+            li
+              a(href="#") Главная
+            li
+              a(href="#") Каталог
+          .productHero__title Opus Sonata
+          .productHero__head-sub
+            .productHero__brand Erwin Sattler
+            .productHero__availability
+              +svgMono('checkmark')
+              span В наличии
 
+        .productHero__actions
+          .productHero__price
+            span 1 000 000<i class="rub">v</i>
+            span 12 140€
+          .productHero__cta
+            .btn.btn-primary.btn--xl.js-link(data-href="product.html")
+              span Купить эти часы
+
+        .productHero__features
+          .row
+            .col.col-6.col-md-12
+              ul.productFull__features-list
+                li постамент из мрамара
+                li запас хода 31 день
+                li родирование корпуса
+            .col.col-6.col-md-12
+              ul.productFull__features-list
+                li скрытый сейф в базе, сканер отпечатков пальцев
+                li варианты держателей часов для ремешка разной длины
+      // image
       .productHero__image
+        .productHero__image-more
+          +svgMono('camera')
+          span 12
+
         .productHero__image-container
           img(src='img/product/heroImage.png' srcset='img/product/heroImage@2x.png 2x')
 
