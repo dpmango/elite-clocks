@@ -11,9 +11,37 @@
             ul.contactDetails__tab-nav
               li.is-active Россия
               li Германия
-            .contactDetails__tab(style="display: block")
+            .contactDetails__tab(style="display: block" data-id="1")
               .contactDetails__address
                 .contactDetails__address-label Адрес
                 .contactDetails__address-name Москва, Шаболовка д.23
                 .contactDetails__decor
                   +svgColor('diamond')
+
+              .contactDetails__content
+                .contactDetails__phones
+                  .contactDetails__label По всем вопросам звоните
+                  a(href="tel:+74954091058") +74954091058
+                  a(href="tel:+79258144534") +79258144534
+                .contactDetails__messengers
+                  a(href="https://t.me/" target="_blank")
+                    +svgMono('telegram')
+                  a(href="https://viber.com/" target="_blank")
+                    +svgMono('viber')
+                .contactDetails__emails
+                  .contactDetails__label Электронная почта
+                  a(href="mailto:info@elite-clocks.ru") info@elite-clocks.ru
+
+                .contactDetails__socials
+                  a(href="#" target="_blank")
+                    .contactDetails__social-icon
+                      +svgColor('social-facebook-shadow')
+                    span facebook
+                  a(href="#" target="_blank")
+                    .contactDetails__social-icon
+                      +svgColor('social-youtube-shadow')
+                    span youtube
+                  a(href="#" target="_blank")
+                    .contactDetails__social-icon
+                      +svgColor('social-instagram-shadow')
+                    span instagram

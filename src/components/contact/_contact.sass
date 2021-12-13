@@ -173,6 +173,7 @@
 
 // contactDetails
 .contactDetails
+  flex: 1 0 auto
   background: #FFFFFF
   box-shadow: 0px 22px 24px rgba(79, 72, 74, 0.2)
   &__tab-nav
@@ -222,3 +223,83 @@
     font-size: 0
     .ico
       font-size: 82px
+
+  &__content
+    padding: 46px 60px 20px
+  &__label
+    margin-bottom: 10px
+    font-weight: 300
+    font-size: 20px
+    line-height: (29 / 20)
+  &__phones
+    a
+      display: inline-block
+      font-size: 30px
+      line-height: (43 / 30)
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimary
+      & + a
+        margin-top: 4px
+  &__messengers
+    margin: 0px -8px -8px
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      padding: 8px
+      transition: color .25s $ease
+      font-size: 0
+      color: rgba($fontColor, .2)
+      .ico-mono-telegram
+        font-size: 24px
+      .ico-mono-viber
+        font-size: 29px
+      &:hover
+        color: $colorPrimary
+
+  &__emails
+    margin-top: 22px
+    a
+      display: inline-block
+      font-size: 24px
+      line-height: (35 / 24)
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimary
+      & + a
+        margin-top: 4px
+  &__socials
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 30px 30px 0
+    margin: 40px -30px 0
+    border-top: 1px solid $borderColor
+    a
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 5px
+      font-size: 0
+      transition: color .25s $ease
+
+      span
+        margin-top: 8px
+        font-weight: 300
+        font-size: 20px
+        line-height: (29 / 20)
+      &:hover
+        color: $colorPrimary
+  &__social-icon
+    min-height: 30px
+    display: flex
+    align-items: center
+    .ico
+      font-size: 30px
+      &-color-social-facebook-shadow
+        font-size: 30px
+      &-color-social-youtube-shadow
+        font-size: 21px
+      &-color-social-instagram-shadow
+        font-size: 30px

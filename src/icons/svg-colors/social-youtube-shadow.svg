@@ -1,0 +1,18 @@
+<svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="social-youtube-shadow">
+<g id="Shape" filter="url(#filter0_i_0_2622)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M29.3363 3.00056L29.3738 3.24268C29.0113 1.97156 28.0325 0.990738 26.7888 0.633739L26.7625 0.627562C24.4238 3.41088e-05 15.0127 3.40735e-05 15.0127 3.40735e-05C15.0127 3.40735e-05 5.6253 -0.0123188 3.26283 0.627562C1.99534 0.990738 1.01536 1.97156 0.65911 3.21673L0.65286 3.24268C-0.22088 7.75273 -0.227129 13.172 0.691609 18.0007L0.65286 17.7561C1.01536 19.0272 1.99409 20.0081 3.23783 20.3651L3.26408 20.3712C5.6003 21 15.0139 21 15.0139 21C15.0139 21 24.4001 21 26.7638 20.3712C28.0325 20.0081 29.0125 19.0272 29.3688 17.7821L29.375 17.7561C29.7725 15.6586 30 13.2448 30 10.7792C30 10.689 30 10.5976 29.9988 10.5062C30 10.4222 30 10.3221 30 10.2221C30 7.7552 29.7725 5.34144 29.3363 3.00056ZM12.0102 15.0101V6.00108L19.8426 10.5124L12.0102 15.0101Z" fill="#89052C"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_0_2622" x="0" y="0" width="30" height="21" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-3"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.427451 0 0 0 0 0.00392157 0 0 0 0 0.12549 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_2622"/>
+</filter>
+</defs>
+</svg>

@@ -8,7 +8,7 @@ PageList:
   - file: product.html
     ready: 60
   - file: contacts.html
-    ready: 30
+    ready: 50
   - file: complications.html
     ready: 5
   - file: article.html
