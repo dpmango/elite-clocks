@@ -8,6 +8,47 @@
   &:hover
     color $fontColor
 
+
 // tabs
 .js-tab
   display: none
+
+
+.gallery
+  &__image
+    flex: 1 0 auto
+    position: relative
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &__prev, &__next
+    position: absolute
+    z-index: 3
+    bottom: 0
+    width: 80px
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    background: $colorPrimary
+    cursor: pointer
+    transition: background .25s $ease
+    .ico
+      font-size: 16px
+    &:hover
+      background: $colorPrimaryHover
+  &__prev
+    left: 0
+    background: $fontColor
+    &:hover
+      background: $colorPrimaryHover
+  &__next
+    left: 80px
+    background: $colorPrimary
+    &:hover
+      background: $colorPrimaryHover

@@ -71,7 +71,10 @@ ul
 
 // wysiwyg
 .wysiwyg
+  // base em definition
   h1, h2, h3, h4, h5, h6
+    margin-top: 60px
+    margin-bottom: 40px
     font-weight: 400
 
   h1
@@ -100,6 +103,14 @@ ul
     font-weight: 300
     font-size: 20px
     line-height: 1.9
+    strong
+      font-weight: 400
+
+  mark
+    font-weight: 400
+    font-size: 24px
+    line-height: (40 / 24)
+    background: transparent
 
   a
     color: $colorPrimary
@@ -107,28 +118,111 @@ ul
     &:hover
       color: $colorAccent
 
-  strong
-    font-weight: bold
-    font-weight: 700
+
   blockquote
-    padding: 20px
-    background: #FFFBD8
-    border-radius: 8px
-    font-size: 14px
-    line-height: (24 / 14)
+    position: relative
+    font-size: 24px
+    line-height: (40 / 24)
+    padding: 0 0 0 52px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 0
+      top: 0.3em
+      bottom: 0.3em
+      width: 2px
+      background: $colorPrimary
+
+  img
+    max-width: 100%
 
   ul, ol, blockquote
     margin-left: 0
     margin-right: 0
 
-  p, ul, ol, blockquote, h1, h2, h3, h4, h5, h6, table, .table-scroller
-    margin-top: 0
-    margin-bottom: 0
-    & + p, & + ul, & + ol, & + blockquote, & + table, & + .table-scroller
-      margin-top: 1em
-      margin-bottom: 1em
+  picture
+    display: block
+    margin: 60px 0
+
+  ul
+    padding: 0
+    li
+      display: block
+      position: relative
+      padding-left: 46px
+      margin-bottom: 30px
+      font-weight: 300
+      font-size: 20px
+      line-height: 2
+      &:last-child
+        margin-bottom: 0
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 0
+        top: 6px
+        width: 30px
+        height: 26px
+        background: svg-load('../icons/svg-colors/diamond.svg') no-repeat center
+        background-size: contain
+
+  ol
+    padding: 0
+    li
+      display: block
+      position: relative
+      padding-left: 56px
+      margin-bottom: 30px
+      font-weight: 300
+      font-size: 20px
+      line-height: 2
+      counter-increment: counter
+      &:last-child
+        margin-bottom: 0
+      &::before
+        display: inline-block
+        content: counter(counter)
+        position: absolute
+        left: 0
+        top: 0px
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        background: $colorPrimary
+        color: white
+        font-weight: 400
+        line-height: 36px
+        text-align: center
+
+
+
+  p, ul, ol, blockquote, h1, h2, h3, h4, h5, h6, table, mark, img .table-scroller
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+
+    & + p, & + ul, & + ol, & + blockquote, & + table, & + mark, & + .table-scroller
+      margin-top: 60px
+      margin-bottom: 40px
     & + h1, & + h2, & + h3, & + h4, & + h5, & + h6,
-      margin-top: 1em
+      margin-top: 60px
+    & + img
+      margin-top: 60px
+      margin-bottom: 60px
+
+  img
+    &[style*="float: left"]
+      margin-top: 0
+      margin-bottom: 0
+      margin-right: 50px
+    &[style*="float: right"]
+      margin-top: 0
+      margin-bottom: 0
+      margin-left: 50px
+
 
 +r($lg)
   .wysiwyg
@@ -218,16 +312,23 @@ ul
 .table
   border-collapse: collapse
   width: 100%
-  caption
-    margin-top: 24px
-    margin-bottom: 16px
-    font-weight: normal
-    text-align: left
-    font-size: 24px
-    line-height: (34 / 24)
-  &:first-child
-    caption
-      margin-top: 0
+  tbody
+    td
+      font-weight: 300
+      font-size: 18px
+      line-height: (24 / 18)
+      padding: 30px 30px 30px 40px
+      background: #FDFDFD
+      border: 1px solid #DEDEDE
+      &:first-child
+        border-left: 0
+        font-weight: 400
+      &:last-child
+        border-right: 0
+    tr:nth-child(odd)
+      td
+        background: #F8F8F8
+
 
 // .table--w-head
 .table--w-head

@@ -1,0 +1,135 @@
+// article
+.article
+  &__wrapper
+    display: flex
+    padding-bottom: 100px
+    border-bottom: 1px solid $borderColor
+  &__content
+    width: 100%
+    flex: 0 0 calc(100% - 390px)
+    max-width: calc(100% - 390px)
+    min-width: 1px
+    padding-left: 140px
+    padding-top: 110px
+
+  &__sidebar
+    position: relative
+    width: 100%
+    flex: 0 0 390px
+    max-width: 390px
+    min-width: 1px
+    padding-top: 165px
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 450px
+      width: 1px
+      background: $borderColor
+
+
+  &__head
+
+  &__breadcrumbs
+    margin: -5px
+    padding: 0
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    li
+      position: relative
+      flex: 0 0 auto
+      margin-right: 50px
+      &::after
+        display: inline-block
+        content: '-'
+        position: absolute
+        top: 9px
+        right: -24px
+        color: rgba($fontColor, .5)
+      &:last-child
+        &::after
+          display: none
+    a
+      display: inline-block
+      font-size: 18px
+      line-height: (26 / 18)
+      color: rgba($fontColor, .5)
+      padding: 5px
+      transition: color .25s $ease
+      &:hover
+        color: $fontColor
+
+  &__title
+    margin: 15px 0 0
+
+  &__body
+    margin-top: 60px
+    max-width: 1000px
+
+  &__gallery
+    background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
+    padding: 40px
+    .swiper-slide
+      flex: 0 0 300px
+      width: 300px
+      height: 194px
+      display: flex
+      flex-direction: column
+    .gallery__prev, .gallery__next
+      width: 70px
+      height: 70px
+      .ico
+        font-size: 11px
+    .gallery__next
+      left: 70px
+
+
+  &__sidebar-more
+    padding: 0 10px
+
+  &__sidebar-label
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-size: 30px
+    line-height: (43 / 30)
+    text-align: center
+    .ico
+      margin-top: 50px
+      font-size: 54px
+      color: $colorPrimary
+  &__sidebar-list
+    padding: 0
+    margin: 10px 0
+    li
+      margin-top: 40px
+      display: flex
+      flex-direction: column
+      span
+        display: inline-block
+        margin-top: 20px
+        font-size: 20px
+        line-height: (29 / 20)
+    a
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 10px
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimary
+
+  &__sidebar-image
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100px
+    height: 100px
+    text-align: center
+    img
+      max-width: 100%
