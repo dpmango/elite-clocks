@@ -1,0 +1,119 @@
+// modalrequest
+.modalRequest
+  display: flex
+  flex-wrap: wrap
+  &__left
+    width: 100%
+    min-width: 1px
+    flex: 0 0 $col4
+    max-width: $col4
+    display: flex
+    flex-direction: column
+    border-right: 1px solid $borderColor
+  &__right
+    width: 100%
+    min-width: 1px
+    flex: 0 0 $col8
+    max-width: $col8
+    display: flex
+    flex-direction: column
+    padding: 80px 80px 0
+
+  &__product
+    margin: auto 0
+    padding: 20px 0
+    text-align: center
+  &__product-title
+    font-size: 30px
+    line-height: (43 / 30)
+  &__product-image
+    margin: 40px 0
+  &__product-brand
+    font-size: 18px
+    line-height: (26 / 18)
+    color: rgba($fontColor, .5)
+
+  &__title
+    font-size: 46px
+    line-height: 1
+  &__subtitle
+    margin-top: 20px
+    font-weight: 300
+    font-size: 20px
+    line-height: (23 / 20)
+  &__form
+    margin-top: 46px
+  &__form-cta
+    margin-top: 50px
+    display: flex
+    align-items: center
+    .ui-toggle
+      max-width: 372px
+      margin-right: auto
+      label
+        color: rgba($fontColor, .5)
+        span
+          font-weight: 300
+          font-size: 18px
+      &:hover
+        label
+          color: $fontColor
+    .btn
+      flex: 0 0 auto
+  &__call
+    position: relative
+    margin: 88px -80px 0
+  &__call-background
+    position: absolute 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    font-size: 0
+    img
+      flex: 1 1 auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+  &__call-content
+    position: relative
+    z-index: 2
+    padding: 74px 80px
+    display: flex
+    align-items: center
+    color: white
+  &__call-label
+    font-size: 30px
+    line-height: (43 / 30)
+  &__call-phones
+    display: flex
+    align-items: center
+    margin-left: auto
+    a
+      display: inline-block
+      padding: 5px 10px
+      font-size: 30px
+      line-height: (43 / 30)
+      margin-right: 0px
+      transition: color .25s $ease
+      &:last-child
+        margin-right: 0
+      &:hover
+        color: rgba(white, .7)
+  &__call-socials
+    flex: 0 0 auto
+    margin-right: -5px
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      padding: 5px 5px
+      font-size: 0
+      color: white
+      transition: color .25s $ease
+      .ico-mono-telegram
+        font-size: 20px
+      .ico-mono-viber
+        font-size: 25px
+      &:hover
+        color: rgba(white, .7)

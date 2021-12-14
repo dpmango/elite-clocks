@@ -1,27 +1,46 @@
 // for input or textarea element
 .ui-input
-  -webkit-appearance: none
-  display: block
-  width: 100%
-  background: transparent
-  font-family: $systemFont
-  font-size: 16px
-  color: $fontColor
-  border: 1px solid $borderColor
-  border-radius: 0px
-  padding: 15px 15px
-  transition: background
-  transition: border .25s $ease, color .25s $ease, background .25s $ease
-  &::placeholder
-    color: rgba($fontColor, 5)
-  &:focus, &:active
-    background: white
-  &.has-error
-    border-color: $colorRed
+  position: relative
+  input
+    -webkit-appearance: none
+    display: block
+    width: 100%
+    background: transparent
+    font-family: $systemFont
+    font-size: 20px
+    line-height: (29 / 20)
+    color: $fontColor
+    border: 0
+    border-bottom: 1px solid #818181
+    border-radius: 0px
+    padding: 10px 0px 26px
+    transition: background
+    transition: border .25s $ease, color .25s $ease, background .25s $ease
     &::placeholder
-      color: rgba($colorRed, .5)
-  &.js-datepicker
-    padding-right: 50px
+      color: rgba($fontColor, .5)
+    &:focus, &:active
+      border-color: $colorPrimary
+    &.has-error
+      border-color: $colorRed
+      &::placeholder
+        color: rgba($colorRed, .5)
+    &.js-datepicker
+      padding-right: 50px
+
+  .ico
+    position: absolute
+    z-index: 2
+    left: 0
+    top: 12px
+    font-size: 24px
+    & + input
+      padding-left: 42px
+    &.ico-color-person
+      font-size: 34px
+      top: 8px
+      & + input
+        padding-left: 30px
+
 
 +r($md)
   .ui-input
@@ -45,43 +64,6 @@
 
 textarea.ui-input
   resize: vertical
-
-
-// eye
-.ui-pass-eye
-  position: absolute
-  z-index: 2
-  right: 15px
-  bottom: 14px
-  cursor: pointer
-  &__wrapper
-    position: relative
-    size: 26px 22px
-    font-size: 0
-    .ico
-      position: absolute
-      font-size: 22px
-      transition: color .25s $ease, opacity .25s $ease
-    .ico-mono-eye-closed
-      color: #ABABAB
-    .ico-mono-eye-opened
-      color: $fontColor
-      opacity: 0
-      font-size: 20px
-      transform: translateY(1px)
-  &:hover
-    .ui-pass-eye__wrapper
-      .ico-mono-eye-closed
-        color: $fontColor
-      .ico-mono
-        color: #ABABAB
-  &.is-active
-    .ui-pass-eye__wrapper
-      .ico-mono-eye-closed
-        opacity: 0
-      .ico-mono-eye-opened
-        opacity: 1
-
 
 
 // ui-dynamic-input
