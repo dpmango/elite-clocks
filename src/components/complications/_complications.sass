@@ -3,8 +3,45 @@
   margin: 110px 0 80px
   &__wrapper
     justify-content: center
+  &__more
+    margin-top: 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    font-size: 0
+    text-align: center
+    cursor: pointer
+    transition: color .25s $ease
+    .ico
+      font-size: 30px
+      will-change: transform
+      backface-visibility: hidden
+      animation: 1s infinite both rotateLoader
+      animation-play-state: paused
+      color: $colorPrimary
+    span
+      display: inline-block
+      margin-top: 20px
+      font-size: 20px
+      line-height: (29 / 20)
+    &:hover
+      color: $colorPrimary
+    &.is-loading
+      .ico
+        animation-play-state: running
+
+
+@keyframes rotateLoader
+  from
+    transform: rotate(0)
+  to
+    transform: rotate(360deg)
 
 .complicationCard
+  flex: 1 0 auto
+  display: flex
+  flex-direction: column
   text-align: center
   max-width: 452px
   margin: 0 auto 30px
@@ -21,3 +58,44 @@
     font-weight: 300
     font-size: 18px
     line-height: (26 / 18)
+    a
+      font-weight: 400
+      display: inline-block
+      color: $colorPrimary
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimaryHover
+  &__models
+    margin-top: auto
+    padding-top: 30px
+  &__models-label
+    font-weight: 300
+    font-size: 18px
+    line-height: (26 / 18)
+    color: rgba($fontColor, .5)
+  &__models-list
+    margin: 10px 0 0
+    padding: 0
+    list-style: none
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    li
+      font-size: 20px
+      line-height: (29 / 20)
+      position: relative
+      margin-right: 34px
+      &:last-child
+        margin-right: 0
+        &::after
+          display: none
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        right: -20px
+        top: 12px
+        width: 6px
+        height: 6px
+        background: $colorPrimary
+        border-radius: 50%
