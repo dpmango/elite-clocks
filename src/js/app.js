@@ -32,7 +32,6 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     };
 
     app.refresh = function () {
-      APP.Plugins.Sharer.refresh();
       APP.Plugins.Sliders.reinit();
       app.initPlugins(true);
       app.initComponents(true);
@@ -65,32 +64,18 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     // Plugins which depends on DOM and page content
     app.initPlugins = function (fromPjax) {
       APP.Plugins.Teleport.init();
-      APP.Plugins.LAYOUT.init(fromPjax);
       APP.Plugins.MicroModal.init(fromPjax);
       APP.Plugins.Sliders.init(fromPjax);
       APP.Plugins.Masks.init();
-      APP.Plugins.Choises.init();
       APP.Plugins.LazyLoadImages.init();
-      APP.Plugins.TextareaAutoExpand.init();
       APP.Plugins.Validations.init();
       APP.Plugins.Tabs.init(fromPjax);
       APP.Plugins.Table.init(fromPjax);
-      APP.Plugins.DatePicker.init(fromPjax);
-      APP.Plugins.Upload.init(fromPjax);
       APP.Plugins.LegacySupport.fixImages();
       APP.Plugins.Gmaps.init();
 
       // APP.Plugins.ScrollReveal.init();
       // APP.Plugins.ScalerDesktop.init(fromPjax);
-
-      // plugins
-      // APP.Plugins.Sticky.init(fromPjax);
-      // APP.Plugins.Photoswipe.init(fromPjax);
-      // APP.Plugins.DatePicker.init(fromPjax);
-
-      // ui
-      // APP.Plugins.InputFocuses.init();
-      // APP.Plugins.Selectric.init();
     };
 
     // All components from `src/componenets`

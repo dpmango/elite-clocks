@@ -140,7 +140,6 @@
       if (!params.center) return;
 
       // CREATE MAP INSTANCE
-      console.log('drawing', params);
       myMap = new google.maps.Map(domElement, params);
 
       // CONTROLS
