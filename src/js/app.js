@@ -32,7 +32,6 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     };
 
     app.refresh = function () {
-      APP.Plugins.Sliders.reinit();
       app.initPlugins(true);
       app.initComponents(true);
     };
