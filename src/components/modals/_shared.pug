@@ -8,3 +8,20 @@
         +svgMono('close')
       .modal__header.tac
         .h3-title.h3-title.h3-title-lg.h3-title-sm.modal__title Загрузка документов
+
+// modal component
+#galleryModal.modal.modal--fullheight.micromodal-slide(aria-hidden='true')
+  .modal__overlay(tabindex='-1' data-micromodal-close)
+    .modal__container(role='dialog' aria-modal='true')
+      .modal__close(aria-label='Close modal' data-micromodal-close)
+        +svgMono('close')
+
+      // modalGallery
+      .modalGallery.js-modal-gallery
+        //- .modalGallery__slide
+        //-   img(src='img/gallery/galleryFull_1.jpg')
+        //-   .modalGallery__slide-caption Часовой механизм часов Opus Sonata
+
+        //- .modalGallery__thumbs
+        //-   .modalGallery__thumb.is-active
+        //-     img(src='img/gallery/gallery_1.jpg')
