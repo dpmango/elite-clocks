@@ -1,6 +1,6 @@
 mixin productCard(card)
   // productCard
-  a(href="#").productCard
+  a(href="product.html").productCard
     .productCard__title= card.title
     .productCard__gallery.swiper-container.js-swiper-product
       .swiper-wrapper
@@ -32,7 +32,9 @@ mixin productCard(card)
 
 mixin productFull(card)
   // productCard
-  a(href="#").productFull
+  a(href="product.html" data-aos="fade-up").productFull
+    .productFull__title-mobile= card.title
+
     .productFull__gallery.swiper-container.js-swiper-product
       .swiper-wrapper
         each img in card.gallery
@@ -45,6 +47,8 @@ mixin productFull(card)
       .productFull__gallery-next.swiper-product-next
           +svgMono('arrow-right')
 
+    .productFull__brand-mobile= card.brand
+
     .productFull__content
       .productFull__head
         .productFull__title= card.title
@@ -54,12 +58,12 @@ mixin productFull(card)
 
       .productFull__features
         .row
-          .col.col-6.col-md-12
+          .col.col-6.col-lg-12
             ul.productFull__features-list
               li постамент из мрамара
               li запас хода 31 день
               li родирование корпуса
-          .col.col-6.col-md-12
+          .col.col-6.col-lg-12
             ul.productFull__features-list
               li скрытый сейф в базе, сканер отпечатков пальцев
               li варианты держателей часов для ремешка разной длины
@@ -85,11 +89,11 @@ mixin productFull(card)
 
       .productFull__actions
         .row
-          .col.col-6
+          .col.col-6.col-sm-12
             .productFull__price
               span 1 000 000<i class="rub">v</i>
               span= card.price
-          .col.col-6
+          .col.col-6.sm-hidden
             .productFull__cta
               .btn.btn-primary.js-link(data-href="product.html")
                 span Купить

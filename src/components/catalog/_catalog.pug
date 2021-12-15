@@ -5,11 +5,18 @@ include ../products/_productCard
   .container
     .catalog__wrapper
       .row
-        .col.col-3
+        .col.col-3.col-hd-12(data-aos="fade-right")
+          .catalog__filter-toggle.js-catalog-filter-toggle
+            +svgMono('filter')
+            span Фильтр
+          .catalog__filter-background.js-catalog-filter-background
+            .catalog__filter-close.js-catalog-filter-close
+              +svgMono('close')
+
           // catalogSidebar
-          .catalog__sidebar.catSidebar
+          .catalog__sidebar.catSidebar.js-catalog-filter
             .catSidebar__section.is-open
-              .catSidebar__title.js-catalog-sidebar Усложнения
+              .catSidebar__title.js-catalog-sidebar-section Усложнения
               .catSidebar__content(style="display: block")
                 .ui-checkbox
                   input(id="complications_1" type="checkbox" checked)
@@ -44,7 +51,7 @@ include ../products/_productCard
 
             // section
             .catSidebar__section
-              .catSidebar__title.js-catalog-sidebar Цвет
+              .catSidebar__title.js-catalog-sidebar-section Цвет
               .catSidebar__content
                 .ui-checkbox
                   input(id="color_1" type="checkbox" checked)
@@ -69,7 +76,7 @@ include ../products/_productCard
 
             // section
             .catSidebar__section
-              .catSidebar__title.js-catalog-sidebar Бренд
+              .catSidebar__title.js-catalog-sidebar-section Бренд
               .catSidebar__content
                 .ui-checkbox
                   input(id="brand_1" type="checkbox" checked)
@@ -89,7 +96,7 @@ include ../products/_productCard
 
             // section
             .catSidebar__section
-              .catSidebar__title.js-catalog-sidebar Тип
+              .catSidebar__title.js-catalog-sidebar-section Тип
               .catSidebar__content
                 .ui-checkbox
                   input(id="brand_1" type="checkbox" checked)
@@ -114,7 +121,7 @@ include ../products/_productCard
                 label(for="avail_2")
                   span есть в Баден-Бадене
 
-        .col.col-9
+        .col.col-9.col-hd-12
           .catalog__products
             +productFull({title: 'Laterna 1615', gallery: ['product_1', 'product_3'], brand: 'Erwin Sattler', price: '8 100€' })
             +productFull({title: 'NT 10', gallery: ['product_2', 'product_3'], brand: 'Matthias Naeschke', price: '11 600€' })
@@ -125,3 +132,39 @@ include ../products/_productCard
             +productFull({title: 'Opus Sonata', gallery: ['product_7', 'product_1'], brand: 'Erwin Sattler', price: '12 140€' })
             +productFull({title: 'Opus Sonata', gallery: ['product_8', 'product_3'], brand: 'Erwin Sattler', price: '7 400€' })
 
+            .catalog__pagination.pagination(data-aos="fade")
+              a.pagination__prev(href="#") Предыдущая
+              ul.pagination__list
+                li
+                  a(href="#").is-active
+                    span 1
+                li
+                  a(href="#")
+                    span 2
+                li
+                  a(href="#")
+                    span 3
+                li
+                  a(href="#")
+                    span 4
+                li
+                  a(href="#")
+                    span 5
+                li.xl-hidden
+                  a(href="#")
+                    span 6
+                li.xl-hidden
+                  a(href="#")
+                    span 7
+                li.xl-hidden
+                  a(href="#")
+                    span 8
+                li.xl-hidden
+                  a(href="#")
+                    span 9
+                li.pagination__separator
+                  span ...
+                li
+                  a(href="#")
+                    span 121
+              a.pagination__next(href="#") Следующая

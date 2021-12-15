@@ -12,6 +12,7 @@
       + label
         &::before
           background-color: $colorPrimary
+          // box-shadow: inset 0px -4px 0px $colorPrimaryHover;
         &::after
           transform: translate(24px, -50%)
           background-color: white
@@ -59,3 +60,23 @@
       line-height: 1.3
       font-size: 20px
       cursor: pointer
+
++r($sm)
+  .ui-toggle
+    input
+      &:checked
+        + label
+          &::after
+            transform: translate(18px, -50%)
+            // box-shadow: inset 0px -3px 0px $colorPrimaryHover;
+    label
+      &::before
+        width: 40px
+        height: 21px
+      &::after
+        left: 4px
+        width: 13px
+        height: 13px
+      span
+        font-size: 16px
+        padding-left: 52px

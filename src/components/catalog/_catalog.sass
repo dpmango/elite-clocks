@@ -3,6 +3,43 @@
   &__wrapper
     margin: 100px 0
 
+  &__filter-toggle
+    display: none
+    align-items: center
+    font-size: 0
+    padding: 0px 0
+    margin-bottom: 10px
+    cursor: pointer
+    transition: color .25s $ease
+    .ico
+      font-size: 27px
+      color: $colorPrimary
+      margin-right: 20px
+    span
+      display: inline-block
+      font-size: 26px
+      line-height: (38 / 26)
+    &:hover
+      color: $colorPrimary
+  &__filter-background
+    display: none
+    position: fixed 0
+    z-index: 10
+    background: rgba($fontColor, .5)
+  &__filter-close
+    position: absolute
+    left: 420px
+    top: 30px
+    padding: 10px
+    font-size: 0
+    color: white
+    cursor: pointer
+    transition: color .25s $ease
+    .ico
+      font-size: 42px
+    &:hover
+      color: $colorPrimary
+
   &__sidebar
     position: sticky
     top: 30px
@@ -11,6 +48,83 @@
   &__products
     .productFull
       margin-bottom: 30px
+
+  &__pagination
+    margin-top: 50px
+
++r($hd)
+  .catalog
+    &__wrapper
+      // margin: 90px 0
+    &__filter-toggle
+      display: inline-flex
+    &__filter-background
+      display: block
+      opacity: 0
+      pointer-events: none
+      transition: opacity .25s $ease
+      &.is-active
+        opacity: 1
+        pointer-events: all
+
+    &__sidebar
+      // make it slide panel like
+      position: fixed
+      z-index: 11
+      top: 0
+      bottom: 0
+      left: 0
+      width: 100%
+      max-height: 100%
+      min-height: 1px
+      max-width: 400px
+      background: white
+      padding: 40px 30px 0
+      overflow-y: auto
+      opacity: 0
+      pointer-events: none
+      transform: translateX(-100%)
+      will-change: transform
+      transition: opacity .25s $ease, transform .25s $ease
+      &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translateX(0)
+
++r($lg)
+  .catalog
+    &__wrapper
+      margin: 90px 0
+
++r($md)
+  .catalog
+    &__wrapper
+      margin: 40px 0
+    &__pagination
+      margin-top: 30px
+    &__filter-toggle
+      margin-bottom: -6px
+      .ico
+        font-size: 18px
+        margin-right: 10px
+      span
+        font-size: 20px
+
++r($sm)
+  .catalog
+    &__sidebar
+      width: 280px
+      padding: 30px 20px 0
+    &__filter-close
+      left: 280px
+      top: 10px
+      .ico
+        font-size: 16px
+    &__products
+      .productFull
+        margin-bottom: 20px
+    &__pagination
+      margin-top: 20px
 
 
 // catalog sidebar
@@ -60,3 +174,21 @@
       margin-bottom: 30px
       &:last-child
         margin-bottom: 0
+
++r($hd)
+  .catSidebar
+    &__section
+      padding: 30px 0
+    &__title
+      font-size: 20px
+      &::after
+        width: 11px
+        height: 6px
+    &__content
+      padding-top: 24px
+      .ui-checkbox
+        margin-bottom: 14px
+    &__toggles
+      padding: 30px 0
+      .ui-toggle
+        margin-bottom: 20px

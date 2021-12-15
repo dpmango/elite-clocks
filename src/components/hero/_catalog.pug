@@ -2,16 +2,16 @@
 .hero
   .container
     .hero__wrapper.stick-window-right.--keep-container
-      .hero__crumbs
+      .hero__crumbs(data-aos="fade-right")
         .hero__crumbs-list
           li
             a(href="#") Главная
         .hero__crumbs-title Каталог
 
-      .hero__meta
+      .hero__meta(data-aos="fade-up")
         .hero__meta-icon
           +svgColor('diamond')
         .hero__meta-count <span>200+</span> наименований
 
-      .hero__image
+      .hero__image(data-aos="fade")
         img(src='img/hero/hero_catalog.png' srcset='img/hero/hero_catalog@2x.png 2x')

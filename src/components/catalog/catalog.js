@@ -11,17 +11,33 @@
     },
 
     eventListeners: function () {
-      _document.on('click', '.js-catalog-sidebar', function () {
-        let $section = $(this).parent();
-        let $content = $section.find('.catSidebar__content');
+      _document
+        .on('click', '.js-catalog-sidebar-section', function () {
+          let $section = $(this).parent();
+          let $content = $section.find('.catSidebar__content');
 
-        if ($section.is('.is-open')) {
-          $content.slideUp();
-        } else {
-          $content.slideDown();
-        }
-        $section.toggleClass('is-open');
-      });
+          if ($section.is('.is-open')) {
+            $content.slideUp();
+          } else {
+            $content.slideDown();
+          }
+          $section.toggleClass('is-open');
+        })
+        .on('click', '.js-catalog-filter-toggle', function () {
+          var $toggle = $(this);
+          var $sidebar = $('.js-catalog-filter');
+          var $background = $('.js-catalog-filter-background');
+
+          $sidebar.addClass('is-active');
+          $background.addClass('is-active');
+        })
+        .on('click', '.js-catalog-filter-close, .js-catalog-filter-background', function () {
+          var $sidebar = $('.js-catalog-filter');
+          var $background = $('.js-catalog-filter-background');
+
+          $sidebar.removeClass('is-active');
+          $background.removeClass('is-active');
+        });
     },
   };
 })(jQuery, window.APP);
