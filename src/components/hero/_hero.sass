@@ -6,7 +6,7 @@
     background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
   &__crumbs
     margin: auto 0 auto 134px
-    padding-right: 30px
+    padding-right: 60px
   &__crumbs-list
     li
       display: block
@@ -26,30 +26,85 @@
   &__meta
     display: flex
     align-items: center
+    padding-top: 16px
     margin-right: 130px
     margin-left: auto
   &__meta-icon
     flex: 0 0 auto
     font-size: 0
-    margin-bottom: 8px
+    margin-bottom: 30px
     .ico
       font-size: 35px
   &__meta-count
     margin-left: 16px
     font-weight: 300
     font-size: 18px
-    line-height: 26px
+    line-height: 1
     span
       display: block
+      margin-bottom: 4px
       font-family: $altFont
       font-size: 60px
-      line-height: (81 / 60)
-      margin-bottom: 6px
+      line-height: 1
   &__image
     align-self: flex-end
     font-size: 0
+    max-width: 500px
     margin-right: 120px
     &--right
       margin-left: auto
     img
       max-width: 100%
+
++r($hdplus)
+  .hero
+    &__image
+      margin-right: 0
+
++r($hd)
+  .hero
+    &__crumbs
+      margin-left: 60px
+      padding-bottom: 16px
+    &__meta
+      margin-right: 90px
+    &__image
+      // max-width: 400px
+
++r($xl)
+  .hero
+    &__image
+      display: none
+
++r($lg)
+  .hero
+    &__wrapper
+      margin-left: -30px
+
++r($md)
+  .hero
+    &__wrapper
+      height: 125px
+      margin-left: -20px
+    &__crumbs
+      padding-right: 20px
+      margin-left: 20px
+      padding-bottom: 10px
+    &__crumbs-list
+      a
+        font-size: 14px
+    &__crumbs-title
+      margin-top: 8px
+      font-size: 30px
+    &__meta
+      margin-right: 0
+      padding-top: 0
+    &__meta-icon
+      margin-bottom: 22px
+      .ico
+        font-size: 24px
+    &__meta-count
+      font-size: 14px
+      margin-left: 10px
+      span
+        font-size: 30px
