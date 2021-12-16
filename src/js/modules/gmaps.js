@@ -6,6 +6,7 @@
     data: {
       scriptsCreated: false,
       gmapsLoaded: false,
+      instance: null,
     },
     init: function () {
       if ($('.js-gmap').length > 0) {
@@ -55,14 +56,16 @@
     drawMap: function (domElement) {
       var _this = this;
       var $domElement = $(domElement);
+      var $markers = $domElement.find('.js-gmap-markers');
       if ($domElement.length === 0) return;
 
-      var myMap;
+      var mapInstance;
       const center = _this.geoStringToArr($domElement.data('center'));
 
       var params = {
         center: new google.maps.LatLng(center[0], center[1]),
         zoom: $domElement.data('zoom') || 10,
+        disableDefaultUI: true,
         styles: [
           {
             featureType: 'water',
@@ -130,48 +133,36 @@
           },
         ],
       };
+      var markers = [];
 
-      // placeholder: {
-      //   geodata: _this.geoStringToArr($domElement.data('placeholder')),
-      //   caption: $domElement.data('placeholder-caption'),
-      //   balloon: $domElement.data('placeholder-balloon'),
-      // },
+      if ($markers.length) {
+        $markers.children().each(function (i, marker) {
+          var markerGeo = _this.geoStringToArr($(marker).data('marker'));
+
+          markers.push({
+            geodata: new google.maps.LatLng(markerGeo[0], markerGeo[1]),
+            caption: $(marker).data('marker-caption'),
+            balloon: $(marker).data('marker-balloon'),
+          });
+        });
+      }
 
       if (!params.center) return;
 
       // CREATE MAP INSTANCE
-      myMap = new google.maps.Map(domElement, params);
+      mapInstance = new google.maps.Map(domElement, params);
+      _this.data.instance = mapInstance;
 
-      // CONTROLS
-      // myMap.controls.remove('trafficControl');
-      // myMap.controls.remove('searchControl');
-      // myMap.controls.remove('fullscreenControl');
-      // myMap.controls.remove('rulerControl');
-      // myMap.controls.remove('geolocationControl');
-      // myMap.controls.remove('routeEditor');
-      // myMap.controls.remove('typeSelector');
-      // myMap.controls.remove('zoomControl');
-
-      // PLACEHOLDER
-      if (params.placeholder.geodata) {
-        var placeholder = new ymaps.Placemark(
-          params.placeholder.geodata,
-          {
-            balloonContent: params.placeholder.balloon,
-            iconCaption: params.placeholder.caption,
-          },
-          {
-            preset: 'islands#redIcon',
-          }
-        );
-
-        // var marker = new google.maps.Marker({
-        //   position: new google.maps.LatLng(40.67, -73.94),
-        //   map: map,
-        //   title: 'Snazzy!',
-        // });
-
-        myMap.geoObjects.add(placeholder);
+      // MARKER
+      if (markers.length) {
+        $.each(markers, function (i, marker) {
+          new google.maps.Marker({
+            position: marker.geodata,
+            map: mapInstance,
+            title: marker.caption,
+            icon: 'img/decor/map-marker.svg',
+          });
+        });
       }
     },
     geoStringToArr: function (str) {

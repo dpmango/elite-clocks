@@ -3,15 +3,19 @@
   .container
     .contact__wrapper
       .contact__map
-        .js-gmap.stick-window-right(data-center="55.723004,37.612838")
+        .js-gmap.stick-window-right(data-center="55.723004,37.612838" data-zoom="16")
+          .js-gmap-markers
+            i(data-marker="55.723004,37.612838" data-marker-caption="Офис в Москве")
+            i(data-marker="48.135553,8.762030" data-marker-caption="Офис в Германии")
 
-        .contact__details
+        .contact__details.js-contact-tabs
           // contactDetails
-          .contactDetails
-            ul.contactDetails__tab-nav
-              li.is-active Россия
-              li Германия
-            .contactDetails__tab(style="display: block" data-id="1")
+          .contactDetails(data-aos="fade")
+            ul.contactDetails__tab-nav.js-contact-tabs-nav
+              li.is-active(data-map="55.723004,37.612838" data-id="1") Россия
+              li(data-map="48.135553,8.762030" data-id="2") Германия
+            // tab
+            .contactDetails__tab.js-contact-tab(style="display: block" data-id="1")
               .contactDetails__address
                 .contactDetails__address-label Адрес
                 .contactDetails__address-name Москва, Шаболовка д.23
@@ -23,11 +27,45 @@
                   .contactDetails__label По всем вопросам звоните
                   a(href="tel:+74954091058") +74954091058
                   a(href="tel:+79258144534") +79258144534
-                .contactDetails__messengers
-                  a(href="https://t.me/" target="_blank")
-                    +svgMono('telegram')
-                  a(href="https://viber.com/" target="_blank")
-                    +svgMono('viber')
+                  .contactDetails__messengers
+                    a(href="https://t.me/" target="_blank")
+                      +svgMono('telegram')
+                    a(href="https://viber.com/" target="_blank")
+                      +svgMono('viber')
+                .contactDetails__emails
+                  .contactDetails__label Электронная почта
+                  a(href="mailto:info@elite-clocks.ru") info@elite-clocks.ru
+
+                .contactDetails__socials
+                  a(href="#" target="_blank")
+                    .contactDetails__social-icon
+                      +svgColor('social-facebook-shadow')
+                    span facebook
+                  a(href="#" target="_blank")
+                    .contactDetails__social-icon
+                      +svgColor('social-youtube-shadow')
+                    span youtube
+                  a(href="#" target="_blank")
+                    .contactDetails__social-icon
+                      +svgColor('social-instagram-shadow')
+                    span instagram
+            // tab
+            .contactDetails__tab.js-contact-tab(data-id="2")
+              .contactDetails__address
+                .contactDetails__address-label Адрес
+                .contactDetails__address-name Баден-Вюртемберг, Тутлинген, Industriestraße, 8
+                .contactDetails__decor
+                  +svgColor('diamond')
+
+              .contactDetails__content
+                .contactDetails__phones
+                  .contactDetails__label По всем вопросам звоните
+                  a(href="tel:+493000079947") +493000079947
+                  .contactDetails__messengers
+                    a(href="https://t.me/" target="_blank")
+                      +svgMono('telegram')
+                    a(href="https://viber.com/" target="_blank")
+                      +svgMono('viber')
                 .contactDetails__emails
                   .contactDetails__label Электронная почта
                   a(href="mailto:info@elite-clocks.ru") info@elite-clocks.ru

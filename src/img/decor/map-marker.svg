@@ -1,0 +1,11 @@
+<svg width="70" height="60" viewBox="0 0 70 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="map-marker">
+<path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M0 0H70L35 60L0 0Z" fill="#6D0120"/>
+<mask id="mask0_0_2584" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="70" height="60">
+<path id="Path_2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0H70L35 60L0 0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_2584)">
+<path id="Path_3" fill-rule="evenodd" clip-rule="evenodd" d="M21.875 0H70L35 60L21.875 0Z" fill="#980A34"/>
+</g>
+</g>
+</svg>

@@ -7,16 +7,17 @@
   &__map
     position: relative
     z-index: 1
-    height: 800px
     display: flex
     flex-direction: column
-    background: $borderColor
     font-size: 0
-    > div
+    .js-gmap
+      height: 800px
+      background: $borderColor
       flex: 1 0 auto
 
   &__details
     position: absolute
+    z-index: 2
     width: 100%
     max-width: 390px
     right: 0
@@ -131,10 +132,40 @@
       max-width: 100%
       mix-blend-mode: darken
 
++r($lg)
+  .contact
+    &__details
+      margin-top: -218px
+      max-width: 100%
+      position: static
 
-// contactpage
++r($sm)
+  .contact
+    &__details
+      margin-top: -132px
+
+
+// contactPage
 .contactPage
   margin-bottom: 80px
+  overflow: visible
+
++r($lg)
+  .contactPage
+    .js-gmap
+      margin-left: -30px
+
++r($md)
+  .contactPage
+    .js-gmap
+      height: 600px
+      margin-left: -20px
+
++r($sm)
+  .contactPage
+    margin-bottom: 40px
+    .js-gmap
+      height: 400px
 
 // contactDetails
 .contactDetails
@@ -178,6 +209,7 @@
     font-size: 20px
     line-height: (29 / 20)
   &__address-name
+    margin-top: 8px
     font-size: 24px
     line-height: (35 / 24)
 
@@ -192,12 +224,15 @@
   &__content
     padding: 46px 60px 20px
   &__label
+    flex: 0 0 100%
     margin-bottom: 10px
     font-weight: 300
     font-size: 20px
     line-height: (29 / 20)
   &__phones
-    a
+    display: flex
+    flex-wrap: wrap
+    > a
       display: inline-block
       font-size: 30px
       line-height: (43 / 30)
@@ -207,6 +242,7 @@
       & + a
         margin-top: 4px
   &__messengers
+    flex: 0 0 auto
     margin: 0px -8px -8px
     display: flex
     align-items: center
@@ -224,7 +260,7 @@
         color: $colorPrimary
 
   &__emails
-    margin-top: 22px
+    margin-top: 28px
     a
       display: inline-block
       font-size: 24px
@@ -238,7 +274,7 @@
     display: flex
     align-items: center
     justify-content: space-between
-    padding: 30px 30px 0
+    padding: 24px 10px 0
     margin: 40px -30px 0
     border-top: 1px solid $borderColor
     a
@@ -248,7 +284,6 @@
       padding: 5px
       font-size: 0
       transition: color .25s $ease
-
       span
         margin-top: 8px
         font-weight: 300
@@ -268,3 +303,74 @@
         font-size: 21px
       &-color-social-instagram-shadow
         font-size: 30px
+
++r($lg)
+  .contactDetails
+    // box-shadow: none
+    &__phones
+      > a
+        margin-right: 30px
+        & + a
+          margin-top: 0px
+          margin-right: 14px
+    &__messengers
+      margin-top: -6px
+    &__socials
+      padding-left: 80px
+      padding-right: 80px
+
++r($sm)
+  .contactDetails
+    &__tab-nav
+      li
+        font-size: 20px
+        padding: 11px
+    &__address
+      padding: 16px 20px 18px
+      border-bottom-width: 10px
+    &__address-label
+      font-size: 16px
+    &__address-name
+      margin-top: 4px
+      font-size: 20px
+    &__decor
+      right: 20px
+      bottom: -33px
+      .ico
+        font-size: 47px
+    &__content
+      padding: 20px 20px 20px
+    &__label
+      font-size: 16px
+      margin-bottom: 6px
+    &__phones
+      > a
+        font-size: 24px
+    &__messengers
+      a
+        padding: 4px
+        .ico-mono-telegram
+          font-size: 15px
+        .ico-mono-viber
+          font-size: 19px
+    &__emails
+      margin-top: 14px
+      a
+        font-size: 20px
+    &__socials
+      margin: 20px 0 0
+      padding: 15px 0 0
+      a
+        span
+          font-size: 16px
+    &__social-icon
+      min-height: 24px
+      .ico
+        font-size: 24px
+        &-color-social-facebook-shadow
+          font-size: 24px
+        &-color-social-youtube-shadow
+          font-size: 17px
+        &-color-social-instagram-shadow
+          font-size: 24px
+
