@@ -11,6 +11,7 @@
     min-width: 1px
     padding-left: 140px
     padding-top: 110px
+    padding-right: 40px
 
   &__sidebar
     position: relative
@@ -28,7 +29,6 @@
       bottom: 450px
       width: 1px
       background: $borderColor
-
 
   &__head
 
@@ -54,6 +54,7 @@
           display: none
     a
       display: inline-block
+      font-weight: 300
       font-size: 18px
       line-height: (26 / 18)
       color: rgba($fontColor, .5)
@@ -72,6 +73,7 @@
   &__gallery
     background: linear-gradient(206.46deg, #FBFBFB -18.56%, #F7F7F7 25.04%, #E8E6E6 84.5%)
     padding: 40px
+    margin: 60px 0
     .swiper-slide
       flex: 0 0 300px
       width: 300px
@@ -104,10 +106,13 @@
   &__sidebar-list
     padding: 0
     margin: 10px 0
+    .swiper-wrapper
+      display: block
     li
       margin-top: 40px
       display: flex
       flex-direction: column
+      text-align: center
       span
         display: inline-block
         margin-top: 20px
@@ -133,3 +138,120 @@
     text-align: center
     img
       max-width: 100%
+
++rmin($hd + 1)
+  .article
+    &__sidebar-list
+      li
+        width: 100% !important
+
++r($hdplus)
+  .article
+    &__content
+      padding-left: 60px
+      flex-basis: calc(100% - 340px)
+      max-width: calc(100% - 340px)
+    &__sidebar
+      flex-basis: 340px
+      max-width: 340px
+
++r($hd)
+  .article
+    &__wrapper
+      display: block
+      padding-bottom: 90px
+    &__content
+      flex-basis: 100%
+      max-width: 100%
+    &__sidebar
+      flex-basis: 100%
+      max-width: 100%
+      margin-top: 100px
+      padding-top: 100px
+      &::before
+        bottom: auto
+        right: 0
+        width: 100%
+        height: 1px
+
+    &__sidebar-list
+      margin: 50px 0 0
+      .swiper-wrapper
+        display: flex
+      li
+        margin-top: 0
+    &__sidebar-more
+      padding: 0
+
++r($lg)
+  .article
+    &__content
+      padding-top: 80px
+      padding-left: 0
+      padding-right: 0
+    &__gallery
+      padding: 40px 0px 40px 30px
+      margin: 60px -30px
+      img
+        margin-left: 0
+        margin-right: 0
+        max-width: 100%
+      .gallery__prev, .gallery__next
+        display: none
+
++r($md)
+  .article
+    &__wrapper
+      padding-bottom: 30px
+
+    &__content
+      padding-top: 30px
+    &__breadcrumbs
+      li
+        margin-right: 34px
+        &::after
+          top: 6px
+          right: -18px
+      a
+        font-size: 14px
+    &__title
+      margin-top: 8px
+    &__body
+      margin-top: 30px
+    &__gallery
+      padding: 30px 0px 30px 20px
+      margin: 30px -20px 40px
+      .swiper-slide
+        flex-basis: 205px
+        width: 205px
+        height: 133px
+      img
+        margin: 0
+        max-width: 100%
+
+    &__sidebar
+      margin-top: 30px
+      padding-top: 40px
+
+    &__sidebar-label
+      font-size: 24px
+      .ico
+        margin-top: 20px
+        font-size: 42px
+
+    &__sidebar-list
+      margin: 20px 0 0
+      .swiper-wrapper
+        display: block
+        transform: none !important
+      li
+        width: 100% !important
+        margin-top: 10px
+        &:nth-child(n+4)
+          display: none
+        span
+          font-size: 16px
+
+    &__sidebar-image
+      width: 80px
+      height: 80px

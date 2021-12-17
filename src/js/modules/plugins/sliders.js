@@ -8,6 +8,8 @@
         hero: undefined,
         product: undefined,
         cgallery: undefined,
+        articleSidebar: undefined,
+        similarProducts: undefined,
       },
       responsiveSwipers: {
         backstageSwiper: {
@@ -63,6 +65,8 @@
         let domProps = {};
         const dataBefore = $dom.data('offset-before');
         const dataAfter = $dom.data('offset-after');
+        const dataSpaceBetween = $dom.data('space-between');
+
         if (dataBefore) {
           domProps = {
             slidesOffsetBefore: dataBefore,
@@ -72,6 +76,11 @@
           domProps = {
             ...domProps,
             slidesOffsetAfter: dataAfter,
+          };
+        }
+        if (dataSpaceBetween) {
+          domProps = {
+            spaceBetween: dataSpaceBetween,
           };
         }
 
@@ -127,25 +136,63 @@
         { navigation: true, pagination: true }
       );
 
-      // product
-      this.data.swipers.product = _this.utils.buildSwiper(
-        'product',
-        {
-          loop: true,
-          spaceBetween: 0,
-          slidesPerView: 1,
-        },
-        { navigation: true }
-      );
-
       // cgallery
       this.data.swipers.cgallery = _this.utils.buildSwiper(
         'cgallery',
         {
           loop: false,
-          spaceBetween: 20,
+          // spaceBetween: 20,
           slidesPerView: 'auto',
           slidesOffsetAfter: 100,
+        },
+        { navigation: true }
+      );
+
+      // articleSidebar
+      this.data.swipers.articleSidebar = _this.utils.buildSwiper(
+        'article-sidebar',
+        {
+          loop: false,
+          // spaceBetween: 20,
+          slidesPerView: 'auto',
+          breakpoints: {
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            993: {
+              slidesPerView: 4,
+            },
+          },
+        },
+        {}
+      );
+
+      // similarProducts
+      this.data.swipers.similarProducts = _this.utils.buildSwiper(
+        'similarProducts',
+        {
+          loop: false,
+          spaceBetween: 30,
+          slidesPerView: 4,
+          breakpoints: {
+            577: {
+              slidesPerView: 'auto',
+              spaceBetween: 30,
+            },
+          },
+        },
+        {}
+      );
+
+      // product
+      this.data.swipers.product = _this.utils.buildSwiper(
+        'product',
+        {
+          loop: true,
+          nested: true,
+          spaceBetween: 0,
+          slidesPerView: 1,
         },
         { navigation: true }
       );

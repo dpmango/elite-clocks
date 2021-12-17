@@ -12,6 +12,6 @@ PageList:
   - file: complications.html
     ready: 60
   - file: article.html
-    ready: 60
+    ready: 90
   - file: ui.html
     ready: 100

@@ -1,15 +1,16 @@
 include _productCard
 
 // similar products
-.products
+.products.products--slider
   .container
-    .products__title.h3-title Похожие модели
-    .products__grid.row
-      .col.col-3.col-hd-4.col-lg-6.col-sm-12
-        +productCard({title: 'Laterna 1615', gallery: ['product_1', 'product_3'], brand: 'Erwin Sattler', price: '8 100€' })
-      .col.col-3.col-hd-4.col-lg-6.col-sm-12
-        +productCard({title: 'NT 10', gallery: ['product_2', 'product_3'], brand: 'Matthias Naeschke', price: '11 600€' })
-      .col.col-3.col-hd-4.col-lg-6.col-sm-12
-        +productCard({title: 'Opus Sonata', gallery: ['product_3', 'product_5'], brand: 'Erwin Sattler', price: '12 140€' })
-      .col.col-3.col-hd-4.col-lg-6.col-sm-12
-        +productCard({title: 'Opus Sonata', gallery: ['product_4', 'product_1'], brand: 'Erwin Sattler', price: '25 000€' })
+    .products__title.h3-title(data-aos="fade-down") Похожие модели
+    .products__grid.swiper-container.js-swiper-similarProducts
+      .swiper-wrapper
+        .swiper-slide(data-aos="fade-up")
+          +productCard({nested: true, title: 'Laterna 1615', gallery: ['product_1', 'product_3'], brand: 'Erwin Sattler', price: '8 100€' })
+        .swiper-slide(data-aos="fade-up")
+          +productCard({nested: true, title: 'NT 10', gallery: ['product_2', 'product_3'], brand: 'Matthias Naeschke', price: '11 600€' })
+        .swiper-slide(data-aos="fade-up")
+          +productCard({nested: true, title: 'Opus Sonata', gallery: ['product_3', 'product_5'], brand: 'Erwin Sattler', price: '12 140€' })
+        .swiper-slide(data-aos="fade-up")
+          +productCard({nested: true, title: 'Opus Sonata', gallery: ['product_4', 'product_1'], brand: 'Erwin Sattler', price: '25 000€' })

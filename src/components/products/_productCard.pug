@@ -24,15 +24,16 @@ mixin productCard(card)
       .productCard__availability-wrapper
         +svgMono('checkmark')
 
-    .productCard__hoverable
-      .productCard__description постамент из мрамара, запас хода 31 день, родирование корпуса
-      .productCard__cta
-        .btn.btn-primary.js-link(data-href="product.html")
-          span Купить
+    if card.nested === false
+      .productCard__hoverable
+        .productCard__description постамент из мрамара, запас хода 31 день, родирование корпуса
+        .productCard__cta
+          .btn.btn-primary.js-link(data-href="product.html")
+            span Купить
 
 mixin productFull(card)
   // productCard
-  a(href="product.html" data-aos="fade-up").productFull
+  a(href="product.html").productFull
     .productFull__title-mobile= card.title
 
     .productFull__gallery.swiper-container.js-swiper-product
