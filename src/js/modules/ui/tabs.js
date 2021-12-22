@@ -6,9 +6,13 @@
     init: function (fromPjax) {
       if (!fromPjax) {
         this.eventListeners();
+        this.listenResize();
       }
       this.checkHighlighters();
       this.checkHash();
+    },
+    listenResize: function () {
+      _window.on('resize', debounce(this.checkHighlighters.bind(this), 100));
     },
     changeActiveTab: function (dataHref) {
       const _this = this;
@@ -77,12 +81,14 @@
       let $container = $link.closest('.js-tabs-nav');
       let $highlighter = $container.find('.js-nav-highlighter');
 
+      let highlighterWidth = window.innerWidth <= 767 ? 90 : 130;
+
       $highlighter.css({
-        left: elLeft + elWidth / 2 - 130 / 2,
+        left: elLeft + elWidth / 2 - highlighterWidth / 2,
       });
 
       // if scrollbar - scroll to
-      let $scroller = $container.closest('.dash__nav-scroller');
+      let $scroller = $container.closest('.js-nav-scroller');
       if (scrollable && $scroller.length > 0) {
         $scroller.animate({ scrollLeft: elLeft }, 300);
       }

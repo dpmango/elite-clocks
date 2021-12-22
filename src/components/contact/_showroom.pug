@@ -3,26 +3,30 @@
   .container
     .contact__wrapper.stick-window-right
       .contact__map
-        .js-gmap(data-center="55.723004,37.612838")
+        .js-gmap(data-center="55.721504,37.612838" data-zoom="16")
+          .js-gmap-markers
+            i(data-marker="55.723004,37.612838" data-marker-caption="Офис в Москве")
 
+      // content
       .contact__content
-        .contact__ribbon
+        // ribbon
+        .contact__ribbon(data-aos="fade")
           .contact__ribbon-wrapper
             .contact__ribbon-title Шоурум в Москве
             .contact__ribbon-location
               +svgColor('location-white')
               span Шаболовка д.23
             .contact__ribbon-contacts
-              .contact__ribbon-phones
-                a(href="tel:+74954091058") +74954091058
-                a(href="tel:+79258144534") +79258144534
+              a(href="tel:+74954091058") +74954091058
+              a(href="tel:+79258144534") +79258144534
               .contact__ribbon-socials
                 a(href="https://t.me/" target="_blank")
                   +svgMono('telegram')
                 a(href="https://viber.com/" target="_blank")
                   +svgMono('viber')
 
-        .contact__gallery
+        // gallery
+        .contact__gallery(data-aos="fade")
           .swiper-container.js-swiper-cgallery(data-space-between="20")
             .swiper-wrapper.js-gallery
               .swiper-slide
@@ -42,3 +46,4 @@
               +svgMono('arrow-left')
             .gallery__next.swiper-cgallery-next
               +svgMono('arrow-right')
+            .gallery__bullets.swiper-cgallery-pagination

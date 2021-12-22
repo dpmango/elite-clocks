@@ -145,7 +145,7 @@
           slidesPerView: 'auto',
           slidesOffsetAfter: 100,
         },
-        { navigation: true }
+        { navigation: true, pagination: true }
       );
 
       // articleSidebar

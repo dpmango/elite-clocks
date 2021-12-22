@@ -1,82 +1,83 @@
 // about
-.about
+.about(data-aos="fade-up")
   .container
     .about__wrapper.js-tabs
-      ul.about__nav.js-tabs-nav.stick-window-right.--keep-container
-        i.about__nav-highlighter.js-nav-highlighter
-        li.is-active
-          a(href="#about-1")
-            .about__nav-icon
-              +svgColor('clock')
-              .about__nav-icon-active
-                +svgColor('diamond')
-                +svgColor('clock-active')
-            span Работа с брендами <br/>больше 20 лет
-        li
-          a(href="#about-2")
-            .about__nav-icon
-              +svgColor('hands')
-              .about__nav-icon-active
-                +svgColor('diamond')
-                +svgColor('hands-active')
-            span Личное знакомство <br/>с мастерами
-        li
-          a(href="#about-3")
-            .about__nav-icon
-              +svgColor('people')
-              .about__nav-icon-active
-                +svgColor('diamond')
-                +svgColor('people-active')
-            span Работают лучшие <br/>люди
-        li
-          a(href="#about-4")
-            .about__nav-icon
-              +svgColor('photos')
-              .about__nav-icon-active
-                +svgColor('diamond')
-                +svgColor('photos-active')
-            span Можем добавить наши <br/>фотографии с мест и фабрик
+      .about__nav-scroller.js-nav-scroller.stick-window-right.--keep-container
+        ul.about__nav.js-tabs-nav
+          i.about__nav-highlighter.js-nav-highlighter
+          li.is-active
+            a(href="#about-1")
+              .about__nav-icon
+                +svgColor('clock')
+                .about__nav-icon-active
+                  +svgColor('diamond')
+                  +svgColor('clock-active')
+              span Работа с брендами <br/>больше 20 лет
+          li
+            a(href="#about-2")
+              .about__nav-icon
+                +svgColor('hands')
+                .about__nav-icon-active
+                  +svgColor('diamond')
+                  +svgColor('hands-active')
+              span Личное знакомство <br/>с мастерами
+          li
+            a(href="#about-3")
+              .about__nav-icon
+                +svgColor('people')
+                .about__nav-icon-active
+                  +svgColor('diamond')
+                  +svgColor('people-active')
+              span Работают лучшие <br/>люди
+          li
+            a(href="#about-4")
+              .about__nav-icon
+                +svgColor('photos')
+                .about__nav-icon-active
+                  +svgColor('diamond')
+                  +svgColor('photos-active')
+              span Можем добавить наши <br/>фотографии с мест и фабрик
 
       // NEXT TAB
       .js-tab.about__content-tab(data-tab="about-1" style="display: block")
         .row
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             .wysiwyg
               h3 Работа с брендами больше 20 лет
               p Настольные часы были пружинные и с маятниками, простые и с боем, в общем разные, но какие они ни были, это в любом случае был статусный предмет и позволял себе его не каждый.
               p На первых порах в настольных часах использовались квадратные циферблаты, вплоть до конца 17 века, когда в моду вошли круглые эмалированные или металлические. Как правило все такие часы имели ручку (или ручки) для удобства их переноса в другие помещения. В наше время настольные часы не имеют ограничений: они выпускаются электронные или кварцевые, а также по старинке – механические, всевозможных форм и из множества материалов: металл, стекло, шпиатр, искусственные камень, бронза, пластик, дерево и т.д. Не смотря на фактор времени, настольные часы актуальны и сегодня и поэтому всегда на них есть стабильный спрос.
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             img(src='img/about/about_1.jpg' srcset='img/about/about_1@2x.jpg 2x')
 
       // NEXT TAB
       .js-tab.about__content-tab(data-tab="about-2")
         .row
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             .wysiwyg
               h3 Личное знакомство с мастерами
               p Настольные часы были пружинные и с маятниками, простые и с боем, в общем разные, но какие они ни были, это в любом случае был статусный предмет и позволял себе его не каждый.
               p На первых порах в настольных часах использовались квадратные циферблаты, вплоть до конца 17 века, когда в моду вошли круглые эмалированные или металлические. Как правило все такие часы имели ручку (или ручки) для удобства их переноса в другие помещения. В наше время настольные часы не имеют ограничений: они выпускаются электронные или кварцевые, а также по старинке – механические, всевозможных форм и из множества материалов: металл, стекло, шпиатр, искусственные камень, бронза, пластик, дерево и т.д. Не смотря на фактор времени, настольные часы актуальны и сегодня и поэтому всегда на них есть стабильный спрос.
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             img(src='img/about/about_1.jpg' srcset='img/about/about_1@2x.jpg 2x')
 
       // NEXT TAB
       .js-tab.about__content-tab(data-tab="about-3")
         .row
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             .wysiwyg
               h3 Работают лучшие люди
               p Настольные часы были пружинные и с маятниками, простые и с боем, в общем разные, но какие они ни были, это в любом случае был статусный предмет и позволял себе его не каждый.
               p На первых порах в настольных часах использовались квадратные циферблаты, вплоть до конца 17 века, когда в моду вошли круглые эмалированные или металлические. Как правило все такие часы имели ручку (или ручки) для удобства их переноса в другие помещения. В наше время настольные часы не имеют ограничений: они выпускаются электронные или кварцевые, а также по старинке – механические, всевозможных форм и из множества материалов: металл, стекло, шпиатр, искусственные камень, бронза, пластик, дерево и т.д. Не смотря на фактор времени, настольные часы актуальны и сегодня и поэтому всегда на них есть стабильный спрос.
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             img(src='img/about/about_1.jpg' srcset='img/about/about_1@2x.jpg 2x')
 
       // NEXT TAB
       .js-tab.about__content-tab(data-tab="about-4")
         .row
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             .wysiwyg
               h3 Можем добавить наши фотографии с мест и фабрик
               p Настольные часы были пружинные и с маятниками, простые и с боем, в общем разные, но какие они ни были, это в любом случае был статусный предмет и позволял себе его не каждый.
               p На первых порах в настольных часах использовались квадратные циферблаты, вплоть до конца 17 века, когда в моду вошли круглые эмалированные или металлические. Как правило все такие часы имели ручку (или ручки) для удобства их переноса в другие помещения. В наше время настольные часы не имеют ограничений: они выпускаются электронные или кварцевые, а также по старинке – механические, всевозможных форм и из множества материалов: металл, стекло, шпиатр, искусственные камень, бронза, пластик, дерево и т.д. Не смотря на фактор времени, настольные часы актуальны и сегодня и поэтому всегда на них есть стабильный спрос.
-          .col.col-6.col-lg-12
+          .col.col-6.col-xl-12
             img(src='img/about/about_1.jpg' srcset='img/about/about_1@2x.jpg 2x')

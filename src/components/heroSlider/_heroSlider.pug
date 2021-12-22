@@ -6,9 +6,9 @@
         .swiper-wrapper
           each slide in [1,2,3]
             .swiper-slide.heroSlider__slide.heroSlide
-              .heroSlide__background
+              .heroSlide__background(data-aos="fade")
                 img(src='img/hero/heroSlide_1.jpg' srcset='img/hero/heroSlide_1@2x.jpg 2x')
-              .heroSlide__content
+              .heroSlide__content(data-aos="fade-up")
                 .heroSlide__content-wrapper
                   .heroSlide__title Уникальные часы <br/>для вашего дома
                   .heroSlide__description Их количество строго лимитировано, <br/>поэтому успейте забрать себе

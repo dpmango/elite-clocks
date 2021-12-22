@@ -28,6 +28,7 @@
 
   &__content
     position: absolute
+    z-index: 2
     left: -70px
     bottom: 70px
     right: 0
@@ -35,7 +36,8 @@
 
   &__ribbon
     position: relative
-    flex: 0 0 670px
+    flex: 0 0 650px
+    max-width: 650px
     padding: 50px 90px 47px
     color: white
     &::before, &::after
@@ -50,7 +52,7 @@
       left: 20%
       background: $colorPrimary
       border-right: 20px solid $colorPrimaryHover
-      transform: skew(15deg)
+      transform: skew(10deg)
     &::after
       z-index: 2
       background: $colorPrimary
@@ -63,7 +65,7 @@
     z-index: 3
   &__ribbon-title
     font-size: 46px
-    line-height: 44px
+    line-height: 1
   &__ribbon-location
     margin-top: 20px
     display: flex
@@ -75,20 +77,17 @@
       margin-left: 12px
       font-weight: 300
       font-size: 24px
-      line-height: 35px
+      line-height: (35 / 24)
   &__ribbon-contacts
     margin-top: 15px
-    display: flex
-    align-items: center
-  &__ribbon-phones
-    display: flex
-    align-items: center
     margin-left: -10px
-    a
+    display: flex
+    align-items: center
+    > a
       display: inline-block
       padding: 5px 10px
       font-size: 26px
-      line-height: 38px
+      line-height: (38 / 26)
       margin-right: 10px
       transition: color .25s $ease
       &:last-child
@@ -115,8 +114,11 @@
   &__gallery
     position: relative
     margin-left: 100px
-    width: calc(100% - 670px)
-    flex: 0 0 calc(100% - 670px)
+    width: calc(100% - 650px)
+    flex: 0 0 calc(100% - 650px)
+    padding-left: 20px
+    .gallery__bullets
+      display: none
     .swiper-slide
       flex: 0 0 400px
       width: 400px
@@ -132,18 +134,96 @@
       max-width: 100%
       mix-blend-mode: darken
 
++r($hd)
+  .contact
+    &__content
+      position: static
+      margin-top: -210px
+      display: block
+    &__map
+      .js-gmap
+        height: 700px
+    &__ribbon
+      padding-left: 70px
+    &__gallery
+      padding-left: 0
+      margin-left: 0
+      margin-top: 50px
+      width: 100%
+
 +r($lg)
   .contact
+    &__map
+      .js-gmap
+        margin-left: -30px
+
     &__details
       margin-top: -218px
       max-width: 100%
       position: static
+
++r($md)
+  .contact
+    &__map
+      .js-gmap
+        margin-left: -20px
+    &__content
+      margin-left: -20px
+    &__ribbon
+      padding-left: 20px
+      max-width: 100%
+      &::before
+        transform: none
+        border-right-width: 10px
 
 +r($sm)
   .contact
     &__details
       margin-top: -132px
 
+    &__content
+      margin-top: -40px
+    &__map
+      .js-gmap
+        height: 400px
+    &__ribbon
+      padding: 30px 30px 30px 20px
+    &__ribbon-title
+      font-size: 24px
+    &__ribbon-location
+      margin-top: 10px
+      .ico
+        font-size: 16px
+      span
+        font-size: 20px
+        margin-left: 10px
+    &__ribbon-contacts
+      flex-wrap: wrap
+      margin-top: 10px
+      margin-left: -8px
+      > a
+        font-size: 20px
+        padding: 2px 8px
+        margin-right: 0
+    &__ribbon-socials
+      a
+        .ico-mono-telegram
+          font-size: 17px
+        .ico-mono-viber
+          font-size: 20px
+    &__gallery
+      margin-top: 0
+      .swiper-slide
+        flex-basis: 100%
+        width: 100%
+        height: auto
+      .gallery__image
+        padding-bottom: 65%
+      .gallery__prev, .gallery__next
+        display: none
+      .gallery__bullets
+        display: flex
+        padding-top: 14px
 
 // contactPage
 .contactPage
@@ -152,14 +232,11 @@
 
 +r($lg)
   .contactPage
-    .js-gmap
-      margin-left: -30px
 
 +r($md)
   .contactPage
     .js-gmap
       height: 600px
-      margin-left: -20px
 
 +r($sm)
   .contactPage

@@ -2,7 +2,7 @@ ProjectTitle: Elite-clocks
 
 PageList:
   - file: homepage.html
-    ready: 80
+    ready: 90
   - file: catalog.html
     ready: 90
   - file: product.html
