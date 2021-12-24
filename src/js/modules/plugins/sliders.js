@@ -24,12 +24,13 @@
       },
     },
     init: function (fromPjax) {
+      this.initSwipers();
+      this.initSwiperDataTree();
+      this.initResponsiveSwipers();
+
       if (!fromPjax) {
-        this.initSwipers();
-        this.initSwiperDataTree();
-        this.initResponsiveSwipers();
+        this.listenResize();
       }
-      this.listenResize();
     },
     utils: {
       // builder helpers

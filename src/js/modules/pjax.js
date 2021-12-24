@@ -1,5 +1,6 @@
 //////////
 // BARBA PJAX
+
 //////////
 (function ($, APP) {
   APP.Plugins.Barba = {

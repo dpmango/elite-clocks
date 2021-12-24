@@ -109,7 +109,7 @@ header.header
         .modalRequest__right
           .modalRequest__title Заполните форму
           .modalRequest__subtitle Наш менеджер свяжется с вами в ближайшее время
-          form.modalRequest__form.js-validate-form(action="#")
+          form.modalRequest__form.js-validate-form(action="#" data-success-function="requestSuccess")
             .row
               .col.col-6.col-md-12
                 .ui-input
@@ -141,3 +141,8 @@ header.header
                     +svgMono('telegram')
                   a(href="https://viber.com/" target="_blank")
                     +svgMono('viber')
+
+//- script.
+//-   function requestSuccess(){
+
+//-   }

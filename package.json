@@ -32,7 +32,7 @@
     "aos": "^2.3.4",
     "autofill-event": "^0.0.1",
     "barba.js": "^1.0.0",
-    "gsap": "2",
+    "gsap": "^2.0.2",
     "jquery": "^3.5.1",
     "jquery-lazy": "^1.7.11",
     "jquery-mask-plugin": "^1.14.16",
