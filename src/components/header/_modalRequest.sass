@@ -48,7 +48,8 @@
     display: flex
     align-items: center
     .ui-toggle
-      max-width: 372px
+      max-width: 392px
+      padding-right: 20px
       margin-right: auto
       label
         color: rgba($fontColor, .5)
@@ -69,6 +70,15 @@
     display: flex
     flex-direction: column
     font-size: 0
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      width: 20px
+      background: $colorPrimaryHover
     img
       flex: 1 1 auto
       width: 100%
@@ -81,14 +91,17 @@
     padding: 74px 80px
     display: flex
     align-items: center
+    // flex-wrap: wrap
     color: white
   &__call-label
+    flex: 0 0 auto
     font-size: 30px
+    margin-right: auto
     line-height: (43 / 30)
   &__call-phones
     display: flex
+    flex-wrap: wrap
     align-items: center
-    margin-left: auto
     a
       display: inline-block
       padding: 5px 10px
@@ -117,3 +130,94 @@
         font-size: 25px
       &:hover
         color: rgba(white, .7)
+
++r($hd)
+  .modalRequest
+    &__right
+      padding-left: 40px
+      padding-right: 40px
+    &__call
+      margin-left: -40px
+      margin-right: -40px
+    &__call-content
+      padding-left: 40px
+      padding-right: 40px
+
++r($xl)
+  .modalRequest
+    &__left
+      display: none
+    &__right
+      flex-basis: 100%
+      max-width: 100%
+      padding-left: 80px
+      padding-right: 80px
+    &__call
+      margin-left: -80px
+      margin-right: -80px
+    &__call-background
+      img
+        object-position: left top
+    &__call-content
+      padding: 50px 80px
+    &__call-phones
+      max-width: 300px
+
++r($md)
+  .modalRequest
+    &__right
+      padding: 30px 20px 0
+    &__title
+      font-size: 24px
+    &__subtitle
+      margin-top: 10px
+      font-size: 16px
+    &__form
+      margin-top: 20px
+    &__form-cta
+      margin-top: 20px
+      display: block
+      .btn
+        margin-top: 20px
+        width: 100%
+    &__call
+      margin-top: 30px
+      margin-left: -20px
+      margin-right: -20px
+    &__call-content
+      padding: 20px
+    &__call-background
+      &::after
+        width: 10px
+
++r($sm)
+  .modalRequest
+    &__form
+      margin-top: 10px
+      .row
+        margin: -5px
+      .col
+        padding: 5px
+    &__form-cta
+      display: block
+      .ui-toggle
+        padding-right: 0
+        label span
+          font-size: 14px
+          line-height: 1.1
+    &__call-content
+      display: block
+    &__call-label
+      font-size: 20px
+    &__call-phones
+      margin-left: -5px
+      margin-top: 5px
+      a
+        font-size: 24px
+        padding: 2px 5px
+    &__call-socials
+      a
+        .ico-mono-telegram
+          font-size: 15px
+        .ico-mono-viber
+          font-size: 19px
