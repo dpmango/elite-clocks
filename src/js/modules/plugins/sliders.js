@@ -10,11 +10,16 @@
         cgallery: undefined,
         articleSidebar: undefined,
         similarProducts: undefined,
+        progress: undefined,
       },
       responsiveSwipers: {
-        backstageSwiper: {
+        complicationsSwiper: {
           instances: [],
-          enableOn: 768,
+          enableOn: 767,
+        },
+        videosSwiper: {
+          intances: [],
+          enableOn: 767,
         },
       },
     },
@@ -115,6 +120,7 @@
 
       if ($swiper.length > 0) {
         $swiper.each(function (i, swiper) {
+          // $(swiper)[0].swiper.updateSize();
           $(swiper)[0].swiper.update();
         });
       }
@@ -196,31 +202,71 @@
         },
         { navigation: true }
       );
+
+      // progress
+      this.data.swipers.progress = _this.utils.buildSwiper(
+        'progress',
+        {
+          observer: true,
+          loop: false,
+          spaceBetween: 100,
+          slidesPerView: 'auto',
+          // centeredSlides: true,
+          centerInsufficientSlides: true,
+          slidesOffsetBefore: 20,
+          slidesOffsetAfter: 20,
+          freeMode: {
+            enabled: true,
+            sticky: false,
+          },
+        },
+        {}
+      );
     },
     initSwiperDataTree: function () {
-      var backstageSwiper = '.js-swiper-backstage';
-      if ($(backstageSwiper).length > 0) {
-        this.initSwiperTree(backstageSwiper, 'backstageSwiper');
+      var complicationsSwiper = '.js-swiper-complications';
+      if ($(complicationsSwiper).length > 0) {
+        this.initSwiperTree(complicationsSwiper, 'complicationsSwiper');
+      }
+
+      var videosSwiper = '.js-swiper-videos';
+      if ($(videosSwiper).length > 0) {
+        this.initSwiperTree(videosSwiper, 'videosSwiper');
       }
     },
     initResponsiveSwipers: function () {
-      var backstageSwiper = '.js-swiper-backstage';
-      if ($(backstageSwiper).length > 0) {
-        this.responsiveSwiperConstructor(backstageSwiper, 'backstageSwiper', {
+      var complicationsSwiper = '.js-swiper-complications';
+      if ($(complicationsSwiper).length > 0) {
+        this.responsiveSwiperConstructor(complicationsSwiper, 'complicationsSwiper', {
           watchOverflow: true,
           setWrapperSize: false,
-          spaceBetween: 0,
           slidesPerView: 'auto',
-          freeMode: true,
-          // centeredSlides: true,
-          freeModeSticky: false,
-          on: {
-            reachEnd: function (swiper) {
-              if (!APP.Components.Backstage.data.isFetching) {
-                APP.Components.Backstage.getNewBackstageItems();
-                swiper.setTranslate(0);
-              }
-            },
+          normalizeSlideIndex: true,
+          slideToClickedSlide: true,
+          touchEventsTarget: 'wrapper',
+          threshold: 10,
+          pagination: {
+            el: '.swiper-complications-pagination',
+            type: 'bullets',
+            clickable: true,
+          },
+        });
+      }
+
+      var videosSwiper = '.js-swiper-videos';
+      if ($(videosSwiper).length > 0) {
+        this.responsiveSwiperConstructor(videosSwiper, 'videosSwiper', {
+          watchOverflow: true,
+          setWrapperSize: false,
+          slidesPerView: 'auto',
+          normalizeSlideIndex: true,
+          slideToClickedSlide: true,
+          touchEventsTarget: 'wrapper',
+          threshold: 10,
+          pagination: {
+            el: '.swiper-videos-pagination',
+            type: 'bullets',
+            clickable: true,
           },
         });
       }
@@ -249,10 +295,6 @@
       });
 
       this.data.responsiveSwipers[objName] = dataObj;
-    },
-
-    destroy: function () {
-      // ... code ...
     },
   };
 })(jQuery, window.APP);

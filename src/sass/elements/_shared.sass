@@ -1,14 +1,4 @@
 // shared elements
-.helper-link
-  font-size: 16px
-  line-height: 16px
-  color: $colorPrimary
-  text-decoration: underline
-  transition: color .25s $ease
-  &:hover
-    color $fontColor
-
-
 // tabs
 .js-tab
   display: none
@@ -52,34 +42,35 @@
     background: $colorPrimary
     &:hover
       background: $colorPrimaryHover
-  &__bullets
-    display: flex
-    align-items: center
-    justify-content: center
-    .swiper-pagination-bullet
-      position: relative
-      width: 16px
-      height: 16px
-      cursor: pointer
-      &::after
-        display: inline-block
-        content: ' '
-        position: absolute
-        width: 6px
-        height: 6px
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        background: #EEEEEE
-        border-radius: 50%
-        transition: background .25s $ease
-      &:hover
-        &::after
-          background: $colorPrimary
 
-      &.swiper-pagination-bullet-active
-        &::after
-          background: $colorPrimary
+.swiper-bullets
+  display: flex
+  align-items: center
+  justify-content: center
+  .swiper-pagination-bullet
+    position: relative
+    width: 16px
+    height: 16px
+    cursor: pointer
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      width: 6px
+      height: 6px
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      background: #EEEEEE
+      border-radius: 50%
+      transition: background .25s $ease
+    &:hover
+      &::after
+        background: $colorPrimary
+
+    &.swiper-pagination-bullet-active
+      &::after
+        background: $colorPrimary
 
 // pagination
 .pagination

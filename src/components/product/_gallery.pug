@@ -2,27 +2,27 @@
 // product gallery
 .productGallery
   .container
-    .productGallery__title.h3-title Фотографии товара
-    .productGallery__wrapper.stick-window-right
+    .productGallery__title.h3-title(data-aos="fade-down") Фотографии товара
+    .productGallery__wrapper.stick-window-right(data-aos="fade")
       .swiper-container.js-swiper-cgallery(data-space-between="20")
-        .swiper-wrapper
+        .swiper-wrapper.js-gallery(data-gallery-id="product")
           .swiper-slide
-            .gallery__image
+            .gallery__image(data-gallery="img/gallery/galleryFull_1.jpg" data-caption="Часовой механизм часов Opus Sonata")
               img(src='img/gallery/gallery_1.jpg' srcset='img/gallery/gallery_1@2x.jpg 2x')
           .swiper-slide
-            .gallery__image
+            .gallery__image(data-gallery="img/gallery/gallery_2.jpg" data-caption="Часовой механизм часов Opus Sonata 2")
               img(src='img/gallery/gallery_2.jpg' srcset='img/gallery/gallery_2@2x.jpg 2x')
           .swiper-slide
-            .gallery__image
+            .gallery__image(data-gallery="img/gallery/gallery_3.jpg" data-caption="Часовой механизм часов Opus Sonata 3")
               img(src='img/gallery/gallery_3.jpg' srcset='img/gallery/gallery_3@2x.jpg 2x')
           .swiper-slide
-            .gallery__image
+            .gallery__image(data-gallery="img/gallery/gallery_2.jpg" data-caption="Часовой механизм часов Opus Sonata 4")
               img(src='img/gallery/gallery_2.jpg' srcset='img/gallery/gallery_2@2x.jpg 2x')
           .swiper-slide
-            .gallery__image
+            .gallery__image(data-gallery="img/gallery/gallery_3.jpg" data-caption="Часовой механизм часов Opus Sonata 5")
               img(src='img/gallery/gallery_3.jpg' srcset='img/gallery/gallery_3@2x.jpg 2x')
           .swiper-slide
-            .gallery__image
+            .gallery__image(data-gallery="img/gallery/gallery_2.jpg" data-caption="Часовой механизм часов Opus Sonata 6")
               img(src='img/gallery/gallery_2.jpg' srcset='img/gallery/gallery_2@2x.jpg 2x')
 
 
@@ -30,3 +30,4 @@
           +svgMono('arrow-left')
         .gallery__next.swiper-cgallery-next
           +svgMono('arrow-right')
+        .swiper-bullets.swiper-cgallery-pagination

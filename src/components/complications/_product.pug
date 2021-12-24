@@ -1,38 +1,41 @@
 // complications
 .complications
   .container
-    .complications__wrapper.row
-      .col.col-4
-        .complicationCard(data-aos="fade-up")
-          .complicationCard__image
-            img(src='img/complications/complication_1.png' srcset='img/complications/complication_1@2x.png 2x')
-          .complicationCard__title Компенсационный маятник
-          .complicationCard__description Маятник, изготовленный из металлов с различными коэффициентами расширения и сохраняющий постоянную длину при изменении температуры.
+    .complications__wrapper.swiper-container.js-swiper-complications
+      .swiper-wrapper.row
+        .swiper-slide.col.col-4.col-xl-6.col-md-12
+          .complicationCard(data-aos="fade-up")
+            .complicationCard__image
+              img(src='img/complications/complication_1.png' srcset='img/complications/complication_1@2x.png 2x')
+            .complicationCard__title Компенсационный маятник
+            .complicationCard__description Маятник, изготовленный из металлов с различными коэффициентами расширения и сохраняющий постоянную длину при изменении температуры.
 
-      .col.col-4
-        .complicationCard(data-aos="fade-up")
-          .complicationCard__image
-            img(src='img/complications/complication_2.png' srcset='img/complications/complication_2@2x.png 2x')
-          .complicationCard__title Вечный календарь
-          .complicationCard__description Настольные часы, имеющие функцию вечного календаря, отображают дату в более или менее полном формате: число, месяц, день недели. В часах «вечным» называют такой... <a href="#">подробнее</a>
+        .swiper-slide.col.col-4.col-xl-6.col-md-12
+          .complicationCard(data-aos="fade-up")
+            .complicationCard__image
+              img(src='img/complications/complication_2.png' srcset='img/complications/complication_2@2x.png 2x')
+            .complicationCard__title Вечный календарь
+            .complicationCard__description Настольные часы, имеющие функцию вечного календаря, отображают дату в более или менее полном формате: число, месяц, день недели. В часах «вечным» называют такой... <a href="#">подробнее</a>
 
-      .col.col-4
-        .complicationCard(data-aos="fade-up")
-          .complicationCard__image
-            img(src='img/complications/complication_3.png' srcset='img/complications/complication_3@2x.png 2x')
-          .complicationCard__title Турбийон
-          .complicationCard__description Встраиваемое устройство, частично компенсирующее притяжение Земли и помогающее тем самым увеличить точность хода механических часов.
+        .swiper-slide.col.col-4.col-xl-6.col-md-12
+          .complicationCard(data-aos="fade-up")
+            .complicationCard__image
+              img(src='img/complications/complication_3.png' srcset='img/complications/complication_3@2x.png 2x')
+            .complicationCard__title Турбийон
+            .complicationCard__description Встраиваемое устройство, частично компенсирующее притяжение Земли и помогающее тем самым увеличить точность хода механических часов.
 
-      .col.col-4
-        .complicationCard(data-aos="fade-up")
-          .complicationCard__image
-            img(src='img/complications/complication_4.png' srcset='img/complications/complication_4@2x.png 2x')
-          .complicationCard__title Скрытый сейф в базе
-          .complicationCard__description Хорошее укромное место имеет большее значение, чем условная железная коробка. Хотя привычный сейф тоже справляется со своими обязанностями, но подходит не всем. <a href="#">подробнее</a>
+        .swiper-slide.col.col-4.col-xl-6.col-md-12
+          .complicationCard(data-aos="fade-up")
+            .complicationCard__image
+              img(src='img/complications/complication_4.png' srcset='img/complications/complication_4@2x.png 2x')
+            .complicationCard__title Скрытый сейф в базе
+            .complicationCard__description Хорошее укромное место имеет большее значение, чем условная железная коробка. Хотя привычный сейф тоже справляется со своими обязанностями, но подходит не всем. <a href="#">подробнее</a>
 
-      .col.col-4
-        .complicationCard(data-aos="fade-up")
-          .complicationCard__image
-            img(src='img/complications/complication_5.png' srcset='img/complications/complication_5@2x.png 2x')
-          .complicationCard__title Сканер отпечатков пальцев
-          .complicationCard__description Сканер отпечатков пальцев отличается исключительно высокой производительностью и точностью и может успешно захватывать даже пересушенные и влажные пальцы. <a href="#">подробнее</a>
+        .swiper-slide.col.col-4.col-xl-6.col-md-12
+          .complicationCard(data-aos="fade-up")
+            .complicationCard__image
+              img(src='img/complications/complication_5.png' srcset='img/complications/complication_5@2x.png 2x')
+            .complicationCard__title Сканер отпечатков пальцев
+            .complicationCard__description Сканер отпечатков пальцев отличается исключительно высокой производительностью и точностью и может успешно захватывать даже пересушенные и влажные пальцы. <a href="#">подробнее</a>
+
+      .swiper-bullets.swiper-complications-pagination

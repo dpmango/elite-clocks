@@ -39,6 +39,14 @@
 
       // gallery
       _document
+        .on('click', '.js-trigger-gallery', function () {
+          var $trigger = $(this);
+          var dataGalleryId = $trigger.data('gallery-id');
+
+          var $gallery = $('.js-gallery[data-gallery-id="' + dataGalleryId + '"]');
+
+          $gallery.find('[data-gallery]').first().click();
+        })
         .on('click', '.js-gallery [data-gallery]', function () {
           var $trigger = $(this);
           var $container = $trigger.closest('.js-gallery');

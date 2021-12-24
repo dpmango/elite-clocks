@@ -25,9 +25,17 @@
     max-width: $col5
     padding: 20px
     min-width: 1px
+  &__image-mobile
+    position: relative
+    z-index: 2
+    width: 100%
+    display: flex
+    flex-direction: column
+
   &__image-container
     flex: 1 1 auto
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
     font-size: 0
@@ -37,7 +45,7 @@
   &__image-more
     position: absolute
     top: 160px
-    right: 160px
+    right: 27%
     width: 100px
     height: 100px
     border-radius: 50%
@@ -50,6 +58,7 @@
     box-shadow: inset 0px -4px 0px $colorPrimaryHover
     font-size: 0
     color: white
+    cursor: pointer
     transition: box-shadow .25s $ease
     &:hover
       box-shadow: inset 0px -100px 0px $colorPrimaryHover
@@ -73,6 +82,7 @@
       background: transparent
       border: 1px solid $colorPrimary
       border-radius: 50%
+      pointer-events: none
       animation-timing-function: ease
       animation-name: pulseCenter
       animation-duration: 2s
@@ -94,7 +104,7 @@
       width: 100%
       height: 100%
       object-fit: cover
-      object-position: right top
+      object-position: left top
   &__head
     margin-top: 110px
   &__breadcrumbs
@@ -127,11 +137,12 @@
       &:hover
         color: $fontColor
   &__title
-    margin-top: 20px
+    margin: 18px 0 0
+    font-weight: 400
     font-size: 60px
     line-height: 1
   &__head-sub
-    margin-top: 50px
+    margin-top: 42px
     display: flex
     align-items: center
   &__brand
@@ -141,6 +152,7 @@
   &__availability
     display: inline-flex
     align-items: center
+    margin-right: 14px
     .ico
       font-size: 15px
       color: $colorPrimary
@@ -148,15 +160,37 @@
     span
       font-size: 20px
       line-height: (29 / 20)
-
+  &__photos-link
+    position: relative
+    font-weight: 300
+    font-size: 20px
+    line-height: (29 / 20)
+    color: #838282
+    cursor: pointer
+    transition: color .25s $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      height: 1px
+      background: #838282
+      transition: right .25s $ease
+    &:hover
+      color: $colorPrimary
+      &::after
+        right: 100%
   &__actions
-    margin-top: 60px
+    margin-top: 62px
     display: flex
     flex-wrap: wrap
 
   &__price
     position: relative
-    margin: 6px 0px 0 0
+    margin: 6px auto 30px 0
+    padding-right: 20px
     font-family: $altFont
     font-size: 40px
     line-height: (54 / 40)
@@ -164,7 +198,7 @@
     span
       display: inline-block
       position: relative
-      margin-right: 42px
+      margin-right: 50px
       &:last-child
         margin-right: 0
         &::after
@@ -173,18 +207,18 @@
         display: inline-block
         content: ' '
         position: absolute
-        right: -26px
-        top: 22px
-        width: 6px
-        height: 6px
+        right: -30px
+        top: 24px
+        width: 8px
+        height: 8px
         background: $colorPrimary
         border-radius: 50%
   &__cta
     flex: 0 0 auto
-    margin-left: auto
+    margin-bottom: 30px
 
   &__features
-    margin: 90px 0 0px
+    margin: 56px 0 0px
     padding: 60px 0 30px 0
     border-top: 1px solid #DEDEDE
   &__features-list
@@ -217,9 +251,129 @@
     transform: translate(-50%, -50%) scale(2)
     opacity: 0
 
++r(1520)
+  .productHero
+    &__decor
+      max-width: 600px
+
++r($hd)
+  .productHero
+    &__content
+      padding-left: 60px
+
++r($xl)
+  .productHero
+    &__wrapper
+      height: auto
+    &__content
+      flex-basis: 100%
+      max-width: 100%
+      padding-right: 0
+    &__image, &__decor
+      display: none
+      display: none
+    &__image-mobile
+      margin-top: 60px
+    &__image-more
+      top: 100px
+    &__features
+      margin: 20px 0 100px
+      padding: 0
+      border-top: 0
+
++r($lg)
+  .productHero
+    &__wrapper
+      margin-left: -30px
+
++r($md)
+  .productHero
+    &__wrapper
+      margin-left: -20px
+    &__content
+      padding-left: 20px
+      padding-right: 0
+    &__image-mobile
+      margin-top: 30px
+      min-height: 1px
+    &__image-container
+      height: 280px
+      min-height: 1px
+
+    &__image-more
+      top: 56px
+      right: 20%
+      width: 56px
+      height: 56px
+      .ico
+        font-size: 14px
+      span
+        margin-top: 4px
+        font-size: 12px
+    &__head
+      margin-top: 30px
+    &__breadcrumbs
+      li
+        margin-right: 34px
+        &::after
+          top: 6px
+          right: -18px
+      a
+        font-size: 14px
+    &__title
+      font-size: 30px
+      margin-top: 9px
+    &__head-sub
+      flex-wrap: wrap
+      margin-top: 16px
+    &__brand
+      width: 100%
+      margin-right: 0
+      margin-bottom: 11px
+      font-size: 16px
+    &__availability
+      margin-right: 8px
+      .ico
+        font-size: 12px
+        margin-right: 10px
+      span
+        font-size: 16px
+    &__photos-link
+      font-size: 16px
+    &__actions
+      margin-top: 30px
+      display: block
+    &__price
+      font-size: 24px
+      padding-right: 0
+      margin-bottom: 20px
+      span
+        margin-right: 42px
+        &::after
+          right: -24px
+          top: 11px
+          width: 6px
+          height: 6px
+    &__cta
+      .btn
+        width: 100%
+        max-width: 400px
+    &__features
+      margin-bottom: 22px
+      .row
+        margin: 0
+      .col
+        padding: 0
+    &__features-list
+      li
+        font-size: 16px
+        padding-left: 16px
+        margin-bottom: 8px
+
+
 // product specs
 .productSpecs
-  margin: 100px 0
+  margin: 80px 0 100px
   &__title
     margin-bottom: 40px
   &__table
@@ -272,6 +426,7 @@
       display: flex
       flex-wrap: wrap
       justify-content: space-between
+      max-width: 1100px
       li
         width: 100%
         flex: 0 0 470px
@@ -296,12 +451,87 @@
         border-radius: 50%
         background: $colorPrimary
 
++r($hd)
+  .productSpecs
+    &__table
+      padding: 30px 0
+      &::before
+        width: 400px
+    &__left
+      flex-basis: 400px
+    &__label
+      margin-left: 60px
+    &__content
+      flex-basis: calc(100% - 400px)
+      padding-left: 40px
+
++r($xl)
+  .productSpecs
+    &__table
+      &::before
+        width: 340px
+    &__left
+      flex-basis: 340px
+    &__content
+      flex-basis: calc(100% - 340px)
+
++r($lg)
+  .productSpecs
+    &__table
+      padding: 20px 0
+      margin-left: -30px
+      &::before
+        width: 246px
+    &__left
+      flex-basis: 246px
+    &__label
+      margin-left: 30px
+    &__content
+      flex-basis: calc(100% - 246px)
+      padding-left: 30px
+
++r($md)
+  .productSpecs
+    margin: 40px 0
+    &__title
+      margin-bottom: 20px
+    &__table
+      margin-left: -20px
+      padding: 0
+      padding-right: 0 !important
+      &::before
+        display: none
+    &__row
+      display: block
+    &__label
+      padding: 20px 20px 0
+      border-bottom: 0
+      margin-left: 0
+      .ico
+        font-size: 18px
+        margin-right: 12px
+      span
+        font-size: 16px
+    &__content
+      padding: 10px 20px 10px
+      &--collumned
+        display: block
+      li
+        font-size: 16px
+        padding-left: 16px
+        margin-bottom: 8px
+        &::before
+          top: 10px
+
+
+
 // product media
 .productMedia
   margin: 100px 0
   &__wrapper
     position: relative
     display: flex
+    flex-wrap: wrap
     padding-top: 110px
     padding-left: 140px
     &::after
@@ -323,6 +553,8 @@
     max-width: calc(100% - 560px)
     min-width: 1px
     padding-bottom: 34px
+    .swiper-bullets
+      display: none
   &__links
     position: relative
     z-index: 2
@@ -367,6 +599,9 @@
   &__video
     position: relative
     z-index: 2
+    display: none
+    &.is-active
+      display: block
   &__thumbs
     position: absolute
     z-index: 4
@@ -375,6 +610,7 @@
     right: 0
     display: flex
     justify-content: center
+    pointer-events: none
 
   &__thumb
     position: relative
@@ -384,6 +620,7 @@
     cursor: pointer
     margin-right: 30px
     will-change: transform
+    pointer-events: all
     transition: transform .25s $ease, border .25s $ease
     &:last-child
       margin-right: 0
@@ -433,22 +670,99 @@
     .ico
       font-size: 3.5px
 
++r($hdplus)
+  .productMedia
+    &__wrapper
+      padding-bottom: 110px
+      &::after
+        bottom: 0
+    &__gallery
+      flex-basis: 100%
+      max-width: 100%
+    &__links
+      margin-top: 50px
+      flex-basis: 100%
+      max-width: 100%
+    &__link
+      margin-left: 0
+    &__video
+      max-width: 950px
+    &__thumbs
+      max-width: 950px
+    &__link
+      max-width: 950px
+
++r($hd)
+  .productMedia
+    &__wrapper
+      padding-left: 60px
+
++r($lg)
+  .productMedia
+    &__wrapper
+      margin-left: -30px
+      padding-left: 30px
+
++r($md)
+  .productMedia
+    margin: 40px 0
+    &__wrapper
+      margin-left: -20px
+      padding: 40px 20px
+    &__gallery
+      padding-bottom: 30px
+      .swiper-bullets
+        display: flex
+      .swiper-pagination-bullet
+        &::after
+          background: white
+    &__video
+      display: block
+
+    &__thumbs
+      display: none
+    &__links
+      margin-top: 10px
+    &__link
+      padding: 15px 20px
+      margin-bottom: 10px
+    &__link-icon
+      .ico
+        font-size: 30px
+    &__link-name
+      font-size: 16px
+      margin-left: 14px
+    &__link-meta
+      font-size: 14px
 
 // video
 .video
   position: relative
+  padding-bottom: 63.5%
   &::after
     display: inline-block
     content: ' '
     position: absolute 0
     z-index: 2
     background: rgba(#1D1D1D, .9)
+    pointer-events: none
+    transition: opacity .25s $ease
+  &__content
+    position: absolute 0
+    z-index: 1
+    video
+      width: 100%
+      height: 100%
+      object-fit: cover
   &__placeholder
-    position: relative
+    position: absolute 0
     z-index: 1
     font-size: 0
+    transition: opacity .25s $ease
     img
       width: 100%
+      height: 100%
+      object-fit: cover
   &__details
     position: absolute 0
     display: flex
@@ -457,6 +771,7 @@
     z-index: 3
     text-align: center
     color: white
+    padding: 16px 16px 40px
   &__play
     width: 100px
     height: 100px
@@ -486,6 +801,39 @@
     font-size: 18px
     line-height: (26 / 18)
     color: rgba(white, .5)
+  &.is-playing
+    &::after
+      opacity: 0
+    .video
+      &__placeholder, &__details
+        pointer-events: none
+        opacity: 0
+
++r($lg)
+  .video
+    &__title
+      br
+        display: none
+    &__details
+      padding-bottom: 80px
+
++r($md)
+  .video
+    &__details
+      padding: 8px
+    &__play
+      width: 40px
+      height: 40px
+      .ico
+        font-size: 5px
+    &__title
+      margin-top: 10px
+      font-size: 20px
+      br
+        display: block
+    &__time
+      margin-top: 4px
+      font-size: 14px
 
 
 // productGallery
@@ -503,7 +851,41 @@
       height: 340px
       display: flex
       flex-direction: column
+    .swiper-bullets
+      display: none
 
++r($lg)
+  .productGallery
+    &__wrapper
+      .gallery__next, .gallery__prev
+        display: none
+      .swiper-slide
+        flex: 0 0 300px
+        width: 300px
+        height: 194px
+      .swiper-bullets
+        display: flex
+        padding-top: 14px
+
+
++r($md)
+  .productGallery
+    margin: 40px 0 0
+    &__wrapper
+      padding-bottom: 40px
+    &__title
+      margin-bottom: 20px
+
++r($sm)
+  .productGallery
+    &__wrapper
+      margin-left: -20px
+      .swiper-slide
+        flex-basis: 100%
+        width: 100%
+        height: auto
+      .gallery__image
+        padding-bottom: 65%
 
 // productProgress
 .productProgress
@@ -513,7 +895,7 @@
     border-bottom: 1px solid $borderColor
   &__title
     font-size: 46px
-    line-height: (66 / 46)
+    line-height: 1.22
     text-align: center
   &__toggle
     margin-top: 32px
@@ -570,37 +952,75 @@
       transition: transform .2s ease, background .2s $ease
   &__grid
     margin-top: 50px
-    display: flex
-    flex-wrap: wrap
+    display: none
+
   &__col
     position: relative
-    width: 100%
-    flex: 0 0 20%
-    max-width: 20%
-    min-width: 1px
+    flex: 0 0 240px
+    width: 240px
+    user-select: none
     &::after
       display: inline-block
       content: ' '
       position: absolute
-      left: -90px
+      left: -140px
       top: 84px
       width: 186px
       height: 16px
+      pointer-events: none
       background: svg-load('../icons/svg-colors/progressCard_separator.svg') no-repeat center
     &:first-child::after
       display: none
+    &--wide
+      flex-basis: 320px
+      width: 320px
+
++r($md)
+  .productProgress
+    margin-top: 40px
+    &__wrapper
+      padding-bottom: 40px
+    &__grid
+      margin-top: 40px
+    &__title
+      font-size: 30px
+    &__toggle
+      margin-top: 20px
+      span
+        font-size: 16px
+      &.is-toggled
+        .productProgress__toggle-icon
+          &::after
+            transform: translate(20px, -50%)
+    &__toggle-icon
+      width: 40px
+      height: 21px
+      box-shadow: inset 0px -2px 0px $colorPrimaryHover
+      &::after
+        left: 3px
+        width: 13px
+        height: 13px
+
++r($sm)
+  .productProgress
+    &__col
+      &::after
+        top: 60px
+      &--wide
+        flex-basis: 240px
+        width: 240px
 
 // progressCard
 .progressCard
   display: flex
   flex-direction: column
-  max-width: 240px
   margin: 0 auto
   text-align: center
   &__number
     font-family: $altFont
     font-size: 20px
     line-height: (27 / 20)
+    padding-right: 8px
     color: rgba($fontColor, .5)
   &__icon
     margin-top: 35px
@@ -611,3 +1031,15 @@
     margin-top: 24px
     font-size: 20px
     line-height: (24 / 20)
+
++r($sm)
+  .progressCard
+    &__number
+      font-size: 16px
+    &__icon
+      margin-top: 24px
+      .ico
+        font-size: 50px
+    &__name
+      margin-top: 20px
+      font-size: 16px

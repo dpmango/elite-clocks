@@ -6,7 +6,7 @@ PageList:
   - file: catalog.html
     ready: 90
   - file: product.html
-    ready: 60
+    ready: 90
   - file: contacts.html
     ready: 90
   - file: complications.html

@@ -1,15 +1,16 @@
 // productProgress
-.productProgress
-  .container
-    .productProgress__wrapper.stick-window-right.--keep-container
-      .productProgress__title Как происходит оформление заказа
+.productProgress(data-aos="fade-up")
+  .productProgress__wrapper
+    .container
+      .productProgress__title Как происходит оформление&nbsp;заказа
       .productProgress__toggle.js-productProgressToggle
         span под заказ
         .productProgress__toggle-icon
         span в наличии
 
-      .productProgress__grid
-        .productProgress__col
+    .productProgress__grid.swiper-container.js-swiper-progress(style="display: block" data-id="1")
+      .swiper-wrapper
+        .swiper-slide.productProgress__col
           // progressCard
           .progressCard
             .progressCard__number 01
@@ -17,7 +18,7 @@
               +svgColor('pay-per-click')
             .progressCard__name Вы подаете заявку через сайт, или звоните по нашим телефонам
 
-        .productProgress__col
+        .swiper-slide.productProgress__col
           // progressCard
           .progressCard
             .progressCard__number 02
@@ -25,7 +26,7 @@
               +svgColor('chat')
             .progressCard__name Обговариваем условия заказа - утверждаем сроки поставки, особенности механизма, отделки
 
-        .productProgress__col
+        .swiper-slide.productProgress__col
           // progressCard
           .progressCard
             .progressCard__number 03
@@ -33,7 +34,7 @@
               +svgColor('prepay-click')
             .progressCard__name Вносите предоплату 70%-30%
 
-        .productProgress__col
+        .swiper-slide.productProgress__col
           // progressCard
           .progressCard
             .progressCard__number 04
@@ -41,10 +42,28 @@
               +svgColor('warehouse')
             .progressCard__name Часы поступают на наш склад в Москве
 
-        .productProgress__col
+        .swiper-slide.productProgress__col
           // progressCard
           .progressCard
             .progressCard__number 05
             .progressCard__icon
               +svgColor('clock-active')
             .progressCard__name Мы доставляем, устанавливаем и рассказываем как пользоваться
+
+    .productProgress__grid.swiper-container.js-swiper-progress(data-id="2")
+      .swiper-wrapper
+        .swiper-slide.productProgress__col.productProgress__col--wide
+          // progressCard
+          .progressCard
+            .progressCard__number 01
+            .progressCard__icon
+              +svgColor('pay-per-click')
+            .progressCard__name Свяжитесь с нами или приезжайте в демонстрационный зал, чтобы обсудить все детали, посмотреть часы и внести оплату
+
+        .swiper-slide.productProgress__col.productProgress__col--wide
+          // progressCard
+          .progressCard
+            .progressCard__number 02
+            .progressCard__icon
+              +svgColor('chat')
+            .progressCard__name Доставляем и устанавливаем бесплатно по желанию заказчика
