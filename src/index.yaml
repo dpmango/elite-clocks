@@ -10,7 +10,7 @@ PageList:
   - file: contacts.html
     ready: 90
   - file: complications.html
-    ready: 60
+    ready: 90
   - file: article.html
     ready: 90
   - file: ui.html

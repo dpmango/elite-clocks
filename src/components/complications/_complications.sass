@@ -35,6 +35,12 @@
       .ico
         animation-play-state: running
 
++r($lg)
+  .complications
+    &--page
+      .complicationCard
+        max-width: 644px
+
 +r($md)
   .complications
     margin: 40px 0
@@ -48,8 +54,13 @@
       .swiper-bullets
         display: flex
 
-+r($sm)
-  .complications
+    &__more
+      margin-top: 0px
+      .ico
+        font-size: 20px
+      span
+        margin-top: 10px
+        font-size: 16px
 
 @keyframes rotateLoader
   from
@@ -133,3 +144,14 @@
     &__description
       margin-top: 20px
       font-size: 14px
+    &__models
+      padding-top: 20px
+    &__models-label
+      font-size: 14px
+    &__models-list
+      li
+        font-size: 16px
+        &::after
+          top: 10px
+          width: 4px
+          height: 4px
