@@ -26,20 +26,6 @@
             e.stopPropagation();
           }
         })
-        // scroll to section
-        .on('click', 'a[href^="#section"]', function () {
-          // section scroll
-          var el = $(this).attr('href');
-          var topTarget = $(el).offset().top;
-
-          // $('body, html').animate({scrollTop: topTarget}, 1000);
-          TweenLite.to(window, 1, {
-            scrollTo: { y: topTarget, autoKill: false },
-            ease: easingSwing,
-          });
-
-          return false;
-        })
         // grid toggler
         .on('click', '.js-show-grid', function () {
           $(this).toggleClass('is-active');

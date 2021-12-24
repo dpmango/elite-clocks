@@ -8,10 +8,36 @@
       if (!fromPjax) {
         this.eventListeners();
       }
+
+      $('.productCard, .productFull').on('click', function (e) {
+        var $target = $(e.target);
+        var isGalleryPrev = $target.closest('.productCard__gallery-prev').length;
+        var isGalleryNext = $target.closest('.productCard__gallery-next').length;
+        var isGalleryFullPrev = $target.closest('.productFull__gallery-prev').length;
+        var isGalleryFullNext = $target.closest('.productFull__gallery-next').length;
+
+        var isLink = $target.closest('.js-link').length;
+
+        if (isLink) {
+          var dataHref = $target.closest('.js-link').data('href');
+          if (dataHref && dataHref !== '#') {
+            e.preventDefault();
+            e.stopPropagation();
+            Barba.Pjax.goTo(dataHref);
+          }
+        }
+
+        if (isGalleryPrev || isGalleryNext || isGalleryFullPrev || isGalleryFullNext) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
     },
 
     eventListeners: function () {
       _document
+
         .on('click', '.js-productMedia-thumb', function () {
           let $thumb = $(this);
           let $container = $thumb.closest('.productMedia');
