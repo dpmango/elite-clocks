@@ -3,11 +3,16 @@
 //////////
 (function ($, APP) {
   APP.Components.Product = {
-    data: {},
+    data: {
+      players: [],
+      scriptsCreated: false,
+      ytLoaded: false,
+    },
     init: function (fromPjax) {
       if (!fromPjax) {
         this.eventListeners();
       }
+      this.tryLoadScripts();
 
       $('.productCard, .productFull').on('click', function (e) {
         var $target = $(e.target);
@@ -34,10 +39,38 @@
         }
       });
     },
+    createScripts: function () {
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+      this.data.scriptsCreated = true;
+    },
+    tryLoadScripts: function () {
+      var _this = this;
+      if (!_this.data.scriptsCreated) {
+        _this.createScripts();
+      }
+
+      var ticker = setInterval(readyChecker, 250);
+      function readyChecker() {
+        if (!_this.data.ytLoaded) {
+          try {
+            if (YT && YT.Player) {
+              _this.data.ytLoaded = true;
+              clearInterval(ticker);
+            }
+          } catch (e) {
+            // console.log('err loading youtube api')
+          }
+        }
+      }
+    },
     eventListeners: function () {
-      _document
+      var _this = this;
 
+      _document
         .on('click', '.js-productMedia-thumb', function () {
           let $thumb = $(this);
           let $container = $thumb.closest('.productMedia');
@@ -54,6 +87,10 @@
             if ($video && $video.length) {
               $video[0].pause();
             }
+          });
+
+          $.each(_this.data.players, function (i, player) {
+            player.stopVideo();
           });
 
           $tagetVideo.siblings().removeClass('is-active');
@@ -80,16 +117,32 @@
           var $container = $toggle.closest('.js-video');
           var $content = $container.find('.video__content');
           var video = $content.find('video')[0];
+          var $player = $container.find('div[data-youtube-video]');
           // var $placeholder = $container.find('.video__placeholder');
           // var $details = $container.find('.video__details');
 
           $container.addClass('is-playing');
-          video.play();
+          if (video) {
+            video.play();
+          } else if ($player && $player.length) {
+            var player = new YT.Player($player[0], {
+              height: '100%',
+              width: '100%',
+              videoId: $player.data('youtube-video'),
+              events: {
+                onReady: function (event) {
+                  event.target.playVideo();
+                },
+              },
+            });
+
+            _this.data.players.push(player);
+          }
         })
         .on('click', '.js-video video', function () {
           var video = $(this)[0];
 
-          if (video.paused) {
+          if (video && video.paused) {
             video.pause();
           } else {
             video.play();

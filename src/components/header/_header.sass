@@ -1,17 +1,20 @@
 /* HEADER
 .header
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   left: 0
   z-index: 9
   background: white
-  // will-change: transform
-  // backface-visibility: hidden
-  // transform-style: preserve-3d
+  will-change: transform
+  backface-visibility: hidden
+  transform-style: preserve-3d
   &__top
+    position: relative
+    z-index: 2
     display: flex
     align-items: center
+    background: white
     padding: 12px 0 20px
 
   &__logo
@@ -98,6 +101,8 @@
         color: $colorPrimary
 
   &__bottom
+    position: relative
+    z-index: 1
     display: flex
     align-items: center
     padding: 15px 0
@@ -177,14 +182,28 @@
       font-size: 20px
       line-height: (29 / 20)
 
+  &__scrollable
+    display: none
+    align-items: center
+    .header__logo
+      .ico
+        font-size: 60px
+      span
+        font-size: 16px
+
   &.is-fixed
     // should be normalized to -100% scroll at this point
     position: fixed
     transform: translate3d(0,-100%,0) !important
     transition: transform .25s $ease
-    .header__wrapper
-      padding-top: 10px
-      padding-bottom: 10px
+    box-shadow: 0 0px 14px 0 rgba(79,72,74,0.20)
+    .header
+      &__scrollable
+        display: flex
+        padding-bottom: 10px
+      &__top, &__bottom
+        display: none
+
 
   &.is-fixed-visible
     transform: translate3d(0,0,0) !important
@@ -220,6 +239,22 @@
       display: none
     &__hamburger
       padding-right: 80px
+    &__scrollable
+      .header__location
+        display: none
+      .header__contacts
+        display: flex
+
++r($lg)
+  .header
+    &__scrollable
+      .header__contacts
+        display: none
+      .header__hamburger-mobile
+        display: flex
+        padding-top: 5px
+        margin-right: -20px
+        margin-left: auto
 
 +r($md)
   .header
@@ -262,6 +297,16 @@
           font-size: 15px
         .ico-mono-viber
           font-size: 18px
+    &__scrollable
+      .header__logo
+        .ico
+          font-size: 55px
+        span
+          margin-top: 4px
+          padding-left: 14px
+          font-size: 14px
+      .header__hamburger-mobile
+        margin-right: -0px
 
 
 // hamburger

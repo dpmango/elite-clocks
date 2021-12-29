@@ -30,6 +30,7 @@
 
           $sidebar.addClass('is-active');
           $background.addClass('is-active');
+          APP.Plugins.ScrollBlock.disableScroll();
         })
         .on('click', '.js-catalog-filter-close, .js-catalog-filter-background', function () {
           var $sidebar = $('.js-catalog-filter');
@@ -37,6 +38,7 @@
 
           $sidebar.removeClass('is-active');
           $background.removeClass('is-active');
+          APP.Plugins.ScrollBlock.enableScroll();
         });
     },
   };

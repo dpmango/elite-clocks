@@ -19,7 +19,7 @@
       }
     },
     createScripts: function () {
-      var gmapsK = 'AIzaSyA7ixnq-FSDGLYTAWc9zc2ze4UtI2ZuhtA';
+      var gmapsK = 'AIzaSyB_yEl9qRVcarwZxUZyZD4JoNgUr1IRZnY';
       var gmapsScript = document.createElement('script');
       gmapsScript.type = 'text/javascript';
       gmapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${gmapsK}`;

@@ -7,6 +7,7 @@
       classes: {
         fixedClass: 'is-fixed',
         visibleClass: 'is-fixed-visible',
+        bodyFixed: 'is-header-fixed',
         bodyFixedVisible: 'is-header-fixed-visible',
       },
       header: {
@@ -18,8 +19,8 @@
       if (!fromPjax) {
         this.getHeaderParams();
         this.hamburgerClickListener();
-        // this.listenScroll();
-        // this.listenResize();
+        this.listenScroll();
+        this.listenResize();
       }
 
       this.closeMobileMenu();
@@ -43,16 +44,24 @@
       APP.Plugins.ScrollBlock.enableScroll();
     },
     hamburgerClickListener: function () {
-      _document.on('click', '.js-hamburger', function () {
-        $(this).toggleClass('is-active');
-        $('.navi').toggleClass('is-active');
+      var _this = this;
+      _document
+        .on('click', '.js-hamburger', function () {
+          $('.js-hamburger').toggleClass('is-active');
+          $('.navi').toggleClass('is-active');
 
-        if ($(this).is('.is-active')) {
-          APP.Plugins.ScrollBlock.disableScroll();
-        } else {
-          APP.Plugins.ScrollBlock.enableScroll();
-        }
-      });
+          if ($('.js-hamburger').is('.is-active')) {
+            APP.Plugins.ScrollBlock.disableScroll();
+          } else {
+            APP.Plugins.ScrollBlock.enableScroll();
+          }
+        })
+        .on('click', '.navi', function () {
+          _this.closeMobileMenu();
+        })
+        .on('click', '.navi__wrapper', function (e) {
+          e.stopPropagation();
+        });
     },
     listenScroll: function () {
       _window.on('scroll', this.scrollHeader.bind(this));
@@ -80,7 +89,6 @@
     scrollHeader: function () {
       if (this.data.header.container !== undefined) {
         var fixedClass = 'is-fixed';
-        var visibleClass = 'is-fixed-visible';
 
         // get scroll params from blocker function
         var scroll = APP.Plugins.ScrollBlock.getData();
@@ -89,6 +97,7 @@
 
         if (scroll.y > this.data.header.bottomPoint) {
           this.data.header.container.addClass(fixedClass);
+          $('body').addClass(this.data.classes.bodyFixed);
 
           if (scroll.y > this.data.header.bottomPoint * 2 && scroll.direction === 'up') {
             this.makeHeaderVisible();
@@ -99,13 +108,14 @@
           // emulate position absolute by giving negative transform on initial scroll
           var normalized = Math.floor(normalize(scroll.y, this.data.header.bottomPoint, 0, 0, 100));
           var reverseNormalized = (100 - normalized) * -1;
-          reverseNormalized = reverseNormalized * 1.2; // a bit faster transition
+          reverseNormalized = reverseNormalized * 1; // a bit faster transition
 
           this.data.header.container.css({
             transform: 'translate3d(0,' + reverseNormalized + '%,0)',
           });
 
           this.data.header.container.removeClass(fixedClass);
+          $('body').removeClass(this.data.classes.bodyFixed);
         }
       }
     },
