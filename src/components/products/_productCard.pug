@@ -7,7 +7,7 @@ mixin productCard(card)
         each img in card.gallery
           .swiper-slide
             .productCard__image
-              img(src='img/products/'+img+'.png' srcset='img/products/'+img+'@2x.png 2x')
+              img(src='/img/products/'+img+'.png' srcset='img/products/'+img+'@2x.png 2x')
 
       .productCard__gallery-prev.swiper-product-prev
         +svgMono('arrow-left')
@@ -41,7 +41,7 @@ mixin productFull(card)
         each img in card.gallery
           .swiper-slide
             .productFull__image
-              img(src='img/products/'+img+'.png' srcset='img/products/'+img+'@2x.png 2x')
+              img(src='/img/products/'+img+'.png' srcset='img/products/'+img+'@2x.png 2x')
 
       .productFull__gallery-prev.swiper-product-prev
         +svgMono('arrow-left')
@@ -84,9 +84,9 @@ mixin productFull(card)
               .productFull__params-label Материалы:
               .productFull__params-values
                 span.productFull__params-value.js-tooltip(data-content="Описание материала")
-                  img(src='img/materials/wood.jpg' srcset='img/materials/wood@2x.jpg 2x')
+                  img(src='/img/materials/wood.jpg' srcset='img/materials/wood@2x.jpg 2x')
                 span.productFull__params-value.js-tooltip(data-content="Описание материала")
-                  img(src='img/materials/steel.jpg' srcset='img/materials/steel@2x.jpg 2x')
+                  img(src='/img/materials/steel.jpg' srcset='img/materials/steel@2x.jpg 2x')
 
       .productFull__actions
         .row

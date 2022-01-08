@@ -69,6 +69,8 @@
             });
           });
 
+          console.log(galleryData);
+
           _this.buildGalleryModal(galleryData);
         })
         .on('click', '.js-modal-gallery .modalGallery__thumb', function () {
@@ -99,7 +101,7 @@
         }"><div class="js-zoom" style="background-image: url(${el.mainSrc})"><img src="${
           el.mainSrc
         }" /></div><div class="modalGallery__slide-caption">${el.caption}</div></div>`;
-
+        console.log(html);
         var thumbHtml = `<div class="swiper-slide modalGallery__thumb ${
           el.active ? 'is-active' : ''
         }" data-id="${el.id}"><img src="${el.thumb}" /></div>`;
