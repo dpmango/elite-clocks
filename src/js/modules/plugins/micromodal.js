@@ -50,7 +50,10 @@
         .on('click', '.js-gallery [data-gallery]', function () {
           var $trigger = $(this);
           var $container = $trigger.closest('.js-gallery');
-          var index = $trigger.parent().index();
+          var index =
+            $trigger.closest('.swiper-slide').length > 0
+              ? $trigger.parent().index()
+              : $trigger.index();
 
           var galleryData = [];
 
@@ -82,25 +85,34 @@
       $modal.empty();
 
       var modalName = $modal.closest('.modal').attr('id');
-      var $thumbsHtml = $('<div class="modalGallery__thumbs"></div>');
+      var $thumbsHtml = $(
+        '<div class="modalGallery__thumbs swiper-container js-swiper-galleryThumbs">' +
+          '<div class="swiper-wrapper"></div>' +
+          '<div class="gallery__prev swiper-galleryThumbs-prev"><svg class="ico ico-mono-arrow-left"><use xlink:href="#ico-mono-arrow-left"></use></svg></div>' +
+          '<div class="gallery__next swiper-galleryThumbs-next"><svg class="ico ico-mono-arrow-right"><use xlink:href="#ico-mono-arrow-right"></use></svg></div>' +
+          '</div>'
+      );
 
       $.each(data, function (i, el) {
         var html = `<div class="modalGallery__slide ${el.active ? 'is-active' : ''}" data-id="${
           el.id
-        }"><img src="${el.mainSrc}" /><div class="modalGallery__slide-caption">${
-          el.caption
-        }</div></div>`;
+        }"><div class="js-zoom"><img src="${
+          el.mainSrc
+        }" /></div><div class="modalGallery__slide-caption">${el.caption}</div></div>`;
 
-        var thumbHtml = `<div class="modalGallery__thumb ${
+        var thumbHtml = `<div class="swiper-slide modalGallery__thumb ${
           el.active ? 'is-active' : ''
         }" data-id="${el.id}"><img src="${el.thumb}" /></div>`;
 
         $modal.append(html);
-        $thumbsHtml.append(thumbHtml);
+        $thumbsHtml.find('.swiper-wrapper').append(thumbHtml);
       });
 
       $modal.append($thumbsHtml);
       MicroModal.show(modalName);
+      APP.Plugins.Sliders.init();
+      APP.Plugins.Zoom.init(true);
+      APP.Plugins.LegacySupport.fixImages();
     },
     changeGalleryModalSlide: function (dataId) {
       var $thumb = $('.js-modal-gallery .modalGallery__thumb[data-id="' + dataId + '"]');

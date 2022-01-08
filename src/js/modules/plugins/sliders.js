@@ -10,6 +10,7 @@
         cgallery: undefined,
         articleSidebar: undefined,
         similarProducts: undefined,
+        galleryThumbs: undefined,
         progress: undefined,
       },
       responsiveSwipers: {
@@ -200,6 +201,21 @@
           nested: true,
           spaceBetween: 0,
           slidesPerView: 1,
+        },
+        { navigation: true }
+      );
+
+      // galleryThumbs
+      this.data.swipers.galleryThumbs = _this.utils.buildSwiper(
+        'galleryThumbs',
+        {
+          loop: false,
+          spaceBetween: 0,
+          slidesPerView: 'auto',
+          freeMode: {
+            enabled: true,
+            sticky: false,
+          },
         },
         { navigation: true }
       );

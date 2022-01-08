@@ -75,17 +75,17 @@ mixin productFull(card)
             .productFull__params-row
               .productFull__params-label Цвета:
               .productFull__params-values
-                span.productFull__params-value(style="background: #9A624B")
-                span.productFull__params-value(style="background: #7F3B1F")
-                span.productFull__params-value(style="background: #60463B")
+                span.productFull__params-value.js-tooltip(data-content="Описание цвета" style="background: #9A624B")
+                span.productFull__params-value.js-tooltip(data-content="Описание цвета" style="background: #7F3B1F")
+                span.productFull__params-value.js-tooltip(data-content="Описание цвета" style="background: #60463B")
 
           .col.col-6
             .productFull__params-row
               .productFull__params-label Материалы:
               .productFull__params-values
-                span.productFull__params-value
+                span.productFull__params-value.js-tooltip(data-content="Описание материала")
                   img(src='img/materials/wood.jpg' srcset='img/materials/wood@2x.jpg 2x')
-                span.productFull__params-value
+                span.productFull__params-value.js-tooltip(data-content="Описание материала")
                   img(src='img/materials/steel.jpg' srcset='img/materials/steel@2x.jpg 2x')
 
       .productFull__actions

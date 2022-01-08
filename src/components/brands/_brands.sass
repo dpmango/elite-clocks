@@ -35,9 +35,13 @@
     img
       max-width: 100%
   &__name
+    display: block
     margin-top: 40px
     font-size: 26px
     line-height: (38 / 26)
+    transition: .25s $ease
+    &:hover
+      color: $colorPrimary
   &__description
     margin: 30px auto 0
     font-weight: 300

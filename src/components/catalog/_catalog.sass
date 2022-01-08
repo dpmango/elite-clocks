@@ -41,9 +41,10 @@
       color: $colorPrimary
 
   &__sidebar
-    position: sticky
     top: 30px
     padding-right: 50px
+    &.sticky
+      postion: sticky
 
   &__products
     .productFull
@@ -51,6 +52,11 @@
 
   &__pagination
     margin-top: 50px
+
++r($hdplus)
+  .catalog
+    &__products
+      margin-left: -30px
 
 +r($hd)
   .catalog
@@ -66,6 +72,8 @@
       &.is-active
         opacity: 1
         pointer-events: all
+    &__products
+      margin-left: 0
 
     &__sidebar
       // make it slide panel like
