@@ -49,20 +49,24 @@
         display: flex
         flex-direction: column
 
-.modal__container.is-zooming
-  // max-height: 100%
-  // max-width: 100%
-  // margin-left: 0
-  // margin-right: 0
-  .modalGallery__thumbs
-    opacity: 0
-    pointer-events: none
-  .modalGallery__slide
-    .js-zoom
-      cursor: zoom-out
-    .zoomImg
-      display: inline !important
-
+.modal__container
+  &.is-zooming
+    max-height: 100%
+    max-width: 100%
+    margin-left: 0
+    margin-right: 0
+    .modalGallery__thumbs
+      opacity: 0
+      pointer-events: none
+    .modalGallery__slide
+      .js-zoom
+        cursor: zoom-out
+      img
+        opacity: 0
+  &:not(.is-zooming)
+    .modalGallery__slide
+      .js-zoom
+        background-image: none !important
 
 +r($lg)
   .modal

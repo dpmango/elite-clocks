@@ -96,7 +96,7 @@
       $.each(data, function (i, el) {
         var html = `<div class="modalGallery__slide ${el.active ? 'is-active' : ''}" data-id="${
           el.id
-        }"><div class="js-zoom"><img src="${
+        }"><div class="js-zoom" style="background-image: url(${el.mainSrc})"><img src="${
           el.mainSrc
         }" /></div><div class="modalGallery__slide-caption">${el.caption}</div></div>`;
 

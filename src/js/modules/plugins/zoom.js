@@ -15,16 +15,33 @@
 
       if ($zoom.length === 0) return;
 
-      $zoom.each(function (i, zoom) {
-        const targetImage = $(zoom).find('img').attr('src');
+      // $zoom.each(function (i, zoom) {
+      //   const targetImage = $(zoom).find('img').attr('src');
 
-        $(zoom).zoom({
-          url: targetImage,
-          on: 'mouseover',
-        });
-      });
+      //   $(zoom).zoom({
+      //     url: targetImage,
+      //     on: 'mouseover',
+      //   });
+      // });
+    },
+    move: function (e) {
+      var zoomer = e.currentTarget;
+      var offsetX = 0;
+      var offsetY = 0;
+
+      e.offsetX ? (offsetX = e.offsetX) : (offsetX = e.touches[0].pageX);
+      e.offsetY ? (offsetY = e.offsetY) : (offsetX = e.touches[0].pageX);
+      var x = (offsetX / zoomer.offsetWidth) * 100;
+      var y = (offsetY / zoomer.offsetHeight) * 100;
+      zoomer.style.backgroundPosition = x + '% ' + y + '%';
     },
     eventListeners: function () {
+      var _this = this;
+
+      _document.on('mousemove', '.js-zoom', function (e) {
+        _this.move(e);
+      });
+
       _document.on('click', '.js-zoom', function () {
         const $zoom = $(this);
         const $modalContainer = $(this).closest('.modal__container');
