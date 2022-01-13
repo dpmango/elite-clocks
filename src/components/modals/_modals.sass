@@ -119,6 +119,43 @@
       font-size: 14px
       padding: 2px 10px
 
+// photoswipe
+.pswp.pswp--zoomed-in
+  .modalGallery__thumbs
+    opacity: 0
+    pointer-events: none
+
++r($xl)
+  .pswp.pswp--zoomed-in
+    .pswp__caption
+      opacity: 0
+
+.pswp__caption
+  left: auto
+  right: 0
+  width: 100%
+  max-width: 400px
+  bottom: 0
+  right: 0
+  min-height: 1px
+  background: linear-gradient(201.37deg, #FBFBFB -19.99%, #F7F7F7 44.27%, #F6F6F6 85.94%)
+
+
+.pswp__caption__center
+  padding: 2px 20px
+  font-size: 18px
+  line-height: (26 / 18)
+  color: $fontColor
+
++r($xl)
+  .pswp__caption
+    bottom: 100px
+
++r($md)
+  .pswp__caption__center
+    font-size: 14px
+    padding: 2px 10px
+
 // modal thanks
 .modalThanks
   position: relative

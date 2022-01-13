@@ -4,6 +4,7 @@
 (function ($, APP) {
   APP.Plugins.Photoswipe = {
     data: {
+      instance: null,
       pswpItems: [],
       curThumbnail: undefined,
       curSlideIndex: 0,
@@ -12,15 +13,26 @@
       this.eventListeners();
     },
     eventListeners: function () {
-      _document.on('click', '.js-gallery [data-gallery]', function (e) {
-        e.preventDefault();
+      var _this = this;
 
-        var $curLink = $(this);
+      _document
+        .on('click', '.js-gallery [data-gallery]', function (e) {
+          e.preventDefault();
 
-        APP.Plugins.Photoswipe.getThumbData($curLink);
-        APP.Plugins.Photoswipe.buildItems($curLink);
-        APP.Plugins.Photoswipe.openPSWP($curLink);
-      });
+          var $curLink = $(this);
+
+          APP.Plugins.Photoswipe.getThumbData($curLink);
+          APP.Plugins.Photoswipe.buildItems($curLink);
+          APP.Plugins.Photoswipe.openPSWP($curLink);
+        })
+        .on('click', '.js-swiper-galleryThumbs .modalGallery__thumb', function () {
+          var $thumb = $(this);
+          var dataId = $thumb.attr('data-id');
+
+          if (_this.data.instance) {
+            _this.data.instance.goTo(Number(dataId));
+          }
+        });
     },
     getThumbData: function ($originLink) {
       // reset
@@ -62,6 +74,7 @@
           var size = $element.data('size').split('x');
 
           var pswpObj = {
+            id: $element.attr('data-id') || i,
             src: $element.attr('data-gallery'),
             msrc: targetImg[0].src, // small image placeholder, main (large) image loads on top of it
             w: parseInt(size[0], 10),
@@ -100,6 +113,7 @@
         bgOpacity: 0.5,
         shareEl: false,
         history: true,
+
         getThumbBoundsFn: function (index) {
           var pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
           var targetThumbnail = curThumbnail;
@@ -137,6 +151,10 @@
       var gallery = new PhotoSwipe($pswpElement[0], PhotoSwipeUI_Default, items, options);
       gallery.init();
 
+      this.data.instance = gallery;
+
+      this.buildGalleryThumbs(items);
+
       // Sync active slide in swiper
       gallery.listen('beforeChange', function () {
         var $swiper = $originLink.closest('.swiper-container');
@@ -148,7 +166,41 @@
             swiper.slideTo(gallery.getCurrentIndex());
           }
         }
+
+        $('.modalGallery__thumb').removeClass('is-active');
+        $('.modalGallery__thumb[data-id="' + gallery.getCurrentIndex() + '"]').addClass(
+          'is-active'
+        );
+
+        if ($('.js-swiper-galleryThumbs')[0].swiper) {
+          $('.js-swiper-galleryThumbs')[0].swiper.slideTo(Number(gallery.getCurrentIndex()));
+        }
       });
+    },
+    buildGalleryThumbs: function (data) {
+      if (data.length === 0) return;
+      var $thumbs = $('.js-swiper-galleryThumbs .swiper-wrapper');
+
+      $thumbs.empty();
+
+      $.each(data, function (i, el) {
+        var thumbHtml = `<div class="swiper-slide modalGallery__thumb ${
+          el.active ? 'is-amctive' : ''
+        }" data-id="${el.id}"><img src="${el.msrc}" /></div>`;
+
+        $thumbs.append(thumbHtml);
+      });
+
+      APP.Plugins.Sliders.init();
+
+      setTimeout(() => {
+        APP.Plugins.Sliders.update();
+      }, 300);
+      setTimeout(() => {
+        APP.Plugins.Sliders.update();
+      }, 1000);
+
+      APP.Plugins.LegacySupport.fixImages();
     },
   };
 })(jQuery, window.APP);

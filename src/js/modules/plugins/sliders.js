@@ -212,6 +212,7 @@
           loop: false,
           spaceBetween: 0,
           slidesPerView: 'auto',
+          // touchStartForcePreventDefault: true,
           freeMode: {
             enabled: true,
             sticky: false,
