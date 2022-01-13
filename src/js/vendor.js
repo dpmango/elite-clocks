@@ -18,6 +18,9 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
+import PhotoSwipe from 'photoswipe';
+// eslint-disable-next-line camelcase
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
 // import scrollMonitor from 'scrollmonitor';
 
@@ -48,3 +51,6 @@ window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
 // window.scrollMonitor = scrollMonitor;
+window.PhotoSwipe = PhotoSwipe;
+// eslint-disable-next-line camelcase
+window.PhotoSwipeUI_Default = PhotoSwipeUI_Default;

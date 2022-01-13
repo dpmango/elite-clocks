@@ -51,8 +51,8 @@
 
 .modal__container
   &.is-zooming
-    max-height: 100%
-    max-width: 100%
+    max-height: 100% !important
+    max-width: 100% !important
     margin-left: 0
     margin-right: 0
     .modalGallery__thumbs
@@ -67,6 +67,12 @@
     .modalGallery__slide
       .js-zoom
         background-image: none !important
+
++r($xl)
+  .modal__container
+    &.is-zooming
+      .modalGallery__slide-caption
+        opacity: 0
 
 +r($lg)
   .modal

@@ -64,6 +64,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     app.initPlugins = function (fromPjax) {
       APP.Plugins.Teleport.init();
       APP.Plugins.MicroModal.init(fromPjax);
+      APP.Plugins.Photoswipe.init(fromPjax);
       APP.Plugins.Sliders.init(fromPjax);
       APP.Plugins.Masks.init();
       APP.Plugins.Tippy.init();

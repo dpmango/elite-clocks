@@ -38,47 +38,44 @@
       });
 
       // gallery
-      _document
-        .on('click', '.js-trigger-gallery', function () {
-          var $trigger = $(this);
-          var dataGalleryId = $trigger.data('gallery-id');
+      _document.on('click', '.js-trigger-gallery', function () {
+        var $trigger = $(this);
+        var dataGalleryId = $trigger.data('gallery-id');
 
-          var $gallery = $('.js-gallery[data-gallery-id="' + dataGalleryId + '"]');
+        var $gallery = $('.js-gallery[data-gallery-id="' + dataGalleryId + '"]');
 
-          $gallery.find('[data-gallery]').first().click();
-        })
-        .on('click', '.js-gallery [data-gallery]', function () {
-          var $trigger = $(this);
-          var $container = $trigger.closest('.js-gallery');
-          var index =
-            $trigger.closest('.swiper-slide').length > 0
-              ? $trigger.parent().index()
-              : $trigger.index();
+        $gallery.find('[data-gallery]').first().click();
+      });
+      // .on('click', '.js-gallery [data-gallery]', function () {
+      //   var $trigger = $(this);
+      //   var $container = $trigger.closest('.js-gallery');
+      //   var index =
+      //     $trigger.closest('.swiper-slide').length > 0
+      //       ? $trigger.parent().index()
+      //       : $trigger.index();
 
-          var galleryData = [];
+      //   var galleryData = [];
 
-          $container.find('[data-gallery]').each((idx, element) => {
-            var $el = $(element);
+      //   $container.find('[data-gallery]').each((idx, element) => {
+      //     var $el = $(element);
 
-            galleryData.push({
-              id: $el.data('id') || idx,
-              active: index === idx,
-              mainSrc: $el.data('gallery'),
-              caption: $el.data('caption'),
-              thumb: $el.data('thumb') || $el.find('img').attr('src'),
-            });
-          });
+      //     galleryData.push({
+      //       id: $el.data('id') || idx,
+      //       active: index === idx,
+      //       mainSrc: $el.data('gallery'),
+      //       caption: $el.data('caption'),
+      //       thumb: $el.data('thumb') || $el.find('img').attr('src'),
+      //     });
+      //   });
 
-          console.log(galleryData);
+      //   _this.buildGalleryModal(galleryData);
+      // })
+      // .on('click', '.js-modal-gallery .modalGallery__thumb', function () {
+      //   var $thumb = $(this);
+      //   var dataId = $thumb.attr('data-id');
 
-          _this.buildGalleryModal(galleryData);
-        })
-        .on('click', '.js-modal-gallery .modalGallery__thumb', function () {
-          var $thumb = $(this);
-          var dataId = $thumb.attr('data-id');
-
-          _this.changeGalleryModalSlide(dataId);
-        });
+      //   _this.changeGalleryModalSlide(dataId);
+      // });
     },
     buildGalleryModal: function (data) {
       if (data.length === 0) return;
@@ -101,7 +98,7 @@
         }"><div class="js-zoom" style="background-image: url(${el.mainSrc})"><img src="${
           el.mainSrc
         }" /></div><div class="modalGallery__slide-caption">${el.caption}</div></div>`;
-        console.log(html);
+
         var thumbHtml = `<div class="swiper-slide modalGallery__thumb ${
           el.active ? 'is-active' : ''
         }" data-id="${el.id}"><img src="${el.thumb}" /></div>`;
@@ -112,6 +109,7 @@
 
       $modal.append($thumbsHtml);
       MicroModal.show(modalName);
+
       APP.Plugins.Sliders.init();
       APP.Plugins.Zoom.init(true);
       APP.Plugins.LegacySupport.fixImages();
